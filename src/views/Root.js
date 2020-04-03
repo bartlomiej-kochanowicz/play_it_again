@@ -14,6 +14,8 @@ const Root = () => (
         <Route exact path={routes.login} component={LoginPage} />
         <Route exact path={routes.app_info} component={AppInfo} />
         <Route exact path={routes.top_artists} component={TopArtists} />
+        <Route exact path={routes.top_tracks} component={TopArtists} />
+        <Route exact path={routes.recent} component={TopArtists} />
       </Switch>
     </MainTemplate>
   </BrowserRouter>
