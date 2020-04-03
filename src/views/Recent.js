@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import UserPageTemplate from 'templates/UserPageTemplate';
+import ListTemplate from "templates/ListTemplate";
+import hero from 'assets/hero_images/hero3.png';
 /*import spotifyApi, { token } from 'api';*/
 
 class Recent extends Component {
   render() {
     return (
-      <UserPageTemplate>
-        <h1>Recent</h1>
-      </UserPageTemplate>
+      <ListTemplate image={hero}/>
     );
   }
 }

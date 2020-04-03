@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import UserPageTemplate from "templates/UserPageTemplate";
+import ListTemplate from "templates/ListTemplate";
+import hero from 'assets/hero_images/hero2.png';
 /*import spotifyApi, { token } from 'api';*/
 
 class TopArtists extends Component {
 
 	render() {
 		return (
-			<UserPageTemplate>
-				<h1>Top Tracks</h1>
-			</UserPageTemplate>
+			<ListTemplate image={hero}/>
 		);
 	}
 }

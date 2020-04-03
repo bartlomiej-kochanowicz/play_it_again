@@ -6,7 +6,14 @@ import Sidebar from 'components/organisms/Sidebar/Sidebar';
 const StyledWrapper = styled.div`
   margin-left: 120px;
   padding: 0 40px;
-
+  display: flex;
+  justify-content: center;
+  background-color: ${({theme})=> theme.grey100};
+  
+  @media(max-width: 1200px){
+    padding: 0;
+  }
+  
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     margin-left: 0;
     padding: 0;
