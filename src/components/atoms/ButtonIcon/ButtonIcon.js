@@ -15,7 +15,10 @@ const ButtonIcon = ({ icon: Icon }) => (
 );
 
 ButtonIcon.propTypes = {
-  icon: PropTypes.element.isRequired,
+  icon: PropTypes.shape({
+    $$typeof: PropTypes.symbol.isRequired,
+    displayName: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default ButtonIcon;

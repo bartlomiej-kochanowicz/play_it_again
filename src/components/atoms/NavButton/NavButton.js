@@ -10,12 +10,18 @@ const StyledDiv = styled.div`
   align-items: center;
   margin-bottom: 40px;
   cursor: pointer;
+  justify-content: center;
 
   &:hover {
     color: ${({ theme }) => theme.spotifyBlack};
   }
   &.active {
     background-color: red;
+  }
+
+  @media (max-width: ${({theme})=> theme.breakpoints.mobile}) {
+    margin-top: 15px;
+    margin-bottom: 0;
   }
 `;
 
@@ -35,6 +41,9 @@ const NavButton = ({ icon, children }) => (
 export default NavButton;
 
 NavButton.propTypes = {
-  icon: PropTypes.element.isRequired,
+  icon: PropTypes.shape({
+    $$typeof: PropTypes.symbol.isRequired,
+    displayName: PropTypes.string.isRequired,
+  }).isRequired,
   children: PropTypes.string.isRequired,
 };

@@ -2,11 +2,15 @@ import SpotifyWebApi from 'spotify-web-api-js';
 
 const spotifyApi = new SpotifyWebApi();
 
+if(!window.localStorage.getItem('hash')){
+  window.localStorage.setItem('hash', window.location.hash);
+}
+
 function getHashParams() {
   const hashParams = {};
   let e;
   const r = /([^&;=]+)=?([^&;]*)/g;
-  const q = window.location.hash.substring(1);
+  const q = window.localStorage.getItem('hash').substring(1);
   e = r.exec(q);
   while (e) {
     hashParams[e[1]] = decodeURIComponent(e[2]);

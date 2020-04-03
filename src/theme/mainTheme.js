@@ -18,4 +18,7 @@ export const theme = {
     xl: '4rem',
     xxl: '5rem',
   },
+  breakpoints:{
+    mobile: '800px',
+  }
 };

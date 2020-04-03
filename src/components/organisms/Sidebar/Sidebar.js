@@ -20,11 +20,29 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    width: 100%;
+    height: 80px;
+    padding: 0;
+    top: auto;
+    bottom: 0;
+    flex-direction: row;
+  }
 `;
 
 const StyledUl = styled.ul`
   padding: 0;
   margin: 50px 0;
+  list-style: none;
+
+  @media (max-width: ${({theme})=> theme.breakpoints.mobile}) {
+    display: flex;
+    justify-content: space-around;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 const StyledNavLink = styled(NavLink)`
@@ -39,9 +57,17 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
+const StyledLogo = styled(Logo)`
+  transform: scale(0.7);
+
+  @media (max-width: ${({theme})=> theme.breakpoints.mobile}) {
+    display: none;
+  }
+`;
+
 const Sidebar = () => (
   <StyledWrapper>
-    <Logo />
+    <StyledLogo />
     <StyledUl>
       <li>
         <StyledNavLink activeClassName="active" to={routes.top_artists}>
