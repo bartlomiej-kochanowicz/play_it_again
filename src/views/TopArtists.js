@@ -4,7 +4,7 @@ import ListTemplate from "templates/ListTemplate";
 import hero from 'assets/hero_images/hero1.png';
 
 const TopArtists = () =>(
-  <ListTemplate image={hero}/>
+  <ListTemplate image={hero} header="Top Artists"/>
 );
 
 export default TopArtists;

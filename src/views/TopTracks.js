@@ -7,7 +7,7 @@ class TopArtists extends Component {
 
 	render() {
 		return (
-			<ListTemplate image={hero}/>
+			<ListTemplate image={hero} header="Top Tracks"/>
 		);
 	}
 }

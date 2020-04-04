@@ -2,22 +2,24 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Redirect } from 'react-router-dom';
 import UserPageTemplate from 'templates/UserPageTemplate';
+import Heading from 'components/atoms/Heading/Heading';
 import { token } from 'api';
 
 const StyledWrapper = styled.div`
   width: 1050px;
   box-shadow: 10px 0 30px rgba(0, 0, 0, 0.05);
   overflow: hidden;
-  
-  @media(max-width: 1200px){
-  width: 100%;
+
+  @media (max-width: 1200px) {
+    width: 100%;
   }
 `;
 
 const StyledHero = styled.div`
+  position: relative;
   width: 100%;
   height: 420px;
-  background-image: url(${({image})=> image});
+  background-image: url(${({ image }) => image});
   background-size: cover;
   background-position: center;
 `;
@@ -28,7 +30,7 @@ const StyledList = styled.div`
   height: 300px;
   position: relative;
   background-color: #fff;
-  
+
   &:before {
     content: '';
     display: block;
@@ -43,11 +45,20 @@ const StyledList = styled.div`
   }
 `;
 
-const ListTemplate = ({ image }) => (
+const StyledHeading = styled(Heading)`
+  color: #fff;
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+`;
+
+const ListTemplate = ({ image, header }) => (
   <UserPageTemplate>
     {!token && <Redirect to="/login" />}
     <StyledWrapper>
-      <StyledHero image={image} />
+      <StyledHero image={image}>
+        <StyledHeading big>{header}</StyledHeading>
+      </StyledHero>
       <StyledList />
     </StyledWrapper>
   </UserPageTemplate>

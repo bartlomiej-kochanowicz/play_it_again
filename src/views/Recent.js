@@ -6,7 +6,7 @@ import hero from 'assets/hero_images/hero3.png';
 class Recent extends Component {
   render() {
     return (
-      <ListTemplate image={hero}/>
+      <ListTemplate image={hero} header="Recently Played"/>
     );
   }
 }
