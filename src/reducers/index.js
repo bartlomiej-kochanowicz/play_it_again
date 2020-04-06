@@ -1,4 +1,10 @@
-import { FETCH_ARTISTS_SUCCESS, FETCH_ARTISTS_FAILURE,CLEAR_STORAGE_REQUEST } from 'actions';
+import {
+  FETCH_ARTISTS_SUCCESS,
+  FETCH_ARTISTS_FAILURE,
+  FETCH_TRACKS_SUCCESS,
+  FETCH_TRACKS_FAILURE,
+  CLEAR_STORAGE_REQUEST,
+} from 'actions';
 
 const initialState = {
   topArtists: [],
@@ -18,6 +24,18 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         topArtists: [],
+      };
+    }
+    case FETCH_TRACKS_SUCCESS: {
+      return {
+        ...state,
+        topTracks: [...action.payload.items],
+      };
+    }
+    case FETCH_TRACKS_FAILURE: {
+      return {
+        ...state,
+        topTracks: [],
       };
     }
     case CLEAR_STORAGE_REQUEST: {

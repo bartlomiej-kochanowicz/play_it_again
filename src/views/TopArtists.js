@@ -7,21 +7,16 @@ import { connect } from 'react-redux';
 import { fetchArtists as fetchArtistsAction, clearStorage as clearStorageAction } from 'actions';
 
 class TopArtists extends Component {
-  state = {
-    time: 'long_term',
-  };
-
   componentDidMount() {
-    const { time } = this.state;
     const { fetchArtists } = this.props;
-    fetchArtists(time);
+    fetchArtists('long_term');
   }
 
   updateList = (item) => {
     console.log('update');
     const { fetchArtists, clearStorage } = this.props;
     clearStorage();
-    setTimeout(() => fetchArtists(item),250);
+    setTimeout(() => fetchArtists(item), 75);
   };
 
   render() {
@@ -30,16 +25,23 @@ class TopArtists extends Component {
     return (
       <ListTemplate image={hero} header="Top Artists" update={this.updateList}>
         {topArtists.map((item, index) => {
-          const { name, genres, id, images, href } = item;
+          const {
+            name,
+            genres,
+            id,
+            images,
+            external_urls: { spotify },
+          } = item;
 
           return (
             <ListItem
+              type='artist'
               key={id}
               index={index}
               name={name}
-              genres={genres}
+              description={genres}
               image={images[2].url}
-              link={href}
+              link={spotify}
             />
           );
         })}
