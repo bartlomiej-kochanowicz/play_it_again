@@ -14,7 +14,7 @@ const StyledWrapper = styled.div`
     padding: 0;
   }
   
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     margin-left: 0;
     padding: 0;
   }

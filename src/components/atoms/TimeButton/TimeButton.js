@@ -18,7 +18,7 @@ const StyledButton = styled.button`
   border: 0;
   background-color: transparent;
   font-weight: ${({ theme }) => theme.bold};
-  font-size: 1.9rem;
+  font-size: 2rem;
   color: ${({ theme, active }) => (active ? theme.spotifyBlack : theme.grey300)};
   cursor: pointer;
   position: relative;
@@ -38,6 +38,10 @@ const StyledButton = styled.button`
       css`
         animation: ${buttonAnimation} .6s both;
       `}
+  }
+  
+  @media(max-width: ${({theme})=> theme.breakpoints.mobile}){
+    font-size: 1.5rem;
   }
 `;
 

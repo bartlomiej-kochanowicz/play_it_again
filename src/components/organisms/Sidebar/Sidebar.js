@@ -20,8 +20,9 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 999;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     width: 100%;
     height: 80px;
     padding: 0;
@@ -36,7 +37,7 @@ const StyledUl = styled.ul`
   margin: 50px 0;
   list-style: none;
 
-  @media (max-width: ${({theme})=> theme.breakpoints.mobile}) {
+  @media (max-width: ${({theme})=> theme.breakpoints.tablet}) {
     display: flex;
     justify-content: space-around;
     margin: 0;
@@ -60,7 +61,7 @@ const StyledNavLink = styled(NavLink)`
 const StyledLogo = styled(Logo)`
   transform: scale(0.7);
 
-  @media (max-width: ${({theme})=> theme.breakpoints.mobile}) {
+  @media (max-width: ${({theme})=> theme.breakpoints.tablet}) {
     display: none;
   }
 `;
