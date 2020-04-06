@@ -20,7 +20,8 @@
     "import/prefer-default-export": 0,
     "react/state-in-constructor": 0,
     "no-console": 0,
-    "react/button-has-type": 0
+    "react/button-has-type": 0,
+    "camelcase": 0
   },
   "settings": {
     "import/resolver": {

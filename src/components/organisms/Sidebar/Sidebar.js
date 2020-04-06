@@ -21,6 +21,7 @@ const StyledWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   z-index: 999;
+  background-color: #fff;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     width: 100%;

@@ -22,6 +22,7 @@ const StyledButton = styled.button`
   color: ${({ theme, active }) => (active ? theme.spotifyBlack : theme.grey300)};
   cursor: pointer;
   position: relative;
+  outline:none;
 
   :hover {
     color: ${({ theme }) => theme.spotifyBlack};

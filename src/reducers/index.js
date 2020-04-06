@@ -1,4 +1,4 @@
-import { FETCH_ARTISTS_SUCCESS, FETCH_ARTISTS_FAILURE } from 'actions';
+import { FETCH_ARTISTS_SUCCESS, FETCH_ARTISTS_FAILURE,CLEAR_STORAGE_REQUEST } from 'actions';
 
 const initialState = {
   topArtists: [],
@@ -9,13 +9,18 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_ARTISTS_SUCCESS: {
-      window.localStorage.setItem('topArtists',JSON.stringify(action.payload.items));
       return {
         ...state,
         topArtists: [...action.payload.items],
       };
     }
     case FETCH_ARTISTS_FAILURE: {
+      return {
+        ...state,
+        topArtists: [],
+      };
+    }
+    case CLEAR_STORAGE_REQUEST: {
       return {
         ...state,
         topArtists: [],
