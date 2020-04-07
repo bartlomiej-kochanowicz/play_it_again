@@ -8,6 +8,6 @@
 ### 💡 Technologies
 - React, Redux
 - Styled Components 💅🏼
-- Apotify API
+- Spotify API
 - JavaScript ES6+
 - Deployment with Google Firebase 🔥
