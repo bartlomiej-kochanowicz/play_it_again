@@ -3,7 +3,7 @@
 
 #### 🔥🔥🔥Web app which allows you to discover your top artist, songs and recent played music.You can also make playlist based on your music preferences.
 
-# 📱 🖥 Preview
+# 📱 🖥 Mobile and desktop preview:
 [![N|Solid](https://imgur.com/9ihuC3T.png)]()
 
 # 💡 Technologies
