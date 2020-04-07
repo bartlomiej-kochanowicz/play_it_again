@@ -8,12 +8,12 @@ const StyledWrapper = styled.div`
   padding: 0 40px;
   display: flex;
   justify-content: center;
-  background-color: ${({theme})=> theme.grey100};
-  
-  @media(max-width: 1200px){
+  background-color: ${({ theme }) => theme.grey100};
+
+  @media (max-width: 1200px) {
     padding: 0;
   }
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     margin-left: 0;
     padding: 0;

@@ -8,8 +8,8 @@ const StyledSpan = styled.span`
   height: 27px;
 `;
 
-const ButtonIcon = ({ icon: Icon, secondary }) => (
-  <StyledSpan secondary={secondary}>
+const ButtonIcon = ({ icon: Icon }) => (
+  <StyledSpan>
     <Icon />
   </StyledSpan>
 );
@@ -21,9 +21,4 @@ ButtonIcon.propTypes = {
     $$typeof: PropTypes.symbol.isRequired,
     displayName: PropTypes.string.isRequired,
   }).isRequired,
-  secondary: PropTypes.bool,
-};
-
-ButtonIcon.defaultProps = {
-  secondary: false,
 };

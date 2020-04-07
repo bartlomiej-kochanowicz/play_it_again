@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, {keyframes} from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import UserPageTemplate from 'templates/UserPageTemplate';
@@ -18,7 +18,7 @@ const StyledWrapper = styled.div`
   }
 `;
 
-const StyledHero = styled.div`
+const StyledHero = styled.header`
   position: relative;
   width: 100%;
   height: 420px;
@@ -54,6 +54,7 @@ const StyledInnerWrapper = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     padding: 10px;
+    margin-bottom: 70px;
   }
 `;
 
@@ -71,7 +72,7 @@ const StyledHeading = styled(Heading)`
   position: absolute;
   left: 20px;
   bottom: 30px;
-  animation: ${appear} .5s .5s both;
+  animation: ${appear} 0.5s 0.5s both;
 `;
 
 const StyledList = styled.ul`
@@ -80,7 +81,7 @@ const StyledList = styled.ul`
   list-style: none;
 `;
 
-const ListTemplate = ({ image, header, children,update }) => (
+const ListTemplate = ({ image, header, children, update }) => (
   <UserPageTemplate>
     {!token && <Redirect to="/login" />}
     <StyledWrapper>
@@ -88,7 +89,7 @@ const ListTemplate = ({ image, header, children,update }) => (
         <StyledHeading big>{header}</StyledHeading>
       </StyledHero>
       <StyledInnerWrapper>
-        {(header !== 'Recently Played') && <TimeNavbar update={update} />}
+        {header !== 'Recently Played' && <TimeNavbar update={update} />}
         <StyledList>{children}</StyledList>
       </StyledInnerWrapper>
     </StyledWrapper>

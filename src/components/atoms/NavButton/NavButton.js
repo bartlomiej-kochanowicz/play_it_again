@@ -1,10 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import ButtonIcon from 'components/atoms/ButtonIcon/ButtonIcon';
 
 const StyledDiv = styled.div`
-  width: 120px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,6 +19,14 @@ const StyledDiv = styled.div`
     background-color: red;
   }
 
+  ${({ last }) =>
+    last &&
+    css`
+      margin-bottom: 0;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    `}
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
     margin-top: 10px;
     margin-bottom: 0;
@@ -29,10 +37,13 @@ const StyledSpan = styled.span`
   font-weight: ${({ theme }) => theme.regular};
   font-size: ${({ theme }) => theme.fontSize.xs};
   margin-top: 10px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    margin-top: 3px;
+  }
 `;
 
-const NavButton = ({ icon, children }) => (
-  <StyledDiv>
+const NavButton = ({ icon, children, last }) => (
+  <StyledDiv last={last}>
     <ButtonIcon icon={icon} />
     <StyledSpan>{children}</StyledSpan>
   </StyledDiv>
@@ -46,4 +57,9 @@ NavButton.propTypes = {
     displayName: PropTypes.string.isRequired,
   }).isRequired,
   children: PropTypes.string.isRequired,
+  last: PropTypes.bool,
+};
+
+NavButton.defaultProps = {
+  last: false,
 };
