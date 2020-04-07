@@ -3,6 +3,8 @@ import {
   FETCH_ARTISTS_FAILURE,
   FETCH_TRACKS_SUCCESS,
   FETCH_TRACKS_FAILURE,
+  FETCH_RECENT_SUCCESS,
+  FETCH_RECENT_FAILURE,
   CLEAR_STORAGE_REQUEST,
 } from 'actions';
 
@@ -36,6 +38,18 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         topTracks: [],
+      };
+    }
+    case FETCH_RECENT_SUCCESS: {
+      return {
+        ...state,
+        recent: [...action.payload.items],
+      };
+    }
+    case FETCH_RECENT_FAILURE: {
+      return {
+        ...state,
+        recent: [],
       };
     }
     case CLEAR_STORAGE_REQUEST: {

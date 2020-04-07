@@ -66,7 +66,6 @@ const StyledInfo = styled.span`
       color: ${({ theme }) => theme.grey300};
       font-size: ${({ theme }) => theme.fontSize.s};
       display: inline-block;
-      width: 70%;
     `};
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: ${({ theme }) => theme.fontSize.s};
@@ -79,19 +78,31 @@ const StyledInfo = styled.span`
   }
 `;
 
-const StyledInnerWrapper = styled.div`
+const StyledFlexWrapper = styled.div`
   width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
-const ListItem = ({ type,index, name, description, image, link }) => (
+const StyledInnerWrapper = styled.div`
+  width: 90%;
+`;
+
+const ListItem = ({ type, index, name, description, image, link, played }) => (
   <li>
     <StyledLink href={link} target="_blank" rel="noopener noreferrer" delay={index}>
-      <StyledNumber>{index + 1}</StyledNumber>
+      {type !== 'recent' && <StyledNumber>{index + 1}</StyledNumber>}
       <StyledImage image={image} />
-      <StyledInnerWrapper>
-        <StyledInfo>{name}</StyledInfo>
-        <StyledInfo secondary>{description.map((item) => type==='artist' ? `${item}, ` : `${item.name}, `)}</StyledInfo>
-      </StyledInnerWrapper>
+      <StyledFlexWrapper>
+        <StyledInnerWrapper>
+          <StyledInfo>{name}</StyledInfo>
+          <StyledInfo secondary>
+            {description.map((item) => (type === 'artist' ? `${item}, ` : `${item.name}, `))}
+          </StyledInfo>
+        </StyledInnerWrapper>
+        <StyledInfo secondary>{played}</StyledInfo>
+      </StyledFlexWrapper>
     </StyledLink>
   </li>
 );
@@ -99,9 +110,16 @@ const ListItem = ({ type,index, name, description, image, link }) => (
 export default ListItem;
 
 ListItem.propTypes = {
+  type: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
-  description: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.object])).isRequired,
+  description: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.object]))
+    .isRequired,
   image: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
+  played: PropTypes.string,
+};
+
+ListItem.defaultProps = {
+  played: '',
 };

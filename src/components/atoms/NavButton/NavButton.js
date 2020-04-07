@@ -19,8 +19,8 @@ const StyledDiv = styled.div`
     background-color: red;
   }
 
-  @media (max-width: ${({theme})=> theme.breakpoints.tablet}) {
-    margin-top: 15px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
+    margin-top: 10px;
     margin-bottom: 0;
   }
 `;

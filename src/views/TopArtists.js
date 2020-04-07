@@ -13,7 +13,6 @@ class TopArtists extends Component {
   }
 
   updateList = (item) => {
-    console.log('update');
     const { fetchArtists, clearStorage } = this.props;
     clearStorage();
     setTimeout(() => fetchArtists(item), 75);
@@ -21,7 +20,6 @@ class TopArtists extends Component {
 
   render() {
     const { topArtists } = this.props;
-
     return (
       <ListTemplate image={hero} header="Top Artists" update={this.updateList}>
         {topArtists.map((item, index) => {
@@ -35,7 +33,7 @@ class TopArtists extends Component {
 
           return (
             <ListItem
-              type='artist'
+              type="artist"
               key={id}
               index={index}
               name={name}
