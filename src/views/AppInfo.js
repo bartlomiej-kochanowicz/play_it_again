@@ -48,7 +48,6 @@ const StyledListItem = styled.li`
 const StyledLink = styled.a`
   display: block;
   color: ${({ theme }) => theme.spotifyBlack};
-  text-decoration: none;
   margin: 30px 0;
   width: 50%;
 `;
@@ -86,12 +85,15 @@ const AppInfo = () => (
         <StyledListItem>user-top-read</StyledListItem>
         <StyledListItem>playlist-modify-public</StyledListItem>
       </ul>
+      <Paragraph>
+        Created & Powered by bartekmajster sp z o.o. using Google Firebase and Spotify API.
+      </Paragraph>
       <StyledLink
-        href="https://developer.spotify.com/documentation/general/guides/scopes/"
+        href="https://github.com/bartekmajster/play_it_again"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Read more about Spotify scopes
+        Github repository
       </StyledLink>
       <Link to={routes.login}>
         <StyledButton>
