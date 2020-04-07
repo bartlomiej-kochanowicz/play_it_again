@@ -2,12 +2,14 @@
 # 🎧Play It Again🎧
 
 #### 🔥🔥🔥Web app which allows you to discover your top artist, songs and recent played music.You can also make playlist based on your music preferences.
-#### 📱Mobile, 📺Tablet and 🖥Desktop Preview
+
+# 📱 🖥 Preview
 [![N|Solid](https://imgur.com/9ihuC3T.png)]()
 
-### 💡 Technologies
+# 💡 Technologies
 - React, Redux
-- Styled Components 💅🏼
-- Spotify API
+- Styled Components with Styled Icons 💅🏼
+- Storybook 📕
+- Spotify API (Node.js)
 - JavaScript ES6+
 - Deployment with Google Firebase 🔥
