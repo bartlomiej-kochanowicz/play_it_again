@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { routes } from 'routes';
@@ -10,7 +10,7 @@ import { Heart } from '@styled-icons/fa-regular/Heart';
 import { Clock } from '@styled-icons/fa-regular/Clock';
 import { ShareSquare } from '@styled-icons/fa-regular/ShareSquare';
 
-const StyledWrapper = styled.div`
+const StyledWrapper = styled.nav`
   width: 120px;
   height: 100vh;
   padding: 30px 0;
@@ -25,12 +25,7 @@ const StyledWrapper = styled.div`
   background-color: #fff;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    width: 100%;
-    height: 60px;
-    padding: 0;
-    top: auto;
-    bottom: 0;
-    flex-direction: row;
+    display: none;
   }
 `;
 
@@ -38,18 +33,9 @@ const StyledUl = styled.ul`
   padding: 0;
   margin: 50px 0;
   list-style: none;
-  flex-grow: 1;
   display: flex;
   flex-direction: column;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
+  height: 100%;
 `;
 
 const StyledLi = styled.li`
@@ -57,25 +43,17 @@ const StyledLi = styled.li`
     last &&
     css`
       flex-grow: 1;
-      position: relative;
     `};
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    flex-grow: 0;
-  }
 `;
 
 const sharedLinkStyle = css`
   display: block;
   text-decoration: none;
   width: 100%;
-  height: 100%;
   color: ${({ theme }) => theme.grey300};
 
   &.active {
     color: ${({ theme }) => theme.spotifyBlack};
-  }
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    width: 60px;
   }
 `;
 
@@ -85,52 +63,47 @@ const StyledNavLink = styled(NavLink)`
 
 const StyledLink = styled(Link)`
   ${sharedLinkStyle};
+  position: absolute;
+  left: 0;
+  bottom: 0;
 `;
 
 const StyledLogo = styled(Logo)`
   transform: scale(0.7);
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    display: none;
-  }
 `;
 
-class Sidebar extends Component {
-  handleLogout = () => {
+const Sidebar = () => {
+  const handleLogout = () => {
     window.sessionStorage.clear();
   };
 
-  render() {
-    return (
-      <StyledWrapper>
-        <StyledLogo />
-        <StyledUl>
-          <StyledLi>
-            <StyledNavLink activeClassName="active" to={routes.top_artists}>
-              <NavButton icon={Star}>Top Artists</NavButton>
-            </StyledNavLink>
-          </StyledLi>
-          <StyledLi>
-            <StyledNavLink activeClassName="active" to={routes.top_tracks}>
-              <NavButton icon={Heart}>Top Tracks</NavButton>
-            </StyledNavLink>
-          </StyledLi>
-          <StyledLi>
-            <StyledNavLink activeClassName="active" to={routes.recent}>
-              <NavButton icon={Clock}>Recent</NavButton>
-            </StyledNavLink>
-          </StyledLi>
-          <StyledLi last>
-            <StyledLink to={routes.login} onClick={this.handleLogout}>
-              <NavButton icon={ShareSquare} last>
-                Logout
-              </NavButton>
-            </StyledLink>
-          </StyledLi>
-        </StyledUl>
-      </StyledWrapper>
-    );
-  }
-}
+  return (
+    <StyledWrapper>
+      <StyledLogo />
+      <StyledUl>
+        <StyledLi>
+          <StyledNavLink activeClassName="active" to={routes.top_artists}>
+            <NavButton icon={Star}>Top Artists</NavButton>
+          </StyledNavLink>
+        </StyledLi>
+        <StyledLi>
+          <StyledNavLink activeClassName="active" to={routes.top_tracks}>
+            <NavButton icon={Heart}>Top Tracks</NavButton>
+          </StyledNavLink>
+        </StyledLi>
+        <StyledLi>
+          <StyledNavLink activeClassName="active" to={routes.recent}>
+            <NavButton icon={Clock}>Recent</NavButton>
+          </StyledNavLink>
+        </StyledLi>
+        <StyledLi last>
+          <StyledLink to={routes.login} onClick={handleLogout}>
+            <NavButton icon={ShareSquare}>Logout</NavButton>
+          </StyledLink>
+        </StyledLi>
+      </StyledUl>
+    </StyledWrapper>
+  );
+};
 
 export default Sidebar;

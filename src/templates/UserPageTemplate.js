@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Sidebar from 'components/organisms/Sidebar/Sidebar';
+import HamburgerMenu from '../components/organisms/HamburgerMenu/HamburgerMenu';
 
 const StyledWrapper = styled.div`
   margin-left: 120px;
@@ -23,6 +24,7 @@ const StyledWrapper = styled.div`
 const UserPageTemplate = ({ children }) => (
   <>
     <Sidebar />
+    <HamburgerMenu />
     <StyledWrapper>{children}</StyledWrapper>
   </>
 );

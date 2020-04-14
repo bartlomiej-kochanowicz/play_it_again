@@ -71,7 +71,7 @@ const LoginPage = () => (
     <StyledLogo />
     <StyledHeader big>Replay your Spotify Hits</StyledHeader>
     <StyledContainer>
-      <StyledHyperlink href="http://localhost:8888/login">
+      <StyledHyperlink href="https://playitagain-auth.herokuapp.com/login">
         <StyledButton>Sign in with Spotify</StyledButton>
       </StyledHyperlink>
       <StyledLink to={routes.app_info}>What is this?</StyledLink>

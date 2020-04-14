@@ -15,7 +15,7 @@ export const theme = {
     s: '1.6rem',
     m: '1.9rem',
     l: '2.4rem',
-    xl: '4rem',
+    xl: '3.5rem',
     xxl: '5rem',
   },
   breakpoints: {

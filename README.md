@@ -13,5 +13,5 @@
 - Styled Components with Styled Icons 💅🏼
 - Storybook 📕
 - Spotify API (Node.js)
-- JavaScript ES6+
+- JavaScript ES6+ 
 - Deployment with Google Firebase 🔥

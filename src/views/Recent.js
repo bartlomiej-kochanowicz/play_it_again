@@ -56,17 +56,18 @@ class Recent extends Component {
 
   render() {
     const { recent } = this.props;
+    console.log(recent);
     return (
       <ListTemplate image={hero} header="Recently Played" update={this.updateList}>
         {recent.map((item, index) => {
           const {
             track: {
               album: {
-                name,
                 artists,
                 external_urls: { spotify },
                 images,
               },
+              name,
             },
             played_at: played,
           } = item;
