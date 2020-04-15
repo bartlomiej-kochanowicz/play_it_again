@@ -1,52 +1,39 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import TimeButton from 'components/atoms/TimeButton/TimeButton';
+import {time} from 'utils';
 
-class TimeNavbar extends Component {
-  state = {
-    long_term: true,
-    medium_term: false,
-    short_term: false,
+const TimeNavbar = ({update}) => {
+  const [activeTab, setActiveTab] = useState(time.longTerm);
+
+  const handleChange = (option) => {
+    setActiveTab(option);
+    update(option);
   };
 
-  setActive = (key) => {
-    if (!this.state[key]) {
-      this.setState({
-        long_term: false,
-        medium_term: false,
-        short_term: false,
-        [key]: true,
-      });
-
-      setTimeout(()=>{
-        const { update } = this.props;
-        Object.keys(this.state).forEach((item) => {
-          if (this.state[item]) {
-            update(item);
-          }
-        });
-      },50);
-    }
-  };
-
-  render() {
-    const { long_term, medium_term, short_term } = this.state;
-
-    return (
-      <div>
-        <TimeButton active={long_term} animation={() => this.setActive('long_term')}>
-          All time
-        </TimeButton>
-        <TimeButton active={medium_term} animation={() => this.setActive('medium_term')}>
-          Last 6 months
-        </TimeButton>
-        <TimeButton active={short_term} animation={() => this.setActive('short_term')}>
-          Last month
-        </TimeButton>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <TimeButton
+        active={activeTab === time.longTerm}
+        animation={() => handleChange(time.longTerm)}
+      >
+        All time
+      </TimeButton>
+      <TimeButton
+        active={activeTab === time.mediumTerm}
+        animation={() => handleChange(time.mediumTerm)}
+      >
+        Last 6 months
+      </TimeButton>
+      <TimeButton
+        active={activeTab === time.shortTerm}
+        animation={() => handleChange(time.shortTerm)}
+      >
+        Last month
+      </TimeButton>
+    </div>
+  );
+};
 
 export default TimeNavbar;
 

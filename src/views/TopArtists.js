@@ -1,44 +1,59 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import ListTemplate from 'templates/ListTemplate';
 import hero from 'assets/hero_images/hero1.png';
 import ListItem from 'components/molecules/ListItem/ListItem';
 import { connect } from 'react-redux';
-import { fetchArtists as fetchArtistsAction, clearStorage as clearStorageAction } from 'actions';
+import { fetchArtists as fetchArtistsAction } from 'actions';
+import { time as staticTime } from 'utils';
 
-const TopArtists = ({ fetchArtists, clearStorage, topArtists }) => {
-  useEffect(() => {
-    fetchArtists('long_term');
-  }, []);
+const TopArtists = ({ fetchArtists, topArtists }) => {
+  const [time, setTime] = useState(staticTime.longTerm);
+  const [listVisible, setListVisibility] = useState(true);
 
   const updateList = (item) => {
-    clearStorage();
-    setTimeout(() => fetchArtists(item), 75);
+    if (!topArtists[item].length) {
+      fetchArtists(item);
+    }
+    setListVisibility(false);
+    setTime(item);
+    setTimeout(() => setListVisibility(true), 200);
   };
+
+  useEffect(() => {
+
+    if (!topArtists.long_term.length) {
+      updateList(staticTime.longTerm);
+    }
+    // fuck this I have no idea how to solve this shit this without tears :,(
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <ListTemplate image={hero} header="Top Artists" update={updateList}>
-      {/*{topArtists.map((item, index) => {
-        const {
-          name,
-          genres,
-          id,
-          images,
-          external_urls: { spotify },
-        } = item;
+      {listVisible &&
+        topArtists[time].map((item, index) => {
+          const {
+            name,
+            genres,
+            id,
+            images,
+            external_urls: { spotify },
+          } = item;
 
-        return (
-          <ListItem
-            type="artist"
-            key={id}
-            index={index}
-            name={name}
-            description={genres}
-            image={images[2].url}
-            link={spotify}
-          />
-        );
-      })}*/}
+          return (
+            <ListItem
+              type="artist"
+              key={id}
+              index={index}
+              name={name}
+              description={genres}
+              image={images[2].url}
+              link={spotify}
+            />
+          );
+        })}
     </ListTemplate>
   );
 };
@@ -50,13 +65,15 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => ({
   fetchArtists: (time) => dispatch(fetchArtistsAction(time)),
-  clearStorage: () => dispatch(clearStorageAction()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TopArtists);
 
 TopArtists.propTypes = {
   fetchArtists: PropTypes.func.isRequired,
-  clearStorage: PropTypes.func.isRequired,
-  topArtists: PropTypes.arrayOf(PropTypes.object).isRequired,
+  topArtists: PropTypes.shape({
+    long_term: PropTypes.array,
+    medium_term: PropTypes.array,
+    short_term: PropTypes.array,
+  }).isRequired,
 };

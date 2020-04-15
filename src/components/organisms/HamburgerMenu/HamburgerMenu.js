@@ -3,16 +3,16 @@ import HamburgerButton from 'components/atoms/HamburgerButton/HamburgerButton';
 import StyledNavigation from 'components/molecules/StyledNavigation/StyledNavigation';
 
 const HamburgerMenu = () => {
-  const [isButtonActive, setButtonActive] = useState(false);
+  const [isHamburgerActive, setHamburgerActive] = useState(false);
 
   const handleClick = () => {
-    setButtonActive(!isButtonActive);
+    setHamburgerActive(!isHamburgerActive);
   };
 
   return (
     <div>
-      <HamburgerButton isActive={isButtonActive} handleFn={handleClick} />
-      <StyledNavigation isActive={isButtonActive} handleFn={handleClick} />
+      <HamburgerButton isActive={isHamburgerActive} handleFn={handleClick} />
+      <StyledNavigation isActive={isHamburgerActive} handleFn={handleClick} />
     </div>
   );
 };

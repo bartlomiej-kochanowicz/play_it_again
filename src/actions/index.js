@@ -32,7 +32,7 @@ export const fetchTracks = (time) => (dispatch) => {
   return spotifyApi
     .getMyTopTracks({ limit: 50, time_range: time })
     .then((payload) => {
-      dispatch({ type: FETCH_TRACKS_SUCCESS, payload });
+      dispatch({ type: FETCH_TRACKS_SUCCESS, payload, time });
     })
     .catch((err) => {
       console.log(err);

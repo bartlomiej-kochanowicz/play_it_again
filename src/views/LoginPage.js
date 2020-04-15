@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { routes } from 'routes';
-import background from 'assets/background.png';
+import background from 'assets/background.jpg';
 import Button from 'components/atoms/Button/Button';
 import Heading from 'components/atoms/Heading/Heading';
 import Logo from 'components/atoms/Logo/Logo';
@@ -20,17 +20,20 @@ const StyledWrapper = styled.div`
   width: 100%;
   height: 100%;
   z-index: -1;
-  padding: 120px 30px 70px 30px;
+  padding: 150px 30px 70px 30px;
+  text-shadow: 0 0 16px hsl(0, 0%, 30%);
   overflow: hidden;
 `;
 
 const StyledHeader = styled(Heading)`
-  color: #fff;
+  font-size: ${({theme}) => theme.fontSize.xxxl};
+  color: ${({theme}) => theme.grey100};
   justify-content: center;
 `;
 
 const StyledHyperlink = styled.a`
   text-decoration: none;
+  color: ${({theme}) => theme.grey100};
 `;
 
 const StyledLogo = styled(Logo)`

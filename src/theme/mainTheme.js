@@ -17,6 +17,7 @@ export const theme = {
     l: '2.4rem',
     xl: '3.5rem',
     xxl: '5rem',
+    xxxl: '6rem',
   },
   breakpoints: {
     mobile: '500px',

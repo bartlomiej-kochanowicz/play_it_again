@@ -101,6 +101,6 @@ export default ListTemplate;
 ListTemplate.propTypes = {
   image: PropTypes.string.isRequired,
   header: PropTypes.string.isRequired,
-  children: PropTypes.arrayOf(PropTypes.element).isRequired,
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object).isRequired,PropTypes.bool]).isRequired,
   update: PropTypes.func.isRequired,
 };

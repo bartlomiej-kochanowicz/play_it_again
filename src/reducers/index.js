@@ -1,3 +1,5 @@
+import produce from 'immer';
+
 import {
   FETCH_ARTISTS_SUCCESS,
   FETCH_ARTISTS_FAILURE,
@@ -10,15 +12,64 @@ import {
 
 const initialState = {
   topArtists: {
-    long_term:[],
-    medium_term:[],
-    short_term:[],
+    long_term: [],
+    medium_term: [],
+    short_term: [],
   },
-  topTracks: [],
+  topTracks: {
+    long_term: [],
+    medium_term: [],
+    short_term: [],
+  },
   recent: [],
 };
 
-const rootReducer = (state = initialState, action) => {
+const rootReducer = (state = initialState, action) =>
+  produce(state, (draft) => {
+    switch (action.type) {
+      case FETCH_ARTISTS_SUCCESS: {
+        // eslint-disable-next-line no-param-reassign
+        draft.topArtists[action.time] = [...action.payload.items];
+        break;
+      }
+      case FETCH_ARTISTS_FAILURE:{
+        // eslint-disable-next-line no-param-reassign
+        draft.topArtists[action.time] = [];
+        break;
+      }
+      case FETCH_TRACKS_SUCCESS: {
+        // eslint-disable-next-line no-param-reassign
+        draft.topTracks[action.time] = [...action.payload.items];
+        break;
+      }
+      case FETCH_TRACKS_FAILURE:{
+        // eslint-disable-next-line no-param-reassign
+        draft.topTracks[action.time] = [];
+        break;
+      }
+
+      case FETCH_RECENT_SUCCESS: {
+        // eslint-disable-next-line no-param-reassign
+        draft.recent = [...action.payload.items];
+        break;
+      }
+      case FETCH_RECENT_FAILURE: {
+        // eslint-disable-next-line no-param-reassign
+        draft.recent = [];
+        break;
+      }
+      case CLEAR_STORAGE_REQUEST: {
+        // eslint-disable-next-line no-param-reassign
+        draft = [];
+        break;
+      }
+
+      default:
+        return draft;
+    }
+  });
+
+/* const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_ARTISTS_SUCCESS: {
       console.log(state);
@@ -69,6 +120,6 @@ const rootReducer = (state = initialState, action) => {
     default:
       return state;
   }
-};
+}; */
 
 export default rootReducer;

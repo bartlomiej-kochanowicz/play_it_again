@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 import { routes } from 'routes';
 import { NavLink, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -12,6 +12,7 @@ const StyledWrapper = styled.nav`
   height: 100vh;
   overflow: hidden;
   z-index: 998;
+  pointer-events: ${({ isActive }) => (isActive ? 'all' : 'none')};
 `;
 
 const StyledCircle = styled.div`
@@ -34,17 +35,29 @@ const StyledCircle = styled.div`
     `}
 `;
 
+const fadeIn = keyframes`
+  from{
+    opacity: 0;
+    transform: translate(calc(-50% + ${window.innerWidth / 2}px),calc(-50% - ${window.innerHeight / 2}px)) scale(.9);
+  }
+  to{
+    opacity: 1;
+    transform: translate(-50%,-50%) scale(1);
+  }
+`;
+
 const StyledUl = styled.ul`
   width: 100%;
   padding: 0;
   margin: 0;
   position: absolute;
+  transform: translate(-50%,-50%);
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   z-index: 999;
   display: flex;
   flex-direction: column;
+  animation: ${fadeIn} .5s .01s both;
 `;
 
 const StyledLi = styled.li`
@@ -69,7 +82,7 @@ const StyledNavigation = ({ isActive, handleFn }) => {
   };
 
   return (
-    <StyledWrapper>
+    <StyledWrapper isActive={isActive}>
       <StyledCircle isActive={isActive} />
       {isActive && (
         <StyledUl>

@@ -35,7 +35,7 @@ const StyledLink = styled.a`
   padding: 17px 20px;
   align-items: center;
   transition: 0.3s;
-  animation: ${appear} 0.5s ${({ delay }) => `.${delay + 1}s`} both;
+  animation: ${appear} 0.5s ${({ index }) => `.${index + 1}s`} both;
   :hover {
     background-color: ${({ theme }) => theme.grey100};
   }
@@ -46,6 +46,8 @@ const StyledLink = styled.a`
 `;
 
 const StyledNumber = styled.span`
+  display: inline-block;
+  width: 30px;
   font-size: ${({ theme }) => theme.fontSize.m};
   color: ${({ theme }) => theme.grey300};
   font-weight: ${({ theme }) => theme.bold};
@@ -91,7 +93,7 @@ const StyledInnerWrapper = styled.div`
 
 const ListItem = ({ type, index, name, description, image, link, played }) => (
   <li>
-    <StyledLink href={link} target="_blank" rel="noopener noreferrer" delay={index}>
+    <StyledLink href={link} target="_blank" rel="noopener noreferrer" index={index}>
       {type !== 'recent' && <StyledNumber>{index + 1}</StyledNumber>}
       <StyledImage image={image} />
       <StyledFlexWrapper>
