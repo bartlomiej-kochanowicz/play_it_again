@@ -19,7 +19,7 @@ export const fetchArtists = (time) => (dispatch) => {
   return spotifyApi
     .getMyTopArtists({ limit: 50, time_range: time })
     .then((payload) => {
-      dispatch({ type: FETCH_ARTISTS_SUCCESS, payload });
+      dispatch({ type: FETCH_ARTISTS_SUCCESS, payload, time });
     })
     .catch((err) => {
       console.log(err);

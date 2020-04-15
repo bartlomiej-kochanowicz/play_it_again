@@ -23,10 +23,6 @@ const StyledWrapper = styled.nav`
   align-items: center;
   z-index: 999;
   background-color: #fff;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    display: none;
-  }
 `;
 
 const StyledUl = styled.ul`

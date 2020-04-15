@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useMediaQuery } from 'react-responsive';
 import PropTypes from 'prop-types';
 import Sidebar from 'components/organisms/Sidebar/Sidebar';
+import { theme as mainTheme } from 'theme/mainTheme';
 import HamburgerMenu from '../components/organisms/HamburgerMenu/HamburgerMenu';
 
 const StyledWrapper = styled.div`
@@ -21,13 +23,17 @@ const StyledWrapper = styled.div`
   }
 `;
 
-const UserPageTemplate = ({ children }) => (
-  <>
-    <Sidebar />
-    <HamburgerMenu />
-    <StyledWrapper>{children}</StyledWrapper>
-  </>
-);
+const UserPageTemplate = ({ children }) => {
+  const isTabletOrMobile = useMediaQuery({ query: `(max-width: ${mainTheme.breakpoints.tablet})` });
+
+  return (
+    <>
+      {!isTabletOrMobile && <Sidebar />}
+      {isTabletOrMobile && <HamburgerMenu />}
+      <StyledWrapper>{children}</StyledWrapper>
+    </>
+  );
+};
 
 export default UserPageTemplate;
 

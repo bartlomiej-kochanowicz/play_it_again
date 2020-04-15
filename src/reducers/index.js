@@ -9,7 +9,11 @@ import {
 } from 'actions';
 
 const initialState = {
-  topArtists: [],
+  topArtists: {
+    long_term:[],
+    medium_term:[],
+    short_term:[],
+  },
   topTracks: [],
   recent: [],
 };
@@ -17,9 +21,13 @@ const initialState = {
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_ARTISTS_SUCCESS: {
+      console.log(state);
       return {
         ...state,
-        topArtists: [...action.payload.items],
+        topArtists:{
+          ...state.topArtists,
+          [action.time]:[...action.payload.items],
+        }
       };
     }
     case FETCH_ARTISTS_FAILURE: {
