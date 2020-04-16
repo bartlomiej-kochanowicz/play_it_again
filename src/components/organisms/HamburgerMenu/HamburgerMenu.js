@@ -6,6 +6,10 @@ const HamburgerMenu = () => {
   const [isHamburgerActive, setHamburgerActive] = useState(false);
 
   const handleClick = () => {
+    if (isHamburgerActive) {
+      window.scroll(0, 0);
+    }
+
     setHamburgerActive(!isHamburgerActive);
   };
 

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import ListTemplate from 'templates/ListTemplate';
-import hero from 'assets/hero_images/hero3.png';
+import hero from 'assets/hero_images/hero3.jpg';
 import ListItem from 'components/molecules/ListItem/ListItem';
 import { connect } from 'react-redux';
 import { fetchRecent as fetchRecentAction, clearStorage as clearStorageAction } from 'actions';
@@ -9,8 +9,7 @@ import PropTypes from 'prop-types';
 const Recent = ({ fetchRecent, recent }) => {
   useEffect(() => {
     fetchRecent();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[]);
+  }, []);
 
   const updateList = () => {
     setTimeout(() => fetchRecent(), 75);

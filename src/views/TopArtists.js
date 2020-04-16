@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import ListTemplate from 'templates/ListTemplate';
-import hero from 'assets/hero_images/hero1.png';
+import hero from 'assets/hero_images/hero1.jpg';
 import ListItem from 'components/molecules/ListItem/ListItem';
 import { connect } from 'react-redux';
 import { fetchArtists as fetchArtistsAction } from 'actions';
@@ -21,13 +21,10 @@ const TopArtists = ({ fetchArtists, topArtists }) => {
   };
 
   useEffect(() => {
-
     if (!topArtists.long_term.length) {
       updateList(staticTime.longTerm);
     }
     // fuck this I have no idea how to solve this shit this without tears :,(
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

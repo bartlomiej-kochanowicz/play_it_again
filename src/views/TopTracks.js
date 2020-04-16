@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ListTemplate from 'templates/ListTemplate';
-import hero from 'assets/hero_images/hero2.png';
+import hero from 'assets/hero_images/hero2.jpg';
 import ListItem from 'components/molecules/ListItem/ListItem';
 import { connect } from 'react-redux';
 import { fetchTracks as fetchTracksAction } from 'actions';
@@ -24,8 +24,6 @@ const TopTracks = ({ fetchTracks, topTracks }) => {
     if (!topTracks.long_term.length) {
       updateList(staticTime.longTerm);
     }
-    // fuck this I have no idea how to solve this shit this without tears :,(
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

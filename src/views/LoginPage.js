@@ -23,17 +23,21 @@ const StyledWrapper = styled.div`
   padding: 150px 30px 70px 30px;
   text-shadow: 0 0 16px hsl(0, 0%, 30%);
   overflow: hidden;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding: 110px 30px 70px 30px;
+  }
 `;
 
 const StyledHeader = styled(Heading)`
-  font-size: ${({theme}) => theme.fontSize.xxxl};
-  color: ${({theme}) => theme.grey100};
+  font-size: ${({ theme }) => theme.fontSize.xxxl};
+  color: ${({ theme }) => theme.grey100};
   justify-content: center;
 `;
 
 const StyledHyperlink = styled.a`
   text-decoration: none;
-  color: ${({theme}) => theme.grey100};
+  color: ${({ theme }) => theme.grey100};
 `;
 
 const StyledLogo = styled(Logo)`
@@ -50,7 +54,7 @@ const StyledLink = styled(Link)`
   font-weight: ${({ theme }) => theme.bold};
   margin-top: 40px;
 
-  @media (max-width: 500px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: ${({ theme }) => theme.fontSize.m};
   }
 `;
@@ -62,7 +66,7 @@ const StyledContainer = styled.div`
 `;
 
 const StyledButton = styled(Button)`
-  @media (max-width: 500px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     width: 310px;
     height: 70px;
     font-size: ${({ theme }) => theme.fontSize.l};
