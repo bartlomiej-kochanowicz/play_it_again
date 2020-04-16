@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import LazyLoad from 'react-lazyload';
 import PropTypes from 'prop-types';
 import ListTemplate from 'templates/ListTemplate';
 import hero from 'assets/hero_images/hero1.jpg';
@@ -25,6 +26,7 @@ const TopArtists = ({ fetchArtists, topArtists }) => {
       updateList(staticTime.longTerm);
     }
     // fuck this I have no idea how to solve this shit this without tears :,(
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -40,15 +42,17 @@ const TopArtists = ({ fetchArtists, topArtists }) => {
           } = item;
 
           return (
-            <ListItem
-              type="artist"
-              key={id}
-              index={index}
-              name={name}
-              description={genres}
-              image={images[2].url}
-              link={spotify}
-            />
+            <LazyLoad key={id} height={100} offset={[-100, 100]}>
+              <ListItem
+                key={id}
+                type="artist"
+                index={index}
+                name={name}
+                description={genres}
+                image={images[2].url}
+                link={spotify}
+              />
+            </LazyLoad>
           );
         })}
     </ListTemplate>

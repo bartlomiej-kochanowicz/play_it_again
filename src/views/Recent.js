@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import LazyLoad from 'react-lazyload';
 import ListTemplate from 'templates/ListTemplate';
 import hero from 'assets/hero_images/hero3.jpg';
 import ListItem from 'components/molecules/ListItem/ListItem';
@@ -9,6 +10,7 @@ import PropTypes from 'prop-types';
 const Recent = ({ fetchRecent, recent }) => {
   useEffect(() => {
     fetchRecent();
+    // eslint-disable-next-line
   }, []);
 
   const updateList = () => {
@@ -69,16 +71,18 @@ const Recent = ({ fetchRecent, recent }) => {
         const day = convertDate(played);
 
         return (
-          <ListItem
-            type="recent"
-            key={played}
-            index={index}
-            name={name}
-            description={artists}
-            image={images[2].url}
-            link={spotify}
-            played={day}
-          />
+          <LazyLoad key={played} height={100} offset={[-100, 100]}>
+            <ListItem
+              type="recent"
+              key={played}
+              index={index}
+              name={name}
+              description={artists}
+              image={images[2].url}
+              link={spotify}
+              played={day}
+            />
+          </LazyLoad>
         );
       })}
     </ListTemplate>

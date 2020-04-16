@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import LazyLoad from 'react-lazyload';
 import ListTemplate from 'templates/ListTemplate';
 import hero from 'assets/hero_images/hero2.jpg';
 import ListItem from 'components/molecules/ListItem/ListItem';
@@ -24,6 +25,7 @@ const TopTracks = ({ fetchTracks, topTracks }) => {
     if (!topTracks.long_term.length) {
       updateList(staticTime.longTerm);
     }
+    // eslint-disable-next-line
   }, []);
 
   return (
@@ -41,15 +43,17 @@ const TopTracks = ({ fetchTracks, topTracks }) => {
           } = item;
 
           return (
-            <ListItem
-              type="track"
-              key={id}
-              index={index}
-              name={name}
-              description={artists}
-              image={images[2].url}
-              link={spotify}
-            />
+            <LazyLoad key={id} height={100} offset={[-100, 100]}>
+              <ListItem
+                type="track"
+                key={id}
+                index={index}
+                name={name}
+                description={artists}
+                image={images[2].url}
+                link={spotify}
+              />
+            </LazyLoad>
           );
         })}
     </ListTemplate>
