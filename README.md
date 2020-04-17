@@ -1,4 +1,4 @@
-[![N|Solid](https://imgur.com/1uUC97E.png)](https://playitagain.web.app/)
+[![N|Solid](https://i.imgur.com/MiC3LSl.png)](https://playitagain.web.app/)
 # 🎧Play It Again🎧
 
 # [APP PAGE](https://playitagain.web.app/)
@@ -15,3 +15,7 @@
 - Spotify API (Node.js)
 - JavaScript ES6+ 
 - Deployment with Google Firebase 🔥
+
+# 💣 Updates
+
+- v1.1.0 Play It Again is now PWA !
