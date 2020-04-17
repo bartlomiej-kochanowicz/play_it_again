@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import TimeButton from 'components/atoms/TimeButton/TimeButton';
-import {time} from 'utils';
+import { time } from 'utils';
 
-const TimeNavbar = ({update}) => {
+const TimeNavbar = ({ update }) => {
   const [activeTab, setActiveTab] = useState(time.longTerm);
+
+  useEffect(() => {
+    setActiveTab(time.longTerm);
+  }, []);
 
   const handleChange = (option) => {
     setActiveTab(option);

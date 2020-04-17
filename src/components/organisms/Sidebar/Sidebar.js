@@ -65,8 +65,8 @@ const StyledLink = styled(Link)`
 `;
 
 const StyledLogo = styled(Logo)`
-  transform: scale(.8);
-  height: 90px;
+  transform: scale(1);
+  width: 50px;
 `;
 
 const Sidebar = () => {

@@ -4,11 +4,11 @@ const Button = styled.button`
   display: block;
   position: relative;
   font-size: ${({ theme }) => theme.fontSize.m};
-  background: none;
+  background: ${({ theme }) => theme.first};
   color: ${({ theme }) => theme.grey100};
-  border: 2px solid ${({ theme }) => theme.first};
+  border: none;
   cursor: pointer;
-  transition: 0.6s;
+  transition: 0.3s;
   overflow: hidden;
   width: 260px;
   height: 50px;
@@ -17,22 +17,7 @@ const Button = styled.button`
   font-family: 'Rubik', sans-serif;
 
   &:hover {
-    color: ${({ theme }) => theme.first};
-  }
-  &:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 180%;
-    background: ${({ theme }) => theme.first};
-    z-index: -1;
-    transition: 0.6s;
-    top: 0;
-    left: 0;
-    border-radius: 0 0 50% 50%;
-  }
-  &:hover:before {
-    height: 0;
+    transform: scale(1.03);
   }
 `;
 

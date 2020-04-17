@@ -4,9 +4,10 @@ import logo from 'assets/logo.png';
 const Logo = styled.span`
   display: block;
   background-image: url(${logo});
-  background-size: cover;
-  width: 70px;
-  height: 70px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 80px;
+  height: 80px;
 `;
 
 export default Logo;

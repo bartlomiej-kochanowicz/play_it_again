@@ -31,14 +31,16 @@ const StyledCircle = styled.div`
   ${({ isActive }) =>
     isActive &&
     css`
-      transform: scale(80);
+      transform: scale(150);
     `}
 `;
 
 const fadeIn = keyframes`
   from{
     opacity: 0;
-    transform: translate(calc(-50% + ${window.innerWidth / 2}px),calc(-50% - ${window.innerHeight / 2}px)) scale(.9);
+    transform: translate(calc(-50% + ${window.innerWidth / 2}px),calc(-50% - ${
+  window.innerHeight / 2
+}px)) scale(.9);
   }
   to{
     opacity: 1;
@@ -51,13 +53,13 @@ const StyledUl = styled.ul`
   padding: 0;
   margin: 0;
   position: absolute;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
   z-index: 999;
   display: flex;
   flex-direction: column;
-  animation: ${fadeIn} .5s .01s both;
+  animation: ${fadeIn} 0.5s 0.01s both;
 `;
 
 const StyledLi = styled.li`

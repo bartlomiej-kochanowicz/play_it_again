@@ -48,11 +48,16 @@ const StyledLogo = styled(Logo)`
 `;
 
 const StyledLink = styled(Link)`
-  color: #fff;
+  color: ${({ theme }) => theme.grey100};
   text-align: center;
   font-size: ${({ theme }) => theme.fontSize.s};
   font-weight: ${({ theme }) => theme.bold};
   margin-top: 40px;
+  transition: 0.3s;
+
+  &:hover {
+    color: ${({ theme }) => theme.grey300};
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     font-size: ${({ theme }) => theme.fontSize.m};
