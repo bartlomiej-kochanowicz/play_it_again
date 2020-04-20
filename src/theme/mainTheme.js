@@ -21,6 +21,7 @@ export const theme = {
   },
   breakpoints: {
     mobile: '500px',
+    mobileXl: '650px',
     tablet: '800px',
     desktop: '1200px',
   },

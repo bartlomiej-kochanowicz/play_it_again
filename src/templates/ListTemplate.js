@@ -3,7 +3,6 @@ import styled, { keyframes } from 'styled-components';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import UserPageTemplate from 'templates/UserPageTemplate';
-import TimeNavbar from 'components/molecules/TimeNavbar/TimeNavbar';
 import Heading from 'components/atoms/Heading/Heading';
 import { token } from 'api';
 
@@ -21,20 +20,20 @@ const StyledWrapper = styled.div`
 const StyledHero = styled.header`
   position: relative;
   width: 100%;
-  height: 420px;
+  height: 280px;
   background-image: url(${({ image }) => image});
   background-size: cover;
   background-position: center;
   overflow: hidden;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}) {
-    height: 320px;
+    height: 220px;
   }
 `;
 
 const StyledInnerWrapper = styled.div`
   width: 100%;
-  padding: 32px 0 70px 0;
+  padding: 32px 0;
   position: relative;
   background-color: #fff;
   height: 100%;
@@ -75,23 +74,14 @@ const StyledHeading = styled(Heading)`
   animation: ${appear} 0.5s 0.5s both;
 `;
 
-const StyledList = styled.ul`
-  padding: 20px 0;
-  margin: 0;
-  list-style: none;
-`;
-
-const ListTemplate = ({ image, header, children, update }) => (
+const ListTemplate = ({ image, header, children }) => (
   <UserPageTemplate>
     {!token && <Redirect to="/login" />}
     <StyledWrapper>
       <StyledHero image={image}>
         <StyledHeading big>{header}</StyledHeading>
       </StyledHero>
-      <StyledInnerWrapper>
-        {header !== 'Recently Played' && <TimeNavbar update={update} />}
-        <StyledList>{children}</StyledList>
-      </StyledInnerWrapper>
+      <StyledInnerWrapper>{children}</StyledInnerWrapper>
     </StyledWrapper>
   </UserPageTemplate>
 );
@@ -101,6 +91,9 @@ export default ListTemplate;
 ListTemplate.propTypes = {
   image: PropTypes.string.isRequired,
   header: PropTypes.string.isRequired,
-  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object).isRequired,PropTypes.bool]).isRequired,
-  update: PropTypes.func.isRequired,
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
+};
+
+ListTemplate.defaultProps = {
+  children: [],
 };

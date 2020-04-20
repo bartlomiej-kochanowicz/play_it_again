@@ -7,6 +7,12 @@ import {
   FETCH_TRACKS_FAILURE,
   FETCH_RECENT_SUCCESS,
   FETCH_RECENT_FAILURE,
+  FETCH_USER_FAILURE,
+  FETCH_USER_SUCCESS,
+  FETCH_PLAYLISTS_SUCCESS,
+  FETCH_PLAYLISTS_FAILURE,
+  FETCH_NEW_RELEASES_SUCCESS,
+  FETCH_NEW_RELEASES_FAILURE,
   CLEAR_STORAGE_REQUEST,
 } from 'actions';
 
@@ -22,44 +28,69 @@ const initialState = {
     short_term: [],
   },
   recent: [],
+  recommendPlaylists: [],
+  recommendPlaylistsByCountry: [],
+  newReleases: [],
+  user: {},
 };
 
 const rootReducer = (state = initialState, action) =>
   produce(state, (draft) => {
     switch (action.type) {
       case FETCH_ARTISTS_SUCCESS: {
-        // eslint-disable-next-line no-param-reassign
         draft.topArtists[action.time] = [...action.payload.items];
         break;
       }
-      case FETCH_ARTISTS_FAILURE:{
-        // eslint-disable-next-line no-param-reassign
-        draft.topArtists[action.time] = [];
+      case FETCH_ARTISTS_FAILURE: {
+        draft.topArtists[action.time] = 'error';
         break;
       }
       case FETCH_TRACKS_SUCCESS: {
-        // eslint-disable-next-line no-param-reassign
         draft.topTracks[action.time] = [...action.payload.items];
         break;
       }
-      case FETCH_TRACKS_FAILURE:{
-        // eslint-disable-next-line no-param-reassign
-        draft.topTracks[action.time] = [];
+      case FETCH_TRACKS_FAILURE: {
+        draft.topTracks[action.time] = 'error';
         break;
       }
 
       case FETCH_RECENT_SUCCESS: {
-        // eslint-disable-next-line no-param-reassign
         draft.recent = [...action.payload.items];
         break;
       }
       case FETCH_RECENT_FAILURE: {
-        // eslint-disable-next-line no-param-reassign
-        draft.recent = [];
+        draft.recent = 'error';
+        break;
+      }
+      case FETCH_USER_SUCCESS: {
+        draft.user = { ...action.payload };
+        break;
+      }
+      case FETCH_USER_FAILURE: {
+        draft.user = {};
+        break;
+      }
+      case FETCH_PLAYLISTS_SUCCESS: {
+        if (action.country === 'PL') {
+          draft.recommendPlaylistsByCountry = { ...action.payload };
+        } else if (action.country === null) {
+          draft.recommendPlaylists = { ...action.payload };
+        }
+        break;
+      }
+      case FETCH_PLAYLISTS_FAILURE: {
+        draft.user = 'error';
+        break;
+      }
+      case FETCH_NEW_RELEASES_SUCCESS: {
+        draft.newReleases = [...action.payload.albums.items];
+        break;
+      }
+      case FETCH_NEW_RELEASES_FAILURE: {
+        draft.newReleases = 'error';
         break;
       }
       case CLEAR_STORAGE_REQUEST: {
-        // eslint-disable-next-line no-param-reassign
         draft = [];
         break;
       }
@@ -68,58 +99,5 @@ const rootReducer = (state = initialState, action) =>
         return draft;
     }
   });
-
-/* const rootReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case FETCH_ARTISTS_SUCCESS: {
-      console.log(state);
-      return {
-        ...state,
-        topArtists:{
-          ...state.topArtists,
-          [action.time]:[...action.payload.items],
-        }
-      };
-    }
-    case FETCH_ARTISTS_FAILURE: {
-      return {
-        ...state,
-        topArtists: [],
-      };
-    }
-    case FETCH_TRACKS_SUCCESS: {
-      return {
-        ...state,
-        topTracks: [...action.payload.items],
-      };
-    }
-    case FETCH_TRACKS_FAILURE: {
-      return {
-        ...state,
-        topTracks: [],
-      };
-    }
-    case FETCH_RECENT_SUCCESS: {
-      return {
-        ...state,
-        recent: [...action.payload.items],
-      };
-    }
-    case FETCH_RECENT_FAILURE: {
-      return {
-        ...state,
-        recent: [],
-      };
-    }
-    case CLEAR_STORAGE_REQUEST: {
-      return {
-        ...state,
-        topArtists: [],
-      };
-    }
-    default:
-      return state;
-  }
-}; */
 
 export default rootReducer;

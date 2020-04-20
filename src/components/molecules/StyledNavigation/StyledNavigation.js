@@ -3,6 +3,7 @@ import styled, { css, keyframes } from 'styled-components';
 import { routes } from 'routes';
 import { NavLink, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { logout } from 'utils';
 
 const StyledWrapper = styled.nav`
   position: fixed;
@@ -78,48 +79,50 @@ const StyledLi = styled.li`
   }
 `;
 
-const StyledNavigation = ({ isActive, handleFn }) => {
-  const handleLogout = () => {
-    window.sessionStorage.clear();
-  };
-
-  return (
-    <StyledWrapper isActive={isActive}>
-      <StyledCircle isActive={isActive} />
-      {isActive && (
-        <StyledUl>
-          <StyledLi
-            as={NavLink}
-            activeClassName="active"
-            to={routes.top_artists}
-            onClick={() => handleFn(false)}
-          >
-            Top Artists
-          </StyledLi>
-          <StyledLi
-            as={NavLink}
-            activeClassName="active"
-            to={routes.top_tracks}
-            onClick={() => handleFn(false)}
-          >
-            Top Tracks
-          </StyledLi>
-          <StyledLi
-            as={NavLink}
-            activeClassName="active"
-            to={routes.recent}
-            onClick={() => handleFn(false)}
-          >
-            Recent
-          </StyledLi>
-          <StyledLi as={Link} to={routes.login} onClick={handleLogout}>
-            Logout
-          </StyledLi>
-        </StyledUl>
-      )}
-    </StyledWrapper>
-  );
-};
+const StyledNavigation = ({ isActive, handleFn }) => (
+  <StyledWrapper isActive={isActive}>
+    <StyledCircle isActive={isActive} />
+    {isActive && (
+      <StyledUl>
+        <StyledLi
+          as={NavLink}
+          activeClassName="active"
+          to={routes.dashboard}
+          onClick={() => handleFn(false)}
+        >
+          Dashboard
+        </StyledLi>
+        <StyledLi
+          as={NavLink}
+          activeClassName="active"
+          to={routes.top_artists}
+          onClick={() => handleFn(false)}
+        >
+          Top Artists
+        </StyledLi>
+        <StyledLi
+          as={NavLink}
+          activeClassName="active"
+          to={routes.top_tracks}
+          onClick={() => handleFn(false)}
+        >
+          Top Tracks
+        </StyledLi>
+        <StyledLi
+          as={NavLink}
+          activeClassName="active"
+          to={routes.recent}
+          onClick={() => handleFn(false)}
+        >
+          Recent
+        </StyledLi>
+        <StyledLi as={Link} to={routes.login} onClick={logout}>
+          Logout
+        </StyledLi>
+      </StyledUl>
+    )}
+  </StyledWrapper>
+);
 
 StyledNavigation.propTypes = {
   isActive: PropTypes.bool.isRequired,

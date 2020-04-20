@@ -1,12 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import LazyLoad from 'react-lazyload';
+import styled from 'styled-components';
 import ListTemplate from 'templates/ListTemplate';
-import hero from 'assets/hero_images/hero2.jpg';
+import hero from 'assets/hero_images/hero3.jpg';
 import ListItem from 'components/molecules/ListItem/ListItem';
 import { connect } from 'react-redux';
 import { fetchTracks as fetchTracksAction } from 'actions';
 import PropTypes from 'prop-types';
+import TimeNavbar from 'components/molecules/TimeNavbar/TimeNavbar';
 import { time as staticTime } from '../utils';
+import ErrorModal from '../components/molecules/ErrorModal/ErrorModal';
+
+const StyledList = styled.ul`
+  padding: 20px 0;
+  margin: 0;
+  list-style: none;
+`;
 
 const TopTracks = ({ fetchTracks, topTracks }) => {
   const [time, setTime] = useState(staticTime.longTerm);
@@ -30,32 +39,41 @@ const TopTracks = ({ fetchTracks, topTracks }) => {
 
   return (
     <ListTemplate image={hero} header="Top Tracks" update={updateList}>
-      {listVisible &&
-        topTracks[time].map((item, index) => {
-          const {
-            name,
-            artists,
-            id,
-            album: {
-              external_urls: { spotify },
-              images,
-            },
-          } = item;
+      {topTracks[time] === 'error' ? (
+        <ErrorModal />
+      ) : (
+        <>
+          <TimeNavbar update={updateList} />
+          <StyledList>
+            {listVisible &&
+              topTracks[time].map((item, index) => {
+                const {
+                  name,
+                  artists,
+                  id,
+                  album: {
+                    external_urls: { spotify },
+                    images,
+                  },
+                } = item;
 
-          return (
-            <LazyLoad key={id} height={100} offset={[-100, 100]}>
-              <ListItem
-                type="track"
-                key={id}
-                index={index}
-                name={name}
-                description={artists}
-                image={images[2].url}
-                link={spotify}
-              />
-            </LazyLoad>
-          );
-        })}
+                return (
+                  <LazyLoad key={id} height={100} offset={[-100, 100]}>
+                    <ListItem
+                      type="track"
+                      key={id}
+                      index={index}
+                      name={name}
+                      description={artists}
+                      image={images[2].url}
+                      link={spotify}
+                    />
+                  </LazyLoad>
+                );
+              })}
+          </StyledList>
+        </>
+      )}
     </ListTemplate>
   );
 };
@@ -74,8 +92,8 @@ export default connect(mapStateToProps, mapDispatchToProps)(TopTracks);
 TopTracks.propTypes = {
   fetchTracks: PropTypes.func.isRequired,
   topTracks: PropTypes.shape({
-    long_term: PropTypes.array,
-    medium_term: PropTypes.array,
-    short_term: PropTypes.array,
+    long_term: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
+    medium_term: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
+    short_term: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
   }).isRequired,
 };

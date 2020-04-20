@@ -4,7 +4,7 @@ const Button = styled.button`
   display: block;
   position: relative;
   font-size: ${({ theme }) => theme.fontSize.m};
-  background: ${({ theme }) => theme.first};
+  background: linear-gradient(194deg, rgba(64, 230, 151, 1) 0%, rgba(57, 183, 183, 1) 100%);
   color: ${({ theme }) => theme.grey100};
   border: none;
   cursor: pointer;

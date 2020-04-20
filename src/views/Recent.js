@@ -1,11 +1,19 @@
 import React, { useEffect } from 'react';
 import LazyLoad from 'react-lazyload';
+import styled from 'styled-components';
 import ListTemplate from 'templates/ListTemplate';
-import hero from 'assets/hero_images/hero3.jpg';
+import hero from 'assets/hero_images/hero4.jpg';
 import ListItem from 'components/molecules/ListItem/ListItem';
+import ErrorModal from 'components/molecules/ErrorModal/ErrorModal';
 import { connect } from 'react-redux';
 import { fetchRecent as fetchRecentAction, clearStorage as clearStorageAction } from 'actions';
 import PropTypes from 'prop-types';
+
+const StyledList = styled.ul`
+  padding: 40px 0;
+  margin: 0;
+  list-style: none;
+`;
 
 const Recent = ({ fetchRecent, recent }) => {
   useEffect(() => {
@@ -20,19 +28,19 @@ const Recent = ({ fetchRecent, recent }) => {
   const convertDate = (played) => {
     const convertDay = (date) => {
       switch (date.getDay()) {
-        case 1:
+        case 0:
           return 'Mon';
-        case 2:
+        case 1:
           return 'Tue';
-        case 3:
+        case 2:
           return 'Wed';
-        case 4:
+        case 3:
           return 'Thu';
-        case 5:
+        case 4:
           return 'Fri';
-        case 6:
+        case 5:
           return 'Sat';
-        case 7:
+        case 6:
           return 'Sun';
         default:
           return '';
@@ -54,37 +62,43 @@ const Recent = ({ fetchRecent, recent }) => {
   };
 
   return (
-    <ListTemplate image={hero} header="Recently Played" update={updateList}>
-      {recent.map((item, index) => {
-        const {
-          track: {
-            album: {
-              artists,
-              external_urls: { spotify },
-              images,
-            },
-            name,
-          },
-          played_at: played,
-        } = item;
+    <ListTemplate image={hero} header="Recently played" update={updateList}>
+      <StyledList>
+        {recent === 'error' ? (
+          <ErrorModal />
+        ) : (
+          recent.map((item, index) => {
+            const {
+              track: {
+                album: {
+                  artists,
+                  external_urls: { spotify },
+                  images,
+                },
+                name,
+              },
+              played_at: played,
+            } = item;
 
-        const day = convertDate(played);
+            const day = convertDate(played);
 
-        return (
-          <LazyLoad key={played} height={100} offset={[-100, 100]}>
-            <ListItem
-              type="recent"
-              key={played}
-              index={index}
-              name={name}
-              description={artists}
-              image={images[2].url}
-              link={spotify}
-              played={day}
-            />
-          </LazyLoad>
-        );
-      })}
+            return (
+              <LazyLoad key={played} height={100} offset={[-100, 100]}>
+                <ListItem
+                  type="recent"
+                  key={played}
+                  index={index}
+                  name={name}
+                  description={artists}
+                  image={images[2].url}
+                  link={spotify}
+                  played={day}
+                />
+              </LazyLoad>
+            );
+          })
+        )}
+      </StyledList>
     </ListTemplate>
   );
 };
@@ -103,91 +117,5 @@ export default connect(mapStateToProps, mapDispatchToProps)(Recent);
 
 Recent.propTypes = {
   fetchRecent: PropTypes.func.isRequired,
-  recent: PropTypes.arrayOf(PropTypes.object).isRequired,
+  recent: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object), PropTypes.string]).isRequired,
 };
-
-/* class Recent extends Component {
-  componentDidMount() {
-    const { fetchRecent } = this.props;
-    fetchRecent();
-  }
-
-  updateList = () => {
-    const { fetchRecent, clearStorage } = this.props;
-    clearStorage();
-    setTimeout(() => fetchRecent(), 75);
-  };
-
-  convertDate = (played) => {
-    const convertDay = (date) => {
-      switch (date.getDay()) {
-        case 1:
-          return 'Mon';
-        case 2:
-          return 'Tue';
-        case 3:
-          return 'Wed';
-        case 4:
-          return 'Thu';
-        case 5:
-          return 'Fri';
-        case 6:
-          return 'Sat';
-        case 7:
-          return 'Sun';
-        default:
-          return '';
-      }
-    };
-
-    const date = new Date(
-      Number(played.slice(0, 4)),
-      Number(played.slice(5, 7)),
-      Number(played.slice(8, 10)),
-      Number(played.slice(11, 13)),
-      Number(played.slice(14, 16)),
-      Number(played.slice(17, 19)),
-    );
-
-    return `${convertDay(date)} ${date.getHours() < 10 ? `0${date.getHours()}` : date.getHours()}:${
-      date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes()
-    }`;
-  };
-
-  render() {
-    const { recent } = this.props;
-    console.log(recent);
-    return (
-      <ListTemplate image={hero} header="Recently Played" update={this.updateList}>
-        {recent.map((item, index) => {
-          const {
-            track: {
-              album: {
-                artists,
-                external_urls: { spotify },
-                images,
-              },
-              name,
-            },
-            played_at: played,
-          } = item;
-
-          const day = this.convertDate(played);
-
-          return (
-            <ListItem
-              type="recent"
-              key={played}
-              index={index}
-              name={name}
-              description={artists}
-              image={images[2].url}
-              link={spotify}
-              played={day}
-            />
-          );
-        })}
-      </ListTemplate>
-    );
-  }
-} */

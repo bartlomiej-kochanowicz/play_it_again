@@ -12,6 +12,18 @@ export const FETCH_RECENT_REQUEST = 'FETCH_RECENT_REQUEST';
 export const FETCH_RECENT_SUCCESS = 'FETCH_RECENT_SUCCESS';
 export const FETCH_RECENT_FAILURE = 'FETCH_RECENT_FAILURE';
 
+export const FETCH_USER_REQUEST = 'FETCH_USER_REQUEST';
+export const FETCH_USER_SUCCESS = 'FETCH_USER_SUCCESS';
+export const FETCH_USER_FAILURE = 'FETCH_USER_FAILURE';
+
+export const FETCH_PLAYLISTS_REQUEST = 'FETCH_PLAYLISTS_REQUEST';
+export const FETCH_PLAYLISTS_SUCCESS = 'FETCH_PLAYLISTS_SUCCESS';
+export const FETCH_PLAYLISTS_FAILURE = 'FETCH_PLAYLISTS_FAILURE';
+
+export const FETCH_NEW_RELEASES_REQUEST = 'FETCH_NEW_RELEASES_REQUEST';
+export const FETCH_NEW_RELEASES_SUCCESS = 'FETCH_NEW_RELEASES_SUCCESS';
+export const FETCH_NEW_RELEASES_FAILURE = 'FETCH_NEW_RELEASES_FAILURE';
+
 export const CLEAR_STORAGE_REQUEST = 'CLEAR_STORAGE_REQUEST';
 
 export const fetchArtists = (time) => (dispatch) => {
@@ -23,7 +35,7 @@ export const fetchArtists = (time) => (dispatch) => {
     })
     .catch((err) => {
       console.log(err);
-      dispatch({ type: FETCH_ARTISTS_FAILURE });
+      dispatch({ type: FETCH_ARTISTS_FAILURE, time });
     });
 };
 
@@ -36,7 +48,7 @@ export const fetchTracks = (time) => (dispatch) => {
     })
     .catch((err) => {
       console.log(err);
-      dispatch({ type: FETCH_TRACKS_FAILURE });
+      dispatch({ type: FETCH_TRACKS_FAILURE, time });
     });
 };
 
@@ -50,6 +62,45 @@ export const fetchRecent = () => (dispatch) => {
     .catch((err) => {
       console.log(err);
       dispatch({ type: FETCH_RECENT_FAILURE });
+    });
+};
+
+export const fetchUser = () => (dispatch) => {
+  dispatch({ type: FETCH_USER_REQUEST });
+  return spotifyApi
+    .getMe()
+    .then((payload) => {
+      dispatch({ type: FETCH_USER_SUCCESS, payload });
+    })
+    .catch((err) => {
+      console.log(err);
+      dispatch({ type: FETCH_USER_FAILURE });
+    });
+};
+
+export const fetchPlaylists = (country = null) => (dispatch) => {
+  dispatch({ type: FETCH_PLAYLISTS_REQUEST });
+  return spotifyApi
+    .getFeaturedPlaylists(country === null ? { limit: 4 } : { country, limit: 4 })
+    .then((payload) => {
+      dispatch({ type: FETCH_PLAYLISTS_SUCCESS, payload, country });
+    })
+    .catch((err) => {
+      console.log(err);
+      dispatch({ type: FETCH_PLAYLISTS_FAILURE });
+    });
+};
+
+export const fetchNewReleases = () => (dispatch) => {
+  dispatch({ type: FETCH_NEW_RELEASES_REQUEST });
+  return spotifyApi
+    .getNewReleases({ limit: 4 })
+    .then((payload) => {
+      dispatch({ type: FETCH_NEW_RELEASES_SUCCESS, payload });
+    })
+    .catch((err) => {
+      console.log(err);
+      dispatch({ type: FETCH_NEW_RELEASES_FAILURE });
     });
 };
 

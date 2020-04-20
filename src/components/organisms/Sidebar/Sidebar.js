@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { routes } from 'routes';
+import { scrollToTop, logout } from 'utils';
 
 import NavButton from 'components/atoms/NavButton/NavButton';
 import Logo from 'components/atoms/Logo/Logo';
@@ -9,6 +10,7 @@ import { Star } from '@styled-icons/fa-regular/Star';
 import { Heart } from '@styled-icons/fa-regular/Heart';
 import { Clock } from '@styled-icons/fa-regular/Clock';
 import { ShareSquare } from '@styled-icons/fa-regular/ShareSquare';
+import { Gem } from '@styled-icons/fa-regular/Gem';
 
 const StyledWrapper = styled.nav`
   width: 120px;
@@ -69,38 +71,37 @@ const StyledLogo = styled(Logo)`
   width: 50px;
 `;
 
-const Sidebar = () => {
-  const handleLogout = () => {
-    window.sessionStorage.clear();
-  };
-
-  return (
-    <StyledWrapper>
-      <StyledLogo />
-      <StyledUl>
-        <StyledLi>
-          <StyledNavLink activeClassName="active" to={routes.top_artists}>
-            <NavButton icon={Star}>Top Artists</NavButton>
-          </StyledNavLink>
-        </StyledLi>
-        <StyledLi>
-          <StyledNavLink activeClassName="active" to={routes.top_tracks}>
-            <NavButton icon={Heart}>Top Tracks</NavButton>
-          </StyledNavLink>
-        </StyledLi>
-        <StyledLi>
-          <StyledNavLink activeClassName="active" to={routes.recent}>
-            <NavButton icon={Clock}>Recent</NavButton>
-          </StyledNavLink>
-        </StyledLi>
-        <StyledLi last>
-          <StyledLink to={routes.login} onClick={handleLogout}>
-            <NavButton icon={ShareSquare}>Logout</NavButton>
-          </StyledLink>
-        </StyledLi>
-      </StyledUl>
-    </StyledWrapper>
-  );
-};
+const Sidebar = () => (
+  <StyledWrapper>
+    <StyledLogo />
+    <StyledUl>
+      <StyledLi>
+        <StyledNavLink activeClassName="active" to={routes.dashboard} onClick={scrollToTop}>
+          <NavButton icon={Gem}>Dashboard</NavButton>
+        </StyledNavLink>
+      </StyledLi>
+      <StyledLi>
+        <StyledNavLink activeClassName="active" to={routes.top_artists} onClick={scrollToTop}>
+          <NavButton icon={Star}>Top Artists</NavButton>
+        </StyledNavLink>
+      </StyledLi>
+      <StyledLi>
+        <StyledNavLink activeClassName="active" to={routes.top_tracks} onClick={scrollToTop}>
+          <NavButton icon={Heart}>Top Tracks</NavButton>
+        </StyledNavLink>
+      </StyledLi>
+      <StyledLi>
+        <StyledNavLink activeClassName="active" to={routes.recent} onClick={scrollToTop}>
+          <NavButton icon={Clock}>Recent</NavButton>
+        </StyledNavLink>
+      </StyledLi>
+      <StyledLi last>
+        <StyledLink to={routes.login} onClick={logout}>
+          <NavButton icon={ShareSquare}>Logout</NavButton>
+        </StyledLink>
+      </StyledLi>
+    </StyledUl>
+  </StyledWrapper>
+);
 
 export default Sidebar;
