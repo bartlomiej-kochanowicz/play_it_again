@@ -24,6 +24,8 @@ export const FETCH_NEW_RELEASES_REQUEST = 'FETCH_NEW_RELEASES_REQUEST';
 export const FETCH_NEW_RELEASES_SUCCESS = 'FETCH_NEW_RELEASES_SUCCESS';
 export const FETCH_NEW_RELEASES_FAILURE = 'FETCH_NEW_RELEASES_FAILURE';
 
+export const FILL_DUMMY_DATA = 'FILL_DUMMY_DATA';
+
 export const CLEAR_STORAGE_REQUEST = 'CLEAR_STORAGE_REQUEST';
 
 export const fetchArtists = (time) => (dispatch) => {
@@ -102,6 +104,12 @@ export const fetchNewReleases = () => (dispatch) => {
       console.log(err);
       dispatch({ type: FETCH_NEW_RELEASES_FAILURE });
     });
+};
+
+export const fillDummyData = () => (dispatch) => {
+  window.localStorage.setItem('hash', '#dummydata');
+  dispatch({ type: FILL_DUMMY_DATA });
+  return null;
 };
 
 export const clearStorage = () => (dispatch) => {

@@ -14,7 +14,22 @@ import {
   FETCH_NEW_RELEASES_SUCCESS,
   FETCH_NEW_RELEASES_FAILURE,
   CLEAR_STORAGE_REQUEST,
+  FILL_DUMMY_DATA,
 } from 'actions';
+
+import {
+  artistsLongTerm,
+  artistsMediumTerm,
+  artistsShortTerm,
+  tracksLongTerm,
+  tracksMediumTerm,
+  tracksShortTerm,
+  recent,
+  me,
+  recommendPlaylistsByCountry,
+  recommendPlaylists,
+  newReleases,
+} from 'dummyData';
 
 const initialState = {
   topArtists: {
@@ -67,7 +82,7 @@ const rootReducer = (state = initialState, action) =>
         break;
       }
       case FETCH_USER_FAILURE: {
-        draft.user = {};
+        draft.user = 'error';
         break;
       }
       case FETCH_PLAYLISTS_SUCCESS: {
@@ -79,7 +94,8 @@ const rootReducer = (state = initialState, action) =>
         break;
       }
       case FETCH_PLAYLISTS_FAILURE: {
-        draft.user = 'error';
+        draft.recommendPlaylistsByCountry = 'error';
+        draft.recommendPlaylists = 'error';
         break;
       }
       case FETCH_NEW_RELEASES_SUCCESS: {
@@ -88,6 +104,24 @@ const rootReducer = (state = initialState, action) =>
       }
       case FETCH_NEW_RELEASES_FAILURE: {
         draft.newReleases = 'error';
+        break;
+      }
+      case FILL_DUMMY_DATA: {
+        draft.topArtists = {
+          long_term: [...artistsLongTerm.items],
+          medium_term: [...artistsMediumTerm.items],
+          short_term: [...artistsShortTerm.items],
+        };
+        draft.topTracks = {
+          long_term: [...tracksLongTerm.items],
+          medium_term: [...tracksMediumTerm.items],
+          short_term: [...tracksShortTerm.items],
+        };
+        draft.recent = [...recent.items];
+        draft.recommendPlaylists = { ...recommendPlaylists };
+        draft.recommendPlaylistsByCountry = { ...recommendPlaylistsByCountry };
+        draft.newReleases = [...newReleases.albums.items];
+        draft.user = { ...me };
         break;
       }
       case CLEAR_STORAGE_REQUEST: {

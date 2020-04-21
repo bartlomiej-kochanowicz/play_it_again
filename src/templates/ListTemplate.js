@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import UserPageTemplate from 'templates/UserPageTemplate';
 import Heading from 'components/atoms/Heading/Heading';
-import { token } from 'api';
 
 const StyledWrapper = styled.div`
   width: 1050px;
@@ -76,7 +75,7 @@ const StyledHeading = styled(Heading)`
 
 const ListTemplate = ({ image, header, children }) => (
   <UserPageTemplate>
-    {!token && <Redirect to="/login" />}
+    {!window.localStorage.getItem('hash') && <Redirect to="/login" />}
     <StyledWrapper>
       <StyledHero image={image}>
         <StyledHeading big>{header}</StyledHeading>

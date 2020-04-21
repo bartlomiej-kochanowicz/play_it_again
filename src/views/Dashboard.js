@@ -68,10 +68,10 @@ const Dashboard = ({
   useEffect(() => {
     if (!user.country) {
       fetchUser();
+      fetchPlaylists('PL');
+      fetchPlaylists();
+      fetchNewReleases();
     }
-    fetchPlaylists('PL');
-    fetchPlaylists();
-    fetchNewReleases();
     // eslint-disable-next-line
   }, []);
 

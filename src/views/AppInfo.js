@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { routes } from 'routes';
 import styled from 'styled-components';
@@ -6,6 +7,8 @@ import Heading from 'components/atoms/Heading/Heading';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import Logo from 'components/atoms/Logo/Logo';
 import Button from 'components/atoms/Button/Button';
+import { connect } from 'react-redux';
+import { fillDummyData as fillDummyDataAction } from 'actions';
 
 const StyledWrapper = styled.div`
   background-color: ${({ theme }) => theme.grey100};
@@ -22,7 +25,7 @@ const StyledWrapper = styled.div`
 
 const StyledModal = styled.div`
   width: 615px;
-  height: 730px;
+  height: 770px;
   padding: 32px;
   color: ${({ theme }) => theme.spotifyBlack};
   background-color: #fff;
@@ -45,11 +48,20 @@ const StyledListItem = styled.li`
   font-weight: ${({ theme }) => theme.bold};
 `;
 
-const StyledLink = styled.a`
+const StyledLinksWrapper = styled.div`
+  width: 100%;
+  margin: 20px 0;
+`;
+
+const StyledHyperlink = styled.a`
   display: block;
   color: ${({ theme }) => theme.spotifyBlack};
-  margin: 30px 0;
-  width: 50%;
+  margin-bottom: 20px;
+`;
+
+const StyledLink = styled(Link)`
+  display: block;
+  color: ${({ theme }) => theme.spotifyBlack};
 `;
 
 const StyledButton = styled(Button)`
@@ -60,7 +72,7 @@ const StyledButton = styled(Button)`
   width: calc(100% - 64px);
 `;
 
-const AppInfo = () => (
+const AppInfo = ({ fillDummyData }) => (
   <StyledWrapper>
     <StyledModal>
       <StyledLogo />
@@ -88,13 +100,18 @@ const AppInfo = () => (
       <Paragraph>
         Created & Powered by bartekmajster sp z o.o. using Google Firebase and Spotify API.
       </Paragraph>
-      <StyledLink
-        href="https://github.com/bartekmajster/play_it_again"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Github repository
-      </StyledLink>
+      <StyledLinksWrapper>
+        <StyledHyperlink
+          href="https://github.com/bartekmajster/play_it_again"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Github repository
+        </StyledHyperlink>
+        <StyledLink to={routes.dashboard} onClick={fillDummyData}>
+          Open app with dummy data.
+        </StyledLink>
+      </StyledLinksWrapper>
       <Link to={routes.login}>
         <StyledButton>
           OK, got it
@@ -107,4 +124,11 @@ const AppInfo = () => (
   </StyledWrapper>
 );
 
-export default AppInfo;
+const mapDispatchToProps = (dispatch) => ({
+  fillDummyData: () => dispatch(fillDummyDataAction()),
+});
+
+export default connect(null, mapDispatchToProps)(AppInfo);
+AppInfo.propTypes = {
+  fillDummyData: PropTypes.func.isRequired,
+};

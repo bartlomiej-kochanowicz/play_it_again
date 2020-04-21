@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Heading from 'components/atoms/Heading/Heading';
+import { logout } from 'utils';
 import Button from '../../atoms/Button/Button';
 import { routes } from '../../../routes';
 
@@ -26,7 +27,7 @@ const StyledHeading = styled(Heading)`
 const ErrorModal = () => (
   <StyledWrapper>
     <StyledHeading>There was a problem with the server.</StyledHeading>
-    <Button>
+    <Button onClick={logout}>
       <StyledLink to={routes.login}>Please log in again</StyledLink>
     </Button>
   </StyledWrapper>
