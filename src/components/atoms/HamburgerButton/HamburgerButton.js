@@ -23,7 +23,7 @@ const StyledSpan = styled.span`
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #fff;
+  background-color: ${({ theme, isBlack }) => (isBlack ? theme.spotifyBlack : '#fff')};
   transition: 0.3s;
   z-index: 999;
 
@@ -36,7 +36,7 @@ const StyledSpan = styled.span`
     position: absolute;
     top: -9px;
     right: 0;
-    background-color: #fff;
+    background-color: ${({ theme, isBlack }) => (isBlack ? theme.spotifyBlack : '#fff')};
     transform-origin: 100% 50%;
     transition: 0.3s;
     z-index: 1000;
@@ -60,14 +60,15 @@ const StyledSpan = styled.span`
     `}
 `;
 
-const HamburgerButton = ({ isActive, handleFn }) => (
+const HamburgerButton = ({ isActive, handleFn, isBlack }) => (
   <StyledButton isActive={isActive} onClick={handleFn}>
-    <StyledSpan isActive={isActive} />
+    <StyledSpan isActive={isActive} isBlack={isBlack} />
   </StyledButton>
 );
 
 HamburgerButton.propTypes = {
   isActive: PropTypes.bool.isRequired,
+  isBlack: PropTypes.bool.isRequired,
   handleFn: PropTypes.func.isRequired,
 };
 

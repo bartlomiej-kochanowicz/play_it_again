@@ -19,3 +19,4 @@
 # 💣 Updates
 
 - v1.1.0 Play It Again is now PWA !
+- v1.2.0 New features - dashboard page

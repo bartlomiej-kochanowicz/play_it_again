@@ -1,6 +1,6 @@
 {
   "name": "play_it_again",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Web app which allows you to discover your top artist, songs and more.You can make playlist based on your music preferences.",
   "private": true,
   "dependencies": {

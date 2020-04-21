@@ -44,6 +44,9 @@ const StyledWrapper = styled.div`
       'countryPlaylists';
     padding: 0;
   }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    padding-top: 20px;
+  }
 `;
 
 const StyledLoading = styled.div`
