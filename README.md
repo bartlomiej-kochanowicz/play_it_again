@@ -1,5 +1,8 @@
 [![N|Solid](https://i.imgur.com/MiC3LSl.png)](https://playitagain.web.app/)
-# 🎧Play It Again🎧
+<h1 align="center">
+  🎧Play It Again🎧
+</h1>
+
 
 # [APP PAGE](https://playitagain.web.app/)
 

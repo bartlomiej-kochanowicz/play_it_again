@@ -57,7 +57,7 @@ const StyledInnerWrapper = styled.div`
 `;
 
 const appear = keyframes`
-  from{
+        from{
     transform: translateX(-300px);
   }
   to{
@@ -75,7 +75,7 @@ const StyledHeading = styled(Heading)`
 
 const ListTemplate = ({ image, header, children }) => (
   <UserPageTemplate>
-    {!window.localStorage.getItem('hash') && <Redirect to="/login" />}
+    {!window.localStorage.getItem('hash') && <Redirect to="/login"/>}
     <StyledWrapper>
       <StyledHero image={image}>
         <StyledHeading big>{header}</StyledHeading>
