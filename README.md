@@ -4,7 +4,7 @@
 </h1>
 
 
-# [APP PAGE](https://playitagain.web.app/)
+# [APP PAGE](https://play-it-again.netlify.app/)
 
 #### 🔥🔥🔥Web app which allows you to discover your top artist, songs and recent played music.You can also make playlist based on your music preferences.
 
