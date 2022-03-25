@@ -1,8 +1,8 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@babel/core': ^7.17.8
-  '@babel/eslint-parser': ^7.17.0
+  '@babel/core': 7.17.8
+  '@babel/eslint-parser': 7.17.0
   '@storybook/addon-actions': 6.4.19
   '@storybook/addon-links': 6.4.19
   '@storybook/addons': 6.4.19
@@ -11,14 +11,14 @@ specifiers:
   '@styled-icons/fa-regular': 10.34.0
   eslint: 8.11.0
   eslint-config-airbnb: 19.0.4
-  eslint-config-prettier: ^8.5.0
+  eslint-config-prettier: 8.5.0
   eslint-plugin-import: 2.25.4
   eslint-plugin-jsx-a11y: 6.5.1
   eslint-plugin-prettier: 4.0.0
   eslint-plugin-react: 7.29.4
   eslint-plugin-react-hooks: 4.3.0
-  immer: ^6.0.3
-  prop-types: ^15.8.1
+  immer: 6.0.3
+  prop-types: 15.8.1
   react: 17.0.2
   react-dom: 17.0.2
   react-lazyload: 3.2.0
@@ -35,7 +35,7 @@ specifiers:
 
 dependencies:
   '@styled-icons/fa-regular': 10.34.0_c17876e09d792e0c7b0f44e49f814625
-  immer: 6.0.9
+  immer: 6.0.3
   prop-types: 15.8.1
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -8033,8 +8033,8 @@ packages:
     resolution: {integrity: sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ==}
     engines: {node: '>= 4'}
 
-  /immer/6.0.9:
-    resolution: {integrity: sha512-SyCYnAuiRf67Lvk0VkwFvwtDoEiCMjeamnHvRfnVDyc7re1/rQrNxuL+jJ7lA3WvdC4uznrvbmm+clJ9+XXatg==}
+  /immer/6.0.3:
+    resolution: {integrity: sha512-12VvNrfSrXZdm/BJgi/KDW2soq5freVSf3I1+4CLunUM8mAGx2/0Njy0xBVzi5zewQZiwM7z1/1T+8VaI7NkmQ==}
     dev: false
 
   /immer/9.0.12:
