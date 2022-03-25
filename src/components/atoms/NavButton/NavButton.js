@@ -26,12 +26,14 @@ const StyledSpan = styled.span`
   margin-top: 10px;
 `;
 
-const NavButton = ({ icon, children, last }) => (
-  <StyledDiv last={last}>
-    <ButtonIcon icon={icon} />
-    <StyledSpan>{children}</StyledSpan>
-  </StyledDiv>
-);
+function NavButton({ icon, children, last }) {
+  return (
+    <StyledDiv last={last}>
+      <ButtonIcon icon={icon} />
+      <StyledSpan>{children}</StyledSpan>
+    </StyledDiv>
+  );
+}
 
 export default NavButton;
 

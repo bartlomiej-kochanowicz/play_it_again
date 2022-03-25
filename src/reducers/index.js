@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+
 import produce from 'immer';
 
 import {
@@ -49,7 +51,7 @@ const initialState = {
   user: {},
 };
 
-const rootReducer = (state = initialState, action) =>
+const rootReducer = (state = initialState, action = null) =>
   produce(state, (draft) => {
     switch (action.type) {
       case FETCH_ARTISTS_SUCCESS: {
@@ -132,6 +134,8 @@ const rootReducer = (state = initialState, action) =>
       default:
         return draft;
     }
+
+    return null;
   });
 
 export default rootReducer;

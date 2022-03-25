@@ -3,7 +3,7 @@ import HamburgerButton from 'components/atoms/HamburgerButton/HamburgerButton';
 import StyledNavigation from 'components/molecules/StyledNavigation/StyledNavigation';
 import { scrollToTop } from 'utils';
 
-const HamburgerMenu = () => {
+function HamburgerMenu() {
   const [isHamburgerActive, setHamburgerActive] = useState(false);
   const [isButtonBlack, setButtonBlack] = useState(false);
 
@@ -40,6 +40,6 @@ const HamburgerMenu = () => {
       <StyledNavigation isActive={isHamburgerActive} handleFn={handleClick} />
     </div>
   );
-};
+}
 
 export default HamburgerMenu;

@@ -173,7 +173,12 @@ export const artistsLongTerm = {
         href: null,
         total: 544485,
       },
-      genres: ['alternative pop rock', 'modern alternative rock', 'modern rock', 'rock'],
+      genres: [
+        'alternative pop rock',
+        'modern alternative rock',
+        'modern rock',
+        'rock',
+      ],
       href: 'https://api.spotify.com/v1/artists/1kDGbuxWknIKx4FlgWxiSp',
       id: '1kDGbuxWknIKx4FlgWxiSp',
       images: [
@@ -496,7 +501,13 @@ export const artistsLongTerm = {
         href: null,
         total: 9176277,
       },
-      genres: ['garage rock', 'modern rock', 'permanent wave', 'rock', 'sheffield indie'],
+      genres: [
+        'garage rock',
+        'modern rock',
+        'permanent wave',
+        'rock',
+        'sheffield indie',
+      ],
       href: 'https://api.spotify.com/v1/artists/7Ln80lUS6He07XvHI8qqHH',
       id: '7Ln80lUS6He07XvHI8qqHH',
       images: [
@@ -768,7 +779,12 @@ export const artistsLongTerm = {
         href: null,
         total: 810522,
       },
-      genres: ['british indie rock', 'modern alternative rock', 'modern rock', 'rock'],
+      genres: [
+        'british indie rock',
+        'modern alternative rock',
+        'modern rock',
+        'rock',
+      ],
       href: 'https://api.spotify.com/v1/artists/6Ad91Jof8Niiw0lGLLi3NW',
       id: '6Ad91Jof8Niiw0lGLLi3NW',
       images: [
@@ -1665,7 +1681,13 @@ export const artistsLongTerm = {
         href: null,
         total: 267155,
       },
-      genres: ['deep euro house', 'edm', 'german dance', 'pop', 'tropical house'],
+      genres: [
+        'deep euro house',
+        'edm',
+        'german dance',
+        'pop',
+        'tropical house',
+      ],
       href: 'https://api.spotify.com/v1/artists/61ipISvUVa5LkJlKZnm3Oo',
       id: '61ipISvUVa5LkJlKZnm3Oo',
       images: [
@@ -2407,7 +2429,12 @@ export const artistsMediumTerm = {
         href: null,
         total: 810522,
       },
-      genres: ['british indie rock', 'modern alternative rock', 'modern rock', 'rock'],
+      genres: [
+        'british indie rock',
+        'modern alternative rock',
+        'modern rock',
+        'rock',
+      ],
       href: 'https://api.spotify.com/v1/artists/6Ad91Jof8Niiw0lGLLi3NW',
       id: '6Ad91Jof8Niiw0lGLLi3NW',
       images: [
@@ -2676,7 +2703,14 @@ export const artistsMediumTerm = {
         href: null,
         total: 7334330,
       },
-      genres: ['dance pop', 'pop', 'pop rap', 'post-teen pop', 'uk pop', 'viral pop'],
+      genres: [
+        'dance pop',
+        'pop',
+        'pop rap',
+        'post-teen pop',
+        'uk pop',
+        'viral pop',
+      ],
       href: 'https://api.spotify.com/v1/artists/2gsggkzM5R49q6jpPvazou',
       id: '2gsggkzM5R49q6jpPvazou',
       images: [
@@ -2742,7 +2776,13 @@ export const artistsMediumTerm = {
         href: null,
         total: 3162401,
       },
-      genres: ['alternative metal', 'nu metal', 'post-grunge', 'rap metal', 'rap rock'],
+      genres: [
+        'alternative metal',
+        'nu metal',
+        'post-grunge',
+        'rap metal',
+        'rap rock',
+      ],
       href: 'https://api.spotify.com/v1/artists/4RddZ3iHvSpGV4dvATac9X',
       id: '4RddZ3iHvSpGV4dvATac9X',
       images: [
@@ -3594,7 +3634,12 @@ export const artistsShortTerm = {
         href: null,
         total: 810522,
       },
-      genres: ['british indie rock', 'modern alternative rock', 'modern rock', 'rock'],
+      genres: [
+        'british indie rock',
+        'modern alternative rock',
+        'modern rock',
+        'rock',
+      ],
       href: 'https://api.spotify.com/v1/artists/6Ad91Jof8Niiw0lGLLi3NW',
       id: '6Ad91Jof8Niiw0lGLLi3NW',
       images: [
@@ -4132,8 +4177,7 @@ export const me = {
 export const recommendPlaylistsByCountry = {
   message: 'Motywacja',
   playlists: {
-    href:
-      'https://api.spotify.com/v1/browse/featured-playlists?country=PL&timestamp=2020-04-21T10%3A24%3A07&offset=0&limit=4',
+    href: 'https://api.spotify.com/v1/browse/featured-playlists?country=PL&timestamp=2020-04-21T10%3A24%3A07&offset=0&limit=4',
     items: [
       {
         collaborative: false,
@@ -4164,7 +4208,8 @@ export const recommendPlaylistsByCountry = {
         },
         primary_color: null,
         public: null,
-        snapshot_id: 'MTU4NzQ2NDU4OSwwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl',
+        snapshot_id:
+          'MTU4NzQ2NDU4OSwwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl',
         tracks: {
           href: 'https://api.spotify.com/v1/playlists/37i9dQZF1DXdmgtdl82XHM/tracks',
           total: 45,
@@ -4174,7 +4219,8 @@ export const recommendPlaylistsByCountry = {
       },
       {
         collaborative: false,
-        description: 'Uplifting and energetic music that helps you stay motivated.',
+        description:
+          'Uplifting and energetic music that helps you stay motivated.',
         external_urls: {
           spotify: 'https://open.spotify.com/playlist/37i9dQZF1DXdxcBWuJkbcy',
         },
@@ -4200,7 +4246,8 @@ export const recommendPlaylistsByCountry = {
         },
         primary_color: null,
         public: null,
-        snapshot_id: 'MTU4NzQ2NDYxNywwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl',
+        snapshot_id:
+          'MTU4NzQ2NDYxNywwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl',
         tracks: {
           href: 'https://api.spotify.com/v1/playlists/37i9dQZF1DXdxcBWuJkbcy/tracks',
           total: 80,
@@ -4210,7 +4257,8 @@ export const recommendPlaylistsByCountry = {
       },
       {
         collaborative: false,
-        description: 'Najważniejsze utwory w historii rocka. Cover: Guns N Roses',
+        description:
+          'Najważniejsze utwory w historii rocka. Cover: Guns N Roses',
         external_urls: {
           spotify: 'https://open.spotify.com/playlist/37i9dQZF1DWUiWDS0oxpZg',
         },
@@ -4236,7 +4284,8 @@ export const recommendPlaylistsByCountry = {
         },
         primary_color: null,
         public: null,
-        snapshot_id: 'MTU4Mzg0OTU1MiwwMDAwMDAwYjAwMDAwMTY0MzFlZjFjMzUwMDAwMDE3MGM0Y2EzYzU5',
+        snapshot_id:
+          'MTU4Mzg0OTU1MiwwMDAwMDAwYjAwMDAwMTY0MzFlZjFjMzUwMDAwMDE3MGM0Y2EzYzU5',
         tracks: {
           href: 'https://api.spotify.com/v1/playlists/37i9dQZF1DWUiWDS0oxpZg/tracks',
           total: 70,
@@ -4246,7 +4295,8 @@ export const recommendPlaylistsByCountry = {
       },
       {
         collaborative: false,
-        description: 'Wyzwania, cele, zadania, spotkania, dedlajny… ale najpierw kawa.',
+        description:
+          'Wyzwania, cele, zadania, spotkania, dedlajny… ale najpierw kawa.',
         external_urls: {
           spotify: 'https://open.spotify.com/playlist/37i9dQZF1DX5T2mzbF9W6j',
         },
@@ -4272,7 +4322,8 @@ export const recommendPlaylistsByCountry = {
         },
         primary_color: null,
         public: null,
-        snapshot_id: 'MTU4NzQ2NDYxNiwwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl',
+        snapshot_id:
+          'MTU4NzQ2NDYxNiwwMDAwMDAwMGQ0MWQ4Y2Q5OGYwMGIyMDRlOTgwMDk5OGVjZjg0Mjdl',
         tracks: {
           href: 'https://api.spotify.com/v1/playlists/37i9dQZF1DX5T2mzbF9W6j/tracks',
           total: 40,
@@ -4282,8 +4333,7 @@ export const recommendPlaylistsByCountry = {
       },
     ],
     limit: 4,
-    next:
-      'https://api.spotify.com/v1/browse/featured-playlists?country=PL&timestamp=2020-04-21T10%3A24%3A07&offset=4&limit=4',
+    next: 'https://api.spotify.com/v1/browse/featured-playlists?country=PL&timestamp=2020-04-21T10%3A24%3A07&offset=4&limit=4',
     offset: 0,
     previous: null,
     total: 15,
@@ -4293,8 +4343,7 @@ export const recommendPlaylistsByCountry = {
 export const recommendPlaylists = {
   message: "Editor's picks",
   playlists: {
-    href:
-      'https://api.spotify.com/v1/browse/featured-playlists?timestamp=2020-04-21T10%3A24%3A07&offset=0&limit=4',
+    href: 'https://api.spotify.com/v1/browse/featured-playlists?timestamp=2020-04-21T10%3A24%3A07&offset=0&limit=4',
     items: [
       {
         collaborative: false,
@@ -4324,7 +4373,8 @@ export const recommendPlaylists = {
         },
         primary_color: null,
         public: null,
-        snapshot_id: 'MTU4NzM1NTI2MCwwMDAwMDNlNDAwMDAwMTcxOTViZjE0YWYwMDAwMDE3MTg1ZDg1NmYy',
+        snapshot_id:
+          'MTU4NzM1NTI2MCwwMDAwMDNlNDAwMDAwMTcxOTViZjE0YWYwMDAwMDE3MTg1ZDg1NmYy',
         tracks: {
           href: 'https://api.spotify.com/v1/playlists/37i9dQZF1DXcBWIGoYBM5M/tracks',
           total: 50,
@@ -4334,7 +4384,8 @@ export const recommendPlaylists = {
       },
       {
         collaborative: false,
-        description: "When you feel like you're 100% that b****\nCover: Megan Thee Stallion",
+        description:
+          "When you feel like you're 100% that b****\nCover: Megan Thee Stallion",
         external_urls: {
           spotify: 'https://open.spotify.com/playlist/37i9dQZF1DX6GwdWRQMQpq',
         },
@@ -4360,7 +4411,8 @@ export const recommendPlaylists = {
         },
         primary_color: null,
         public: null,
-        snapshot_id: 'MTU4NzA5NjIyNiwwMDAwMDAzZjAwMDAwMTcxODY0ZTg5MDYwMDAwMDE3MTNkNzVlZjU1',
+        snapshot_id:
+          'MTU4NzA5NjIyNiwwMDAwMDAzZjAwMDAwMTcxODY0ZTg5MDYwMDAwMDE3MTNkNzVlZjU1',
         tracks: {
           href: 'https://api.spotify.com/v1/playlists/37i9dQZF1DX6GwdWRQMQpq/tracks',
           total: 50,
@@ -4397,7 +4449,8 @@ export const recommendPlaylists = {
         },
         primary_color: null,
         public: null,
-        snapshot_id: 'MTU4Njk0NDE3NywwMDAwMDAwOTAwMDAwMTcxN2QzZTc1NzQwMDAwMDE3MGFmNDlhNmRh',
+        snapshot_id:
+          'MTU4Njk0NDE3NywwMDAwMDAwOTAwMDAwMTcxN2QzZTc1NzQwMDAwMDE3MGFmNDlhNmRh',
         tracks: {
           href: 'https://api.spotify.com/v1/playlists/37i9dQZF1DX7EF8wVxBVhG/tracks',
           total: 45,
@@ -4407,7 +4460,8 @@ export const recommendPlaylists = {
       },
       {
         collaborative: false,
-        description: 'music that breaks the rules, just a little bit. Featuring Remi Wolf',
+        description:
+          'music that breaks the rules, just a little bit. Featuring Remi Wolf',
         external_urls: {
           spotify: 'https://open.spotify.com/playlist/37i9dQZF1DXdwmD5Q7Gxah',
         },
@@ -4433,7 +4487,8 @@ export const recommendPlaylists = {
         },
         primary_color: null,
         public: null,
-        snapshot_id: 'MTU4NzM1NTI2MCwwMDAwMDE3MjAwMDAwMTcxOTViZjE0YjEwMDAwMDE3MTYwOWZkYjg1',
+        snapshot_id:
+          'MTU4NzM1NTI2MCwwMDAwMDE3MjAwMDAwMTcxOTViZjE0YjEwMDAwMDE3MTYwOWZkYjg1',
         tracks: {
           href: 'https://api.spotify.com/v1/playlists/37i9dQZF1DXdwmD5Q7Gxah/tracks',
           total: 126,
@@ -4443,8 +4498,7 @@ export const recommendPlaylists = {
       },
     ],
     limit: 4,
-    next:
-      'https://api.spotify.com/v1/browse/featured-playlists?timestamp=2020-04-21T10%3A24%3A07&offset=4&limit=4',
+    next: 'https://api.spotify.com/v1/browse/featured-playlists?timestamp=2020-04-21T10%3A24%3A07&offset=4&limit=4',
     offset: 0,
     previous: null,
     total: 12,
@@ -38027,7 +38081,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/0RUwm9ukhlW1oXDzXxj3C0',
+                spotify:
+                  'https://open.spotify.com/artist/0RUwm9ukhlW1oXDzXxj3C0',
               },
               href: 'https://api.spotify.com/v1/artists/0RUwm9ukhlW1oXDzXxj3C0',
               id: '0RUwm9ukhlW1oXDzXxj3C0',
@@ -38276,7 +38331,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/3UERyQ4VEbAEy8qfc6OwvU',
+                spotify:
+                  'https://open.spotify.com/artist/3UERyQ4VEbAEy8qfc6OwvU',
               },
               href: 'https://api.spotify.com/v1/artists/3UERyQ4VEbAEy8qfc6OwvU',
               id: '3UERyQ4VEbAEy8qfc6OwvU',
@@ -38525,7 +38581,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/3Sb3oI3Xw7FcgYS262zXPE',
+                spotify:
+                  'https://open.spotify.com/artist/3Sb3oI3Xw7FcgYS262zXPE',
               },
               href: 'https://api.spotify.com/v1/artists/3Sb3oI3Xw7FcgYS262zXPE',
               id: '3Sb3oI3Xw7FcgYS262zXPE',
@@ -38535,7 +38592,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/1pUWzVmu8ACMnIAu9BsOHm',
+                spotify:
+                  'https://open.spotify.com/artist/1pUWzVmu8ACMnIAu9BsOHm',
               },
               href: 'https://api.spotify.com/v1/artists/1pUWzVmu8ACMnIAu9BsOHm',
               id: '1pUWzVmu8ACMnIAu9BsOHm',
@@ -38794,7 +38852,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/6yIzx4oHUcVDTSiCwP3jQ7',
+                spotify:
+                  'https://open.spotify.com/artist/6yIzx4oHUcVDTSiCwP3jQ7',
               },
               href: 'https://api.spotify.com/v1/artists/6yIzx4oHUcVDTSiCwP3jQ7',
               id: '6yIzx4oHUcVDTSiCwP3jQ7',
@@ -38804,7 +38863,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5hThcAy3tmULy0EuMwDkma',
+                spotify:
+                  'https://open.spotify.com/artist/5hThcAy3tmULy0EuMwDkma',
               },
               href: 'https://api.spotify.com/v1/artists/5hThcAy3tmULy0EuMwDkma',
               id: '5hThcAy3tmULy0EuMwDkma',
@@ -38814,7 +38874,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/12nEr6QOfSKkiTXjEp8tBB',
+                spotify:
+                  'https://open.spotify.com/artist/12nEr6QOfSKkiTXjEp8tBB',
               },
               href: 'https://api.spotify.com/v1/artists/12nEr6QOfSKkiTXjEp8tBB',
               id: '12nEr6QOfSKkiTXjEp8tBB',
@@ -39083,7 +39144,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5we8GkSvBODzF7t0TLaiOS',
+                spotify:
+                  'https://open.spotify.com/artist/5we8GkSvBODzF7t0TLaiOS',
               },
               href: 'https://api.spotify.com/v1/artists/5we8GkSvBODzF7t0TLaiOS',
               id: '5we8GkSvBODzF7t0TLaiOS',
@@ -39332,7 +39394,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/6kLGnSLqv3I3NPOTdmm5lA',
+                spotify:
+                  'https://open.spotify.com/artist/6kLGnSLqv3I3NPOTdmm5lA',
               },
               href: 'https://api.spotify.com/v1/artists/6kLGnSLqv3I3NPOTdmm5lA',
               id: '6kLGnSLqv3I3NPOTdmm5lA',
@@ -39342,7 +39405,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/0BRMPrv2B9YgQuYQ3H4fja',
+                spotify:
+                  'https://open.spotify.com/artist/0BRMPrv2B9YgQuYQ3H4fja',
               },
               href: 'https://api.spotify.com/v1/artists/0BRMPrv2B9YgQuYQ3H4fja',
               id: '0BRMPrv2B9YgQuYQ3H4fja',
@@ -39601,7 +39665,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/22I3HfDFVXfgs23A8GT3RN',
+                spotify:
+                  'https://open.spotify.com/artist/22I3HfDFVXfgs23A8GT3RN',
               },
               href: 'https://api.spotify.com/v1/artists/22I3HfDFVXfgs23A8GT3RN',
               id: '22I3HfDFVXfgs23A8GT3RN',
@@ -39850,7 +39915,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/69NXAR2kpX8fv5ed7xJpgx',
+                spotify:
+                  'https://open.spotify.com/artist/69NXAR2kpX8fv5ed7xJpgx',
               },
               href: 'https://api.spotify.com/v1/artists/69NXAR2kpX8fv5ed7xJpgx',
               id: '69NXAR2kpX8fv5ed7xJpgx',
@@ -40099,7 +40165,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/7JD72qpbmGSp9M0uCLOa3D',
+                spotify:
+                  'https://open.spotify.com/artist/7JD72qpbmGSp9M0uCLOa3D',
               },
               href: 'https://api.spotify.com/v1/artists/7JD72qpbmGSp9M0uCLOa3D',
               id: '7JD72qpbmGSp9M0uCLOa3D',
@@ -40348,7 +40415,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/21Aa8MX3PsrO03NgH3TZGy',
+                spotify:
+                  'https://open.spotify.com/artist/21Aa8MX3PsrO03NgH3TZGy',
               },
               href: 'https://api.spotify.com/v1/artists/21Aa8MX3PsrO03NgH3TZGy',
               id: '21Aa8MX3PsrO03NgH3TZGy',
@@ -40358,7 +40426,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/2Ynv0921ni6Jo0TilBCqAO',
+                spotify:
+                  'https://open.spotify.com/artist/2Ynv0921ni6Jo0TilBCqAO',
               },
               href: 'https://api.spotify.com/v1/artists/2Ynv0921ni6Jo0TilBCqAO',
               id: '2Ynv0921ni6Jo0TilBCqAO',
@@ -40617,7 +40686,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/6oa6wet2erehWqnsFS8ZJx',
+                spotify:
+                  'https://open.spotify.com/artist/6oa6wet2erehWqnsFS8ZJx',
               },
               href: 'https://api.spotify.com/v1/artists/6oa6wet2erehWqnsFS8ZJx',
               id: '6oa6wet2erehWqnsFS8ZJx',
@@ -40866,7 +40936,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/05TqxuOClqbhjAba2V5aXa',
+                spotify:
+                  'https://open.spotify.com/artist/05TqxuOClqbhjAba2V5aXa',
               },
               href: 'https://api.spotify.com/v1/artists/05TqxuOClqbhjAba2V5aXa',
               id: '05TqxuOClqbhjAba2V5aXa',
@@ -40876,7 +40947,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/12nEr6QOfSKkiTXjEp8tBB',
+                spotify:
+                  'https://open.spotify.com/artist/12nEr6QOfSKkiTXjEp8tBB',
               },
               href: 'https://api.spotify.com/v1/artists/12nEr6QOfSKkiTXjEp8tBB',
               id: '12nEr6QOfSKkiTXjEp8tBB',
@@ -40886,7 +40958,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5k3Cw8TfLQt40L5dbqxJKD',
+                spotify:
+                  'https://open.spotify.com/artist/5k3Cw8TfLQt40L5dbqxJKD',
               },
               href: 'https://api.spotify.com/v1/artists/5k3Cw8TfLQt40L5dbqxJKD',
               id: '5k3Cw8TfLQt40L5dbqxJKD',
@@ -41155,7 +41228,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5R18HPWho6b4BMhMlKHETL',
+                spotify:
+                  'https://open.spotify.com/artist/5R18HPWho6b4BMhMlKHETL',
               },
               href: 'https://api.spotify.com/v1/artists/5R18HPWho6b4BMhMlKHETL',
               id: '5R18HPWho6b4BMhMlKHETL',
@@ -41404,7 +41478,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/6sFIWsNpZYqfjUpaCgueju',
+                spotify:
+                  'https://open.spotify.com/artist/6sFIWsNpZYqfjUpaCgueju',
               },
               href: 'https://api.spotify.com/v1/artists/6sFIWsNpZYqfjUpaCgueju',
               id: '6sFIWsNpZYqfjUpaCgueju',
@@ -41644,7 +41719,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/3wKV11EdqfY7lFaUeDUEC1',
+                spotify:
+                  'https://open.spotify.com/artist/3wKV11EdqfY7lFaUeDUEC1',
               },
               href: 'https://api.spotify.com/v1/artists/3wKV11EdqfY7lFaUeDUEC1',
               id: '3wKV11EdqfY7lFaUeDUEC1',
@@ -41893,7 +41969,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5T0wPeBVC0F7uEbIr8JKE5',
+                spotify:
+                  'https://open.spotify.com/artist/5T0wPeBVC0F7uEbIr8JKE5',
               },
               href: 'https://api.spotify.com/v1/artists/5T0wPeBVC0F7uEbIr8JKE5',
               id: '5T0wPeBVC0F7uEbIr8JKE5',
@@ -42142,7 +42219,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/6je5mA0FQskRZ5PHgxczTB',
+                spotify:
+                  'https://open.spotify.com/artist/6je5mA0FQskRZ5PHgxczTB',
               },
               href: 'https://api.spotify.com/v1/artists/6je5mA0FQskRZ5PHgxczTB',
               id: '6je5mA0FQskRZ5PHgxczTB',
@@ -42391,7 +42469,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/3fiKwnvotLjl3eF8FcB6ia',
+                spotify:
+                  'https://open.spotify.com/artist/3fiKwnvotLjl3eF8FcB6ia',
               },
               href: 'https://api.spotify.com/v1/artists/3fiKwnvotLjl3eF8FcB6ia',
               id: '3fiKwnvotLjl3eF8FcB6ia',
@@ -42650,7 +42729,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/0V7uJD4pZbCfqj8HdnlF5r',
+                spotify:
+                  'https://open.spotify.com/artist/0V7uJD4pZbCfqj8HdnlF5r',
               },
               href: 'https://api.spotify.com/v1/artists/0V7uJD4pZbCfqj8HdnlF5r',
               id: '0V7uJD4pZbCfqj8HdnlF5r',
@@ -42899,7 +42979,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/2h3ZcRa4CSTILfWC4RRgZJ',
+                spotify:
+                  'https://open.spotify.com/artist/2h3ZcRa4CSTILfWC4RRgZJ',
               },
               href: 'https://api.spotify.com/v1/artists/2h3ZcRa4CSTILfWC4RRgZJ',
               id: '2h3ZcRa4CSTILfWC4RRgZJ',
@@ -43148,7 +43229,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5I6WLC9Auo6aeTRHPQbdOv',
+                spotify:
+                  'https://open.spotify.com/artist/5I6WLC9Auo6aeTRHPQbdOv',
               },
               href: 'https://api.spotify.com/v1/artists/5I6WLC9Auo6aeTRHPQbdOv',
               id: '5I6WLC9Auo6aeTRHPQbdOv',
@@ -43158,7 +43240,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/0GJ3FYu5TXpDjqvPs9iA4u',
+                spotify:
+                  'https://open.spotify.com/artist/0GJ3FYu5TXpDjqvPs9iA4u',
               },
               href: 'https://api.spotify.com/v1/artists/0GJ3FYu5TXpDjqvPs9iA4u',
               id: '0GJ3FYu5TXpDjqvPs9iA4u',
@@ -43168,7 +43251,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/12nEr6QOfSKkiTXjEp8tBB',
+                spotify:
+                  'https://open.spotify.com/artist/12nEr6QOfSKkiTXjEp8tBB',
               },
               href: 'https://api.spotify.com/v1/artists/12nEr6QOfSKkiTXjEp8tBB',
               id: '12nEr6QOfSKkiTXjEp8tBB',
@@ -43437,7 +43521,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/4iyFpbbfjNvfLQPx82OrYc',
+                spotify:
+                  'https://open.spotify.com/artist/4iyFpbbfjNvfLQPx82OrYc',
               },
               href: 'https://api.spotify.com/v1/artists/4iyFpbbfjNvfLQPx82OrYc',
               id: '4iyFpbbfjNvfLQPx82OrYc',
@@ -43686,7 +43771,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/6s3PbveUJMvMwZHyQUAPV4',
+                spotify:
+                  'https://open.spotify.com/artist/6s3PbveUJMvMwZHyQUAPV4',
               },
               href: 'https://api.spotify.com/v1/artists/6s3PbveUJMvMwZHyQUAPV4',
               id: '6s3PbveUJMvMwZHyQUAPV4',
@@ -43935,7 +44021,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/4jFolZNdNsmCX5SIqmQv3X',
+                spotify:
+                  'https://open.spotify.com/artist/4jFolZNdNsmCX5SIqmQv3X',
               },
               href: 'https://api.spotify.com/v1/artists/4jFolZNdNsmCX5SIqmQv3X',
               id: '4jFolZNdNsmCX5SIqmQv3X',
@@ -43945,7 +44032,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/1wxPItEzr7U7rGSMPqZ25r',
+                spotify:
+                  'https://open.spotify.com/artist/1wxPItEzr7U7rGSMPqZ25r',
               },
               href: 'https://api.spotify.com/v1/artists/1wxPItEzr7U7rGSMPqZ25r',
               id: '1wxPItEzr7U7rGSMPqZ25r',
@@ -43955,7 +44043,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5akLE4T9GWOcySnGtZdBC3',
+                spotify:
+                  'https://open.spotify.com/artist/5akLE4T9GWOcySnGtZdBC3',
               },
               href: 'https://api.spotify.com/v1/artists/5akLE4T9GWOcySnGtZdBC3',
               id: '5akLE4T9GWOcySnGtZdBC3',
@@ -44224,7 +44313,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5P8zM1rnE2owF1M5HzAuM5',
+                spotify:
+                  'https://open.spotify.com/artist/5P8zM1rnE2owF1M5HzAuM5',
               },
               href: 'https://api.spotify.com/v1/artists/5P8zM1rnE2owF1M5HzAuM5',
               id: '5P8zM1rnE2owF1M5HzAuM5',
@@ -44473,7 +44563,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/2h3ZcRa4CSTILfWC4RRgZJ',
+                spotify:
+                  'https://open.spotify.com/artist/2h3ZcRa4CSTILfWC4RRgZJ',
               },
               href: 'https://api.spotify.com/v1/artists/2h3ZcRa4CSTILfWC4RRgZJ',
               id: '2h3ZcRa4CSTILfWC4RRgZJ',
@@ -44722,7 +44813,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/3Utd6WFwBcRb2Piu9boAGm',
+                spotify:
+                  'https://open.spotify.com/artist/3Utd6WFwBcRb2Piu9boAGm',
               },
               href: 'https://api.spotify.com/v1/artists/3Utd6WFwBcRb2Piu9boAGm',
               id: '3Utd6WFwBcRb2Piu9boAGm',
@@ -44971,7 +45063,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/3gm9b6AeMf2eGQTLashkDt',
+                spotify:
+                  'https://open.spotify.com/artist/3gm9b6AeMf2eGQTLashkDt',
               },
               href: 'https://api.spotify.com/v1/artists/3gm9b6AeMf2eGQTLashkDt',
               id: '3gm9b6AeMf2eGQTLashkDt',
@@ -44981,7 +45074,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/0LX2VNf5w4iOHW1yyIqb74',
+                spotify:
+                  'https://open.spotify.com/artist/0LX2VNf5w4iOHW1yyIqb74',
               },
               href: 'https://api.spotify.com/v1/artists/0LX2VNf5w4iOHW1yyIqb74',
               id: '0LX2VNf5w4iOHW1yyIqb74',
@@ -44991,7 +45085,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5CkZIA3WpaEFxp0wSjMzRI',
+                spotify:
+                  'https://open.spotify.com/artist/5CkZIA3WpaEFxp0wSjMzRI',
               },
               href: 'https://api.spotify.com/v1/artists/5CkZIA3WpaEFxp0wSjMzRI',
               id: '5CkZIA3WpaEFxp0wSjMzRI',
@@ -45260,7 +45355,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
+                spotify:
+                  'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
               },
               href: 'https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x',
               id: '5K4W6rqBFWDnAN6FQUkS6x',
@@ -45509,7 +45605,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/2hPgGN4uhvXAxiXQBIXOmE',
+                spotify:
+                  'https://open.spotify.com/artist/2hPgGN4uhvXAxiXQBIXOmE',
               },
               href: 'https://api.spotify.com/v1/artists/2hPgGN4uhvXAxiXQBIXOmE',
               id: '2hPgGN4uhvXAxiXQBIXOmE',
@@ -45519,7 +45616,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
+                spotify:
+                  'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
               },
               href: 'https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x',
               id: '5K4W6rqBFWDnAN6FQUkS6x',
@@ -45529,7 +45627,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/0fA0VVWsXO9YnASrzqfmYu',
+                spotify:
+                  'https://open.spotify.com/artist/0fA0VVWsXO9YnASrzqfmYu',
               },
               href: 'https://api.spotify.com/v1/artists/0fA0VVWsXO9YnASrzqfmYu',
               id: '0fA0VVWsXO9YnASrzqfmYu',
@@ -45778,7 +45877,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/2hPgGN4uhvXAxiXQBIXOmE',
+                spotify:
+                  'https://open.spotify.com/artist/2hPgGN4uhvXAxiXQBIXOmE',
               },
               href: 'https://api.spotify.com/v1/artists/2hPgGN4uhvXAxiXQBIXOmE',
               id: '2hPgGN4uhvXAxiXQBIXOmE',
@@ -45788,7 +45888,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
+                spotify:
+                  'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
               },
               href: 'https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x',
               id: '5K4W6rqBFWDnAN6FQUkS6x',
@@ -45798,7 +45899,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/0fA0VVWsXO9YnASrzqfmYu',
+                spotify:
+                  'https://open.spotify.com/artist/0fA0VVWsXO9YnASrzqfmYu',
               },
               href: 'https://api.spotify.com/v1/artists/0fA0VVWsXO9YnASrzqfmYu',
               id: '0fA0VVWsXO9YnASrzqfmYu',
@@ -46057,7 +46159,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/2hPgGN4uhvXAxiXQBIXOmE',
+                spotify:
+                  'https://open.spotify.com/artist/2hPgGN4uhvXAxiXQBIXOmE',
               },
               href: 'https://api.spotify.com/v1/artists/2hPgGN4uhvXAxiXQBIXOmE',
               id: '2hPgGN4uhvXAxiXQBIXOmE',
@@ -46067,7 +46170,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
+                spotify:
+                  'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
               },
               href: 'https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x',
               id: '5K4W6rqBFWDnAN6FQUkS6x',
@@ -46077,7 +46181,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/0fA0VVWsXO9YnASrzqfmYu',
+                spotify:
+                  'https://open.spotify.com/artist/0fA0VVWsXO9YnASrzqfmYu',
               },
               href: 'https://api.spotify.com/v1/artists/0fA0VVWsXO9YnASrzqfmYu',
               id: '0fA0VVWsXO9YnASrzqfmYu',
@@ -46326,7 +46431,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/2hPgGN4uhvXAxiXQBIXOmE',
+                spotify:
+                  'https://open.spotify.com/artist/2hPgGN4uhvXAxiXQBIXOmE',
               },
               href: 'https://api.spotify.com/v1/artists/2hPgGN4uhvXAxiXQBIXOmE',
               id: '2hPgGN4uhvXAxiXQBIXOmE',
@@ -46336,7 +46442,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
+                spotify:
+                  'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
               },
               href: 'https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x',
               id: '5K4W6rqBFWDnAN6FQUkS6x',
@@ -46346,7 +46453,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/0fA0VVWsXO9YnASrzqfmYu',
+                spotify:
+                  'https://open.spotify.com/artist/0fA0VVWsXO9YnASrzqfmYu',
               },
               href: 'https://api.spotify.com/v1/artists/0fA0VVWsXO9YnASrzqfmYu',
               id: '0fA0VVWsXO9YnASrzqfmYu',
@@ -46605,7 +46713,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/2hPgGN4uhvXAxiXQBIXOmE',
+                spotify:
+                  'https://open.spotify.com/artist/2hPgGN4uhvXAxiXQBIXOmE',
               },
               href: 'https://api.spotify.com/v1/artists/2hPgGN4uhvXAxiXQBIXOmE',
               id: '2hPgGN4uhvXAxiXQBIXOmE',
@@ -46615,7 +46724,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
+                spotify:
+                  'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
               },
               href: 'https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x',
               id: '5K4W6rqBFWDnAN6FQUkS6x',
@@ -46625,7 +46735,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/0fA0VVWsXO9YnASrzqfmYu',
+                spotify:
+                  'https://open.spotify.com/artist/0fA0VVWsXO9YnASrzqfmYu',
               },
               href: 'https://api.spotify.com/v1/artists/0fA0VVWsXO9YnASrzqfmYu',
               id: '0fA0VVWsXO9YnASrzqfmYu',
@@ -46884,7 +46995,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/2hPgGN4uhvXAxiXQBIXOmE',
+                spotify:
+                  'https://open.spotify.com/artist/2hPgGN4uhvXAxiXQBIXOmE',
               },
               href: 'https://api.spotify.com/v1/artists/2hPgGN4uhvXAxiXQBIXOmE',
               id: '2hPgGN4uhvXAxiXQBIXOmE',
@@ -46894,7 +47006,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
+                spotify:
+                  'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
               },
               href: 'https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x',
               id: '5K4W6rqBFWDnAN6FQUkS6x',
@@ -46904,7 +47017,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/0fA0VVWsXO9YnASrzqfmYu',
+                spotify:
+                  'https://open.spotify.com/artist/0fA0VVWsXO9YnASrzqfmYu',
               },
               href: 'https://api.spotify.com/v1/artists/0fA0VVWsXO9YnASrzqfmYu',
               id: '0fA0VVWsXO9YnASrzqfmYu',
@@ -47153,7 +47267,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/2hPgGN4uhvXAxiXQBIXOmE',
+                spotify:
+                  'https://open.spotify.com/artist/2hPgGN4uhvXAxiXQBIXOmE',
               },
               href: 'https://api.spotify.com/v1/artists/2hPgGN4uhvXAxiXQBIXOmE',
               id: '2hPgGN4uhvXAxiXQBIXOmE',
@@ -47163,7 +47278,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
+                spotify:
+                  'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
               },
               href: 'https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x',
               id: '5K4W6rqBFWDnAN6FQUkS6x',
@@ -47173,7 +47289,8 @@ export const recent = {
             },
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/0fA0VVWsXO9YnASrzqfmYu',
+                spotify:
+                  'https://open.spotify.com/artist/0fA0VVWsXO9YnASrzqfmYu',
               },
               href: 'https://api.spotify.com/v1/artists/0fA0VVWsXO9YnASrzqfmYu',
               id: '0fA0VVWsXO9YnASrzqfmYu',
@@ -47432,7 +47549,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
+                spotify:
+                  'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
               },
               href: 'https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x',
               id: '5K4W6rqBFWDnAN6FQUkS6x',
@@ -47681,7 +47799,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
+                spotify:
+                  'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
               },
               href: 'https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x',
               id: '5K4W6rqBFWDnAN6FQUkS6x',
@@ -47950,7 +48069,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
+                spotify:
+                  'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
               },
               href: 'https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x',
               id: '5K4W6rqBFWDnAN6FQUkS6x',
@@ -48209,7 +48329,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
+                spotify:
+                  'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
               },
               href: 'https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x',
               id: '5K4W6rqBFWDnAN6FQUkS6x',
@@ -48458,7 +48579,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
+                spotify:
+                  'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
               },
               href: 'https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x',
               id: '5K4W6rqBFWDnAN6FQUkS6x',
@@ -48717,7 +48839,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
+                spotify:
+                  'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
               },
               href: 'https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x',
               id: '5K4W6rqBFWDnAN6FQUkS6x',
@@ -48986,7 +49109,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
+                spotify:
+                  'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
               },
               href: 'https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x',
               id: '5K4W6rqBFWDnAN6FQUkS6x',
@@ -49235,7 +49359,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
+                spotify:
+                  'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
               },
               href: 'https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x',
               id: '5K4W6rqBFWDnAN6FQUkS6x',
@@ -49484,7 +49609,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
+                spotify:
+                  'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
               },
               href: 'https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x',
               id: '5K4W6rqBFWDnAN6FQUkS6x',
@@ -49733,7 +49859,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
+                spotify:
+                  'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
               },
               href: 'https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x',
               id: '5K4W6rqBFWDnAN6FQUkS6x',
@@ -49982,7 +50109,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
+                spotify:
+                  'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
               },
               href: 'https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x',
               id: '5K4W6rqBFWDnAN6FQUkS6x',
@@ -50241,7 +50369,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
+                spotify:
+                  'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
               },
               href: 'https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x',
               id: '5K4W6rqBFWDnAN6FQUkS6x',
@@ -50490,7 +50619,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
+                spotify:
+                  'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
               },
               href: 'https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x',
               id: '5K4W6rqBFWDnAN6FQUkS6x',
@@ -50739,7 +50869,8 @@ export const recent = {
           artists: [
             {
               external_urls: {
-                spotify: 'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
+                spotify:
+                  'https://open.spotify.com/artist/5K4W6rqBFWDnAN6FQUkS6x',
               },
               href: 'https://api.spotify.com/v1/artists/5K4W6rqBFWDnAN6FQUkS6x',
               id: '5K4W6rqBFWDnAN6FQUkS6x',

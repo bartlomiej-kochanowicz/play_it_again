@@ -6,7 +6,10 @@ import hero from 'assets/hero_images/hero4.jpg';
 import ListItem from 'components/molecules/ListItem/ListItem';
 import ErrorModal from 'components/molecules/ErrorModal/ErrorModal';
 import { connect } from 'react-redux';
-import { fetchRecent as fetchRecentAction, clearStorage as clearStorageAction } from 'actions';
+import {
+  fetchRecent as fetchRecentAction,
+  clearStorage as clearStorageAction,
+} from 'actions';
 import PropTypes from 'prop-types';
 
 const StyledList = styled.ul`
@@ -15,7 +18,7 @@ const StyledList = styled.ul`
   list-style: none;
 `;
 
-const Recent = ({ fetchRecent, recent }) => {
+function Recent({ fetchRecent, recent }) {
   useEffect(() => {
     fetchRecent();
     // eslint-disable-next-line
@@ -53,12 +56,12 @@ const Recent = ({ fetchRecent, recent }) => {
       Number(played.slice(8, 10)),
       Number(played.slice(11, 13)),
       Number(played.slice(14, 16)),
-      Number(played.slice(17, 19)),
+      Number(played.slice(17, 19))
     );
 
-    return `${convertDay(date)} ${date.getHours() < 10 ? `0${date.getHours()}` : date.getHours()}:${
-      date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes()
-    }`;
+    return `${convertDay(date)} ${
+      date.getHours() < 10 ? `0${date.getHours()}` : date.getHours()
+    }:${date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes()}`;
   };
 
   return (
@@ -101,7 +104,7 @@ const Recent = ({ fetchRecent, recent }) => {
       </StyledList>
     </ListTemplate>
   );
-};
+}
 
 const mapStateToProps = (state) => {
   const { recent } = state;
@@ -117,5 +120,8 @@ export default connect(mapStateToProps, mapDispatchToProps)(Recent);
 
 Recent.propTypes = {
   fetchRecent: PropTypes.func.isRequired,
-  recent: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.object), PropTypes.string]).isRequired,
+  recent: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.object),
+    PropTypes.string,
+  ]).isRequired,
 };

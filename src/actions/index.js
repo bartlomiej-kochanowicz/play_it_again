@@ -35,8 +35,7 @@ export const fetchArtists = (time) => (dispatch) => {
     .then((payload) => {
       dispatch({ type: FETCH_ARTISTS_SUCCESS, payload, time });
     })
-    .catch((err) => {
-      console.log(err);
+    .catch(() => {
       dispatch({ type: FETCH_ARTISTS_FAILURE, time });
     });
 };
@@ -48,8 +47,7 @@ export const fetchTracks = (time) => (dispatch) => {
     .then((payload) => {
       dispatch({ type: FETCH_TRACKS_SUCCESS, payload, time });
     })
-    .catch((err) => {
-      console.log(err);
+    .catch(() => {
       dispatch({ type: FETCH_TRACKS_FAILURE, time });
     });
 };
@@ -61,8 +59,7 @@ export const fetchRecent = () => (dispatch) => {
     .then((payload) => {
       dispatch({ type: FETCH_RECENT_SUCCESS, payload });
     })
-    .catch((err) => {
-      console.log(err);
+    .catch(() => {
       dispatch({ type: FETCH_RECENT_FAILURE });
     });
 };
@@ -74,24 +71,26 @@ export const fetchUser = () => (dispatch) => {
     .then((payload) => {
       dispatch({ type: FETCH_USER_SUCCESS, payload });
     })
-    .catch((err) => {
-      console.log(err);
+    .catch(() => {
       dispatch({ type: FETCH_USER_FAILURE });
     });
 };
 
-export const fetchPlaylists = (country = null) => (dispatch) => {
-  dispatch({ type: FETCH_PLAYLISTS_REQUEST });
-  return spotifyApi
-    .getFeaturedPlaylists(country === null ? { limit: 4 } : { country, limit: 4 })
-    .then((payload) => {
-      dispatch({ type: FETCH_PLAYLISTS_SUCCESS, payload, country });
-    })
-    .catch((err) => {
-      console.log(err);
-      dispatch({ type: FETCH_PLAYLISTS_FAILURE });
-    });
-};
+export const fetchPlaylists =
+  (country = null) =>
+  (dispatch) => {
+    dispatch({ type: FETCH_PLAYLISTS_REQUEST });
+    return spotifyApi
+      .getFeaturedPlaylists(
+        country === null ? { limit: 4 } : { country, limit: 4 }
+      )
+      .then((payload) => {
+        dispatch({ type: FETCH_PLAYLISTS_SUCCESS, payload, country });
+      })
+      .catch(() => {
+        dispatch({ type: FETCH_PLAYLISTS_FAILURE });
+      });
+  };
 
 export const fetchNewReleases = () => (dispatch) => {
   dispatch({ type: FETCH_NEW_RELEASES_REQUEST });
@@ -100,19 +99,18 @@ export const fetchNewReleases = () => (dispatch) => {
     .then((payload) => {
       dispatch({ type: FETCH_NEW_RELEASES_SUCCESS, payload });
     })
-    .catch((err) => {
-      console.log(err);
+    .catch(() => {
       dispatch({ type: FETCH_NEW_RELEASES_FAILURE });
     });
 };
 
-export const fillDummyData = () => (dispatch) => {
+export const fillDummyData = (dispatch) => {
   window.localStorage.setItem('hash', '#dummydata');
   dispatch({ type: FILL_DUMMY_DATA });
   return null;
 };
 
-export const clearStorage = () => (dispatch) => {
+export const clearStorage = (dispatch) => {
   dispatch({ type: CLEAR_STORAGE_REQUEST });
   return null;
 };

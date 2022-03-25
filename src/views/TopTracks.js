@@ -17,7 +17,7 @@ const StyledList = styled.ul`
   list-style: none;
 `;
 
-const TopTracks = ({ fetchTracks, topTracks }) => {
+function TopTracks({ fetchTracks, topTracks }) {
   const [time, setTime] = useState(staticTime.longTerm);
   const [listVisible, setListVisibility] = useState(true);
 
@@ -76,7 +76,7 @@ const TopTracks = ({ fetchTracks, topTracks }) => {
       )}
     </ListTemplate>
   );
-};
+}
 
 const mapStateToProps = (state) => {
   const { topTracks } = state;

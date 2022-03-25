@@ -19,7 +19,8 @@ const StyledButton = styled.button`
   background-color: transparent;
   font-weight: ${({ theme }) => theme.bold};
   font-size: 2rem;
-  color: ${({ theme, active }) => (active ? theme.spotifyBlack : theme.grey300)};
+  color: ${({ theme, active }) =>
+    active ? theme.spotifyBlack : theme.grey300};
   cursor: pointer;
   position: relative;
   outline: none;
@@ -48,11 +49,13 @@ const StyledButton = styled.button`
   }
 `;
 
-const TimeButton = ({ children, active, animation }) => (
-  <StyledButton onClick={animation} active={active}>
-    {children}
-  </StyledButton>
-);
+function TimeButton({ children, active, animation }) {
+  return (
+    <StyledButton onClick={animation} active={active}>
+      {children}
+    </StyledButton>
+  );
+}
 
 export default TimeButton;
 

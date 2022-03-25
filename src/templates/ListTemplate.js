@@ -73,17 +73,19 @@ const StyledHeading = styled(Heading)`
   animation: ${appear} 0.5s 0.5s both;
 `;
 
-const ListTemplate = ({ image, header, children }) => (
-  <UserPageTemplate>
-    {!window.localStorage.getItem('hash') && <Redirect to="/login"/>}
-    <StyledWrapper>
-      <StyledHero image={image}>
-        <StyledHeading big>{header}</StyledHeading>
-      </StyledHero>
-      <StyledInnerWrapper>{children}</StyledInnerWrapper>
-    </StyledWrapper>
-  </UserPageTemplate>
-);
+function ListTemplate({ image, header, children }) {
+  return (
+    <UserPageTemplate>
+      {!window.localStorage.getItem('hash') && <Redirect to="/login" />}
+      <StyledWrapper>
+        <StyledHero image={image}>
+          <StyledHeading big>{header}</StyledHeading>
+        </StyledHero>
+        <StyledInnerWrapper>{children}</StyledInnerWrapper>
+      </StyledWrapper>
+    </UserPageTemplate>
+  );
+}
 
 export default ListTemplate;
 

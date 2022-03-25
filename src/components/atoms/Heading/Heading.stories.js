@@ -7,5 +7,9 @@ export default {
   decorators: [themeDecorator],
 };
 
-export const MainHeading = () => <Heading>Hello Button</Heading>;
-export const BigHeading = () => <Heading big>Hello Button</Heading>;
+export function MainHeading() {
+  return <Heading>Hello Button</Heading>;
+}
+export function BigHeading() {
+  return <Heading big>Hello Button</Heading>;
+}

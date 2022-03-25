@@ -7,4 +7,6 @@ export default {
   decorators: [themeDecorator],
 };
 
-export const HamburgerBtn = () => <HamburgerButton />;
+export function HamburgerBtn() {
+  return <HamburgerButton />;
+}
