@@ -3,7 +3,6 @@ import { NavLink, Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
 import { routes } from 'routes';
 import { scrollToTop, logout } from 'utils';
-
 import NavButton from 'components/atoms/NavButton/NavButton';
 import Logo from 'components/atoms/Logo/Logo';
 import { Star } from '@styled-icons/fa-regular/Star';
@@ -71,55 +70,53 @@ const StyledLogo = styled(Logo)`
   width: 50px;
 `;
 
-function Sidebar() {
-  return (
-    <StyledWrapper>
-      <StyledLogo />
-      <StyledUl>
-        <StyledLi>
-          <StyledNavLink
-            activeClassName="active"
-            to={routes.dashboard}
-            onClick={scrollToTop}
-          >
-            <NavButton icon={Gem}>Dashboard</NavButton>
-          </StyledNavLink>
-        </StyledLi>
-        <StyledLi>
-          <StyledNavLink
-            activeClassName="active"
-            to={routes.top_artists}
-            onClick={scrollToTop}
-          >
-            <NavButton icon={Star}>Top Artists</NavButton>
-          </StyledNavLink>
-        </StyledLi>
-        <StyledLi>
-          <StyledNavLink
-            activeClassName="active"
-            to={routes.top_tracks}
-            onClick={scrollToTop}
-          >
-            <NavButton icon={Heart}>Top Tracks</NavButton>
-          </StyledNavLink>
-        </StyledLi>
-        <StyledLi>
-          <StyledNavLink
-            activeClassName="active"
-            to={routes.recent}
-            onClick={scrollToTop}
-          >
-            <NavButton icon={Clock}>Recent</NavButton>
-          </StyledNavLink>
-        </StyledLi>
-        <StyledLi last>
-          <StyledLink to={routes.login} onClick={logout}>
-            <NavButton icon={ShareSquare}>Logout</NavButton>
-          </StyledLink>
-        </StyledLi>
-      </StyledUl>
-    </StyledWrapper>
-  );
-}
+const Sidebar = () => (
+  <StyledWrapper>
+    <StyledLogo />
+    <StyledUl>
+      <StyledLi>
+        <StyledNavLink
+          activeClassName="active"
+          to={routes.dashboard}
+          onClick={scrollToTop}
+        >
+          <NavButton icon={Gem}>Dashboard</NavButton>
+        </StyledNavLink>
+      </StyledLi>
+      <StyledLi>
+        <StyledNavLink
+          activeClassName="active"
+          to={routes.top_artists}
+          onClick={scrollToTop}
+        >
+          <NavButton icon={Star}>Top Artists</NavButton>
+        </StyledNavLink>
+      </StyledLi>
+      <StyledLi>
+        <StyledNavLink
+          activeClassName="active"
+          to={routes.top_tracks}
+          onClick={scrollToTop}
+        >
+          <NavButton icon={Heart}>Top Tracks</NavButton>
+        </StyledNavLink>
+      </StyledLi>
+      <StyledLi>
+        <StyledNavLink
+          activeClassName="active"
+          to={routes.recent}
+          onClick={scrollToTop}
+        >
+          <NavButton icon={Clock}>Recent</NavButton>
+        </StyledNavLink>
+      </StyledLi>
+      <StyledLi last>
+        <StyledLink to={routes.login} onClick={logout}>
+          <NavButton icon={ShareSquare}>Logout</NavButton>
+        </StyledLink>
+      </StyledLi>
+    </StyledUl>
+  </StyledWrapper>
+);
 
 export default Sidebar;

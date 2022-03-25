@@ -6,7 +6,7 @@ if (!window.localStorage.getItem('hash')) {
   window.localStorage.setItem('hash', window.location.hash);
 }
 
-function getHashParams() {
+const getHashParams = () => {
   const hashParams = {};
   let e;
   const r = /([^&;=]+)=?([^&;]*)/g;
@@ -18,7 +18,7 @@ function getHashParams() {
   }
   window.location.hash = '';
   return hashParams;
-}
+};
 
 const params = getHashParams();
 export const token = params.access_token;

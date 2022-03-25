@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import Paragraph from '../../atoms/Paragraph/Paragraph';
+import Paragraph from 'components/atoms/Paragraph/Paragraph';
 
 const StyledWrapper = styled.a`
   display: block;
@@ -60,7 +60,7 @@ const StyledInnerWrapper = styled.div`
   align-items: center;
 `;
 
-function Cover({ url, image, name, big }) {
+const Cover = ({ url, image, name, big }) => {
   const [isActive, setActive] = useState(false);
 
   const handleEnter = () => {
@@ -85,7 +85,7 @@ function Cover({ url, image, name, big }) {
       </StyledInnerWrapper>
     </StyledWrapper>
   );
-}
+};
 
 export default Cover;
 

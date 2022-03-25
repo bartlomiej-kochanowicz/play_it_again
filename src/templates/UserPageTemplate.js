@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Sidebar from 'components/organisms/Sidebar/Sidebar';
 import { theme as mainTheme } from 'theme/mainTheme';
 import { useBreakpoint } from 'hooks/useBreakpoint';
-import HamburgerMenu from '../components/organisms/HamburgerMenu/HamburgerMenu';
+import HamburgerMenu from 'components/organisms/HamburgerMenu/HamburgerMenu';
 
 const StyledWrapper = styled.div`
   margin-left: 120px;
@@ -23,7 +23,7 @@ const StyledWrapper = styled.div`
   }
 `;
 
-function UserPageTemplate({ children }) {
+const UserPageTemplate = ({ children }) => {
   const isTabletOrMobile = useBreakpoint(mainTheme.breakpoints.tablet, 'max');
 
   return (
@@ -33,7 +33,7 @@ function UserPageTemplate({ children }) {
       <StyledWrapper>{children}</StyledWrapper>
     </>
   );
-}
+};
 
 export default UserPageTemplate;
 

@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Heading from 'components/atoms/Heading/Heading';
 import { logout } from 'utils';
-import Button from '../../atoms/Button/Button';
-import { routes } from '../../../routes';
+import Button from 'components/atoms/Button/Button';
+import { routes } from 'routes';
 
 const StyledWrapper = styled.div`
   text-align: center;
@@ -24,15 +24,13 @@ const StyledHeading = styled(Heading)`
   margin-bottom: 20px;
 `;
 
-function ErrorModal() {
-  return (
-    <StyledWrapper>
-      <StyledHeading>There was a problem with the server.</StyledHeading>
-      <Button onClick={logout}>
-        <StyledLink to={routes.login}>Please log in again</StyledLink>
-      </Button>
-    </StyledWrapper>
-  );
-}
+const ErrorModal = () => (
+  <StyledWrapper>
+    <StyledHeading>There was a problem with the server.</StyledHeading>
+    <Button onClick={logout}>
+      <StyledLink to={routes.login}>Please log in again</StyledLink>
+    </Button>
+  </StyledWrapper>
+);
 
 export default ErrorModal;

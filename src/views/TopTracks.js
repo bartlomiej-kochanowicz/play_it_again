@@ -8,8 +8,8 @@ import { connect } from 'react-redux';
 import { fetchTracks as fetchTracksAction } from 'actions';
 import PropTypes from 'prop-types';
 import TimeNavbar from 'components/molecules/TimeNavbar/TimeNavbar';
-import { time as staticTime } from '../utils';
-import ErrorModal from '../components/molecules/ErrorModal/ErrorModal';
+import { time as staticTime } from 'utils';
+import ErrorModal from 'components/molecules/ErrorModal/ErrorModal';
 
 const StyledList = styled.ul`
   padding: 20px 0;
@@ -17,7 +17,7 @@ const StyledList = styled.ul`
   list-style: none;
 `;
 
-function TopTracks({ fetchTracks, topTracks }) {
+const TopTracks = ({ fetchTracks, topTracks }) => {
   const [time, setTime] = useState(staticTime.longTerm);
   const [listVisible, setListVisibility] = useState(true);
 
@@ -34,7 +34,6 @@ function TopTracks({ fetchTracks, topTracks }) {
     if (!topTracks.long_term.length) {
       updateList(staticTime.longTerm);
     }
-    // eslint-disable-next-line
   }, []);
 
   return (
@@ -76,7 +75,7 @@ function TopTracks({ fetchTracks, topTracks }) {
       )}
     </ListTemplate>
   );
-}
+};
 
 const mapStateToProps = (state) => {
   const { topTracks } = state;

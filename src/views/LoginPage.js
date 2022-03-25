@@ -78,21 +78,19 @@ const StyledButton = styled(Button)`
   }
 `;
 
-function LoginPage() {
-  return (
-    <StyledWrapper>
-      <StyledLogo />
-      <StyledHeader big>Replay your Spotify Hits</StyledHeader>
-      <StyledContainer>
-        <StyledHyperlink href="https://playitagain-auth.herokuapp.com/login">
-          <StyledButton>Sign in with Spotify</StyledButton>
-        </StyledHyperlink>
-        <StyledLink to={routes.app_info}>
-          What is this? + Overview link
-        </StyledLink>
-      </StyledContainer>
-    </StyledWrapper>
-  );
-}
+const LoginPage = () => (
+  <StyledWrapper>
+    <StyledLogo />
+    <StyledHeader big>Replay your Spotify Hits</StyledHeader>
+    <StyledContainer>
+      <StyledHyperlink href="https://playitagain-auth.herokuapp.com/login">
+        <StyledButton>Sign in with Spotify</StyledButton>
+      </StyledHyperlink>
+      <StyledLink to={routes.app_info}>
+        What is this? + Overview link
+      </StyledLink>
+    </StyledContainer>
+  </StyledWrapper>
+);
 
 export default LoginPage;

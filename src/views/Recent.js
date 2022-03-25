@@ -18,10 +18,9 @@ const StyledList = styled.ul`
   list-style: none;
 `;
 
-function Recent({ fetchRecent, recent }) {
+const Recent = ({ fetchRecent, recent }) => {
   useEffect(() => {
     fetchRecent();
-    // eslint-disable-next-line
   }, []);
 
   const updateList = () => {
@@ -104,7 +103,7 @@ function Recent({ fetchRecent, recent }) {
       </StyledList>
     </ListTemplate>
   );
-}
+};
 
 const mapStateToProps = (state) => {
   const { recent } = state;

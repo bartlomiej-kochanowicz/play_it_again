@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { fetchArtists as fetchArtistsAction } from 'actions';
 import { time as staticTime } from 'utils';
 import TimeNavbar from 'components/molecules/TimeNavbar/TimeNavbar';
-import ErrorModal from '../components/molecules/ErrorModal/ErrorModal';
+import ErrorModal from 'components/molecules/ErrorModal/ErrorModal';
 
 const StyledList = styled.ul`
   padding: 20px 0;
@@ -17,7 +17,7 @@ const StyledList = styled.ul`
   list-style: none;
 `;
 
-function TopArtists({ fetchArtists, topArtists }) {
+const TopArtists = ({ fetchArtists, topArtists }) => {
   const [time, setTime] = useState(staticTime.longTerm);
   const [listVisible, setListVisibility] = useState(true);
 
@@ -75,7 +75,7 @@ function TopArtists({ fetchArtists, topArtists }) {
       )}
     </ListTemplate>
   );
-}
+};
 
 const mapStateToProps = (state) => {
   const { topArtists } = state;

@@ -4,14 +4,12 @@ import { ThemeProvider } from 'styled-components';
 import GlobalStyle from 'theme/GlobalStyles';
 import { theme } from 'theme/mainTheme';
 
-function MainTemplate({ children }) {
-  return (
-    <>
-      <GlobalStyle />
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
-    </>
-  );
-}
+const MainTemplate = ({ children }) => (
+  <>
+    <GlobalStyle />
+    <ThemeProvider theme={theme}>{children}</ThemeProvider>
+  </>
+);
 
 export default MainTemplate;
 

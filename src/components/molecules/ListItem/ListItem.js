@@ -86,36 +86,34 @@ const StyledInnerWrapper = styled.div`
   width: 90%;
 `;
 
-function ListItem({ type, index, name, description, image, link, played }) {
-  return (
-    <li>
-      <StyledLink
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        index={index}
-      >
-        {type !== 'recent' && (
-          <StyledNumber index={index}>{index + 1}</StyledNumber>
-        )}
-        <StyledImage image={image} />
-        <StyledFlexWrapper>
-          <StyledInnerWrapper>
-            <StyledInfo>{name}</StyledInfo>
-            <StyledInfo secondary>
-              {description
-                .slice(0, 4)
-                .map((item) =>
-                  type === 'artist' ? `${item}, ` : `${item.name}, `
-                )}
-            </StyledInfo>
-          </StyledInnerWrapper>
-          <StyledInfo secondary>{played}</StyledInfo>
-        </StyledFlexWrapper>
-      </StyledLink>
-    </li>
-  );
-}
+const ListItem = ({ type, index, name, description, image, link, played }) => (
+  <li>
+    <StyledLink
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      index={index}
+    >
+      {type !== 'recent' && (
+        <StyledNumber index={index}>{index + 1}</StyledNumber>
+      )}
+      <StyledImage image={image} />
+      <StyledFlexWrapper>
+        <StyledInnerWrapper>
+          <StyledInfo>{name}</StyledInfo>
+          <StyledInfo secondary>
+            {description
+              .slice(0, 4)
+              .map((item) =>
+                type === 'artist' ? `${item}, ` : `${item.name}, `
+              )}
+          </StyledInfo>
+        </StyledInnerWrapper>
+        <StyledInfo secondary>{played}</StyledInfo>
+      </StyledFlexWrapper>
+    </StyledLink>
+  </li>
+);
 
 export default ListItem;
 

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Cover from 'components/molecules/Cover/Cover';
-import Heading from '../../atoms/Heading/Heading';
+import Heading from 'components/atoms/Heading/Heading';
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -38,23 +38,21 @@ const CoverWrapper = styled.div`
   justify-content: center;
 `;
 
-function DashboardNewReleases({ albums }) {
-  return (
-    <StyledWrapper>
-      <Heading>New Releases</Heading>
-      <StyledInnerWrapper>
-        {albums.map((item) => (
-          <CoverWrapper key={item.id}>
-            <StyledCover
-              image={item.images[0].url}
-              url={item.external_urls.spotify}
-            />
-          </CoverWrapper>
-        ))}
-      </StyledInnerWrapper>
-    </StyledWrapper>
-  );
-}
+const DashboardNewReleases = ({ albums }) => (
+  <StyledWrapper>
+    <Heading>New Releases</Heading>
+    <StyledInnerWrapper>
+      {albums.map((item) => (
+        <CoverWrapper key={item.id}>
+          <StyledCover
+            image={item.images[0].url}
+            url={item.external_urls.spotify}
+          />
+        </CoverWrapper>
+      ))}
+    </StyledInnerWrapper>
+  </StyledWrapper>
+);
 
 export default DashboardNewReleases;
 

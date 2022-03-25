@@ -13,7 +13,7 @@ import DashboardProfile from 'components/molecules/DashboardProfile/DashboardPro
 import DashboardPlaylists from 'components/molecules/DashboardPlaylists/DashboardPlaylists';
 import DashboardNewReleases from 'components/molecules/DashboardNewReleases/DashboardNewReleases';
 import Spinner from 'components/atoms/Spinner/Spinner';
-import ErrorModal from '../components/molecules/ErrorModal/ErrorModal';
+import ErrorModal from 'components/molecules/ErrorModal/ErrorModal';
 
 const StyledWrapper = styled.div`
   padding: 0 20px;
@@ -56,7 +56,7 @@ const StyledLoading = styled.div`
   height: 50%;
 `;
 
-function Dashboard({
+const Dashboard = ({
   fetchUser,
   fetchPlaylists,
   fetchNewReleases,
@@ -64,7 +64,7 @@ function Dashboard({
   recommendPlaylistsByCountry,
   recommendPlaylists,
   newReleases,
-}) {
+}) => {
   useEffect(() => {
     if (!user.country) {
       fetchUser();
@@ -72,7 +72,6 @@ function Dashboard({
       fetchPlaylists();
       fetchNewReleases();
     }
-    // eslint-disable-next-line
   }, []);
 
   return user.country !== undefined &&
@@ -108,7 +107,7 @@ function Dashboard({
       )}
     </ListTemplate>
   );
-}
+};
 
 const mapStateToProps = (state) => {
   const { user, recommendPlaylistsByCountry, recommendPlaylists, newReleases } =

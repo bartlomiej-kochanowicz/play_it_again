@@ -62,13 +62,11 @@ const StyledSpan = styled.span`
     `}
 `;
 
-function HamburgerButton({ isActive, handleFn, isBlack }) {
-  return (
-    <StyledButton isActive={isActive} onClick={handleFn}>
-      <StyledSpan isActive={isActive} isBlack={isBlack} />
-    </StyledButton>
-  );
-}
+const HamburgerButton = ({ isActive, handleFn, isBlack }) => (
+  <StyledButton isActive={isActive} onClick={handleFn}>
+    <StyledSpan isActive={isActive} isBlack={isBlack} />
+  </StyledButton>
+);
 
 HamburgerButton.propTypes = {
   isActive: PropTypes.bool.isRequired,
