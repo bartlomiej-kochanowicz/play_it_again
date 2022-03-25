@@ -60,7 +60,7 @@ const StyledInnerWrapper = styled.div`
   align-items: center;
 `;
 
-const Cover = ({ url, image, name, big }) => {
+function Cover({ url, image, name, big }) {
   const [isActive, setActive] = useState(false);
 
   const handleEnter = () => {
@@ -85,7 +85,7 @@ const Cover = ({ url, image, name, big }) => {
       </StyledInnerWrapper>
     </StyledWrapper>
   );
-};
+}
 
 export default Cover;
 

@@ -17,7 +17,7 @@ const StyledList = styled.ul`
   list-style: none;
 `;
 
-const TopArtists = ({ fetchArtists, topArtists }) => {
+function TopArtists({ fetchArtists, topArtists }) {
   const [time, setTime] = useState(staticTime.longTerm);
   const [listVisible, setListVisibility] = useState(true);
 
@@ -75,7 +75,7 @@ const TopArtists = ({ fetchArtists, topArtists }) => {
       )}
     </ListTemplate>
   );
-};
+}
 
 const mapStateToProps = (state) => {
   const { topArtists } = state;

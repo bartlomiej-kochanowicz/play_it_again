@@ -8,11 +8,13 @@ const StyledSpan = styled.span`
   height: 27px;
 `;
 
-const ButtonIcon = ({ icon: Icon }) => (
-  <StyledSpan>
-    <Icon />
-  </StyledSpan>
-);
+function ButtonIcon({ icon: Icon }) {
+  return (
+    <StyledSpan>
+      <Icon />
+    </StyledSpan>
+  );
+}
 
 export default ButtonIcon;
 

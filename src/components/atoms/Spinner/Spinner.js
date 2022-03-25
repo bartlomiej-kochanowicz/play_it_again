@@ -18,6 +18,8 @@ const StyledCompass = styled(Compass)`
   animation: ${spin} 1.5s infinite;
 `;
 
-const Spinner = () => <StyledCompass />;
+function Spinner() {
+  return <StyledCompass />;
+}
 
 export default Spinner;

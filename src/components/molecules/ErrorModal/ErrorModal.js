@@ -24,13 +24,15 @@ const StyledHeading = styled(Heading)`
   margin-bottom: 20px;
 `;
 
-const ErrorModal = () => (
-  <StyledWrapper>
-    <StyledHeading>There was a problem with the server.</StyledHeading>
-    <Button onClick={logout}>
-      <StyledLink to={routes.login}>Please log in again</StyledLink>
-    </Button>
-  </StyledWrapper>
-);
+function ErrorModal() {
+  return (
+    <StyledWrapper>
+      <StyledHeading>There was a problem with the server.</StyledHeading>
+      <Button onClick={logout}>
+        <StyledLink to={routes.login}>Please log in again</StyledLink>
+      </Button>
+    </StyledWrapper>
+  );
+}
 
 export default ErrorModal;

@@ -23,8 +23,10 @@ const StyledWrapper = styled.div`
   }
 `;
 
-const UserPageTemplate = ({ children }) => {
-  const isTabletOrMobile = useMediaQuery({ query: `(max-width: ${mainTheme.breakpoints.tablet})` });
+function UserPageTemplate({ children }) {
+  const isTabletOrMobile = useMediaQuery({
+    query: `(max-width: ${mainTheme.breakpoints.tablet})`,
+  });
 
   return (
     <>
@@ -33,10 +35,12 @@ const UserPageTemplate = ({ children }) => {
       <StyledWrapper>{children}</StyledWrapper>
     </>
   );
-};
+}
 
 export default UserPageTemplate;
 
 UserPageTemplate.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.element, PropTypes.bool])).isRequired,
+  children: PropTypes.arrayOf(
+    PropTypes.oneOfType([PropTypes.element, PropTypes.bool])
+  ).isRequired,
 };

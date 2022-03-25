@@ -39,7 +39,7 @@ const StyledHeading = styled(Heading)`
   }
 `;
 
-const DashboardPlaylists = ({ playlists, position }) => {
+function DashboardPlaylists({ playlists, position }) {
   const {
     message,
     playlists: { items },
@@ -62,7 +62,7 @@ const DashboardPlaylists = ({ playlists, position }) => {
       </StyledInnerWrapper>
     </StyledWrapper>
   );
-};
+}
 
 export default DashboardPlaylists;
 

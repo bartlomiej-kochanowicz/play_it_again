@@ -38,20 +38,23 @@ const CoverWrapper = styled.div`
   justify-content: center;
 `;
 
-const DashboardNewReleases = ({ albums }) => {
+function DashboardNewReleases({ albums }) {
   return (
     <StyledWrapper>
       <Heading>New Releases</Heading>
       <StyledInnerWrapper>
         {albums.map((item) => (
           <CoverWrapper key={item.id}>
-            <StyledCover image={item.images[0].url} url={item.external_urls.spotify} />
+            <StyledCover
+              image={item.images[0].url}
+              url={item.external_urls.spotify}
+            />
           </CoverWrapper>
         ))}
       </StyledInnerWrapper>
     </StyledWrapper>
   );
-};
+}
 
 export default DashboardNewReleases;
 

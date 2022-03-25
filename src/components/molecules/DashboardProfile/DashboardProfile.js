@@ -40,20 +40,22 @@ const StyledButton = styled(Button)`
   width: 100%;
 `;
 
-const DashboardProfile = ({ image, name, followers, link }) => (
-  <StyledWrapper>
-    <StyledAvatar image={image} />
-    <Heading>{name}</Heading>
-    <Paragraph>
-      Total followers: <strong>{followers}</strong>
-    </Paragraph>
-    <StyledButton>
-      <StyledLink href={link} target="_blank" rel="noopener noreferrer">
-        Visit profile
-      </StyledLink>
-    </StyledButton>
-  </StyledWrapper>
-);
+function DashboardProfile({ image, name, followers, link }) {
+  return (
+    <StyledWrapper>
+      <StyledAvatar image={image} />
+      <Heading>{name}</Heading>
+      <Paragraph>
+        Total followers: <strong>{followers}</strong>
+      </Paragraph>
+      <StyledButton>
+        <StyledLink href={link} target="_blank" rel="noopener noreferrer">
+          Visit profile
+        </StyledLink>
+      </StyledButton>
+    </StyledWrapper>
+  );
+}
 
 export default DashboardProfile;
 

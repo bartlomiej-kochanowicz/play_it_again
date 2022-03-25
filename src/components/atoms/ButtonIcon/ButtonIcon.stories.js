@@ -10,18 +10,12 @@ export default {
   decorators: [themeDecorator],
 };
 
-export const StarIcon = () => (
-  <>
-    <ButtonIcon icon={Star} />
-  </>
-);
-export const HeartIcon = () => (
-  <>
-    <ButtonIcon icon={Heart} />
-  </>
-);
-export const ClockIcon = () => (
-  <>
-    <ButtonIcon icon={Clock} />
-  </>
-);
+export function StarIcon() {
+  return <ButtonIcon icon={Star} />;
+}
+export function HeartIcon() {
+  return <ButtonIcon icon={Heart} />;
+}
+export function ClockIcon() {
+  return <ButtonIcon icon={Clock} />;
+}

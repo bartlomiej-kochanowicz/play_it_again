@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import TimeButton from 'components/atoms/TimeButton/TimeButton';
 import { time } from 'utils';
 
-const TimeNavbar = ({ update }) => {
+function TimeNavbar({ update }) {
   const [activeTab, setActiveTab] = useState(time.longTerm);
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const TimeNavbar = ({ update }) => {
       </TimeButton>
     </div>
   );
-};
+}
 
 export default TimeNavbar;
 

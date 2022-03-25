@@ -10,6 +10,12 @@ export default {
   decorators: [themeDecorator],
 };
 
-export const TopArtists = () => <NavButton icon={Star}>Top Artists</NavButton>;
-export const TopTracks = () => <NavButton icon={Heart}>Top Tracks</NavButton>;
-export const Recent = () => <NavButton icon={Clock}>Recent</NavButton>;
+export function TopArtists() {
+  return <NavButton icon={Star}>Top Artists</NavButton>;
+}
+export function TopTracks() {
+  return <NavButton icon={Heart}>Top Tracks</NavButton>;
+}
+export function Recent() {
+  return <NavButton icon={Clock}>Recent</NavButton>;
+}

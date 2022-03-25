@@ -1,36 +1,31 @@
 {
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
   "extends": [
     "airbnb",
-    "prettier",
-    "prettier/react"
+    "plugin:prettier/recommended",
+    "plugin:react/recommended"
   ],
-  "parser": "babel-eslint",
-  "env": {
-    "jest": true
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
   },
-  "globals": {
-    "document": true,
-    "window": true
-  },
-  "rules": {
-    "react/jsx-filename-extension": [1, { "extensions": [".js"] }],
-    "react/jsx-one-expression-per-line": 0,
-    "import/no-unresolved": 0,
-    "import/no-extraneous-dependencies": 0,
-    "import/prefer-default-export": 0,
-    "react/state-in-constructor": 0,
-    "no-console": 0,
-    "react/button-has-type": 0,
-    "camelcase": 0,
-    "consistent-return": 0,
-    "exhaustive-deps": 0,
-    "no-param-reassign": 0
-  },
+  "plugins": ["react"],
   "settings": {
     "import/resolver": {
       "node": {
         "paths": ["src"]
       }
     }
+  },
+  "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/forbid-prop-types": "off",
+    "import/prefer-default-export": "off"
   }
 }

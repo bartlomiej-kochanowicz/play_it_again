@@ -56,7 +56,7 @@ const StyledLoading = styled.div`
   height: 50%;
 `;
 
-const Dashboard = ({
+function Dashboard({
   fetchUser,
   fetchPlaylists,
   fetchNewReleases,
@@ -64,7 +64,7 @@ const Dashboard = ({
   recommendPlaylistsByCountry,
   recommendPlaylists,
   newReleases,
-}) => {
+}) {
   useEffect(() => {
     if (!user.country) {
       fetchUser();
@@ -80,7 +80,10 @@ const Dashboard = ({
     recommendPlaylists.message !== undefined ? (
     <ListTemplate header="Dashboard" image={hero}>
       <StyledWrapper>
-        <DashboardPlaylists playlists={recommendPlaylists} position="playlists" />
+        <DashboardPlaylists
+          playlists={recommendPlaylists}
+          position="playlists"
+        />
         <DashboardProfile
           image={user.images[0].url}
           name={user.display_name}
@@ -88,7 +91,10 @@ const Dashboard = ({
           link={user.external_urls.spotify}
         />
         <DashboardNewReleases albums={newReleases} />
-        <DashboardPlaylists playlists={recommendPlaylistsByCountry} position="countryPlaylists" />
+        <DashboardPlaylists
+          playlists={recommendPlaylistsByCountry}
+          position="countryPlaylists"
+        />
       </StyledWrapper>
     </ListTemplate>
   ) : (
@@ -102,11 +108,17 @@ const Dashboard = ({
       )}
     </ListTemplate>
   );
-};
+}
 
 const mapStateToProps = (state) => {
-  const { user, recommendPlaylistsByCountry, recommendPlaylists, newReleases } = state;
-  return { user, recommendPlaylistsByCountry, recommendPlaylists, newReleases };
+  const { user, recommendPlaylistsByCountry, recommendPlaylists, newReleases } =
+    state;
+  return {
+    user,
+    recommendPlaylistsByCountry,
+    recommendPlaylists,
+    newReleases,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => ({
@@ -124,11 +136,22 @@ Dashboard.propTypes = {
   user: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.objectOf(
-      PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.array, PropTypes.object]),
+      PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+        PropTypes.array,
+        PropTypes.object,
+      ])
     ),
   ]).isRequired,
-  recommendPlaylistsByCountry: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
-  recommendPlaylists: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
-  newReleases: PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.object)])
+  recommendPlaylistsByCountry: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object,
+  ]).isRequired,
+  recommendPlaylists: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
     .isRequired,
+  newReleases: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.object),
+  ]).isRequired,
 };
