@@ -23,6 +23,6 @@
 
 # 💣 Updates
 
-- v1.1.0 Play It Again is now PWA !
+- v1.1.0 Play It Again is now PWA!
 - v1.2.0 New features - dashboard page
 - v2.0.0-beta The New app version is here with new React and some new cool features and optimisations
