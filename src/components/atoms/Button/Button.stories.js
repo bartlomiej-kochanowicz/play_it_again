@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'components/atoms';
-import { themeDecorator } from '../../../../.storybook/themeDecorator';
+import { themeDecorator } from 'storybook/themeDecorator';
 
 export default {
   title: 'Buttons',

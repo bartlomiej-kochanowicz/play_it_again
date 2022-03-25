@@ -3,7 +3,7 @@ import { Star } from '@styled-icons/fa-regular/Star';
 import { Heart } from '@styled-icons/fa-regular/Heart';
 import { Clock } from '@styled-icons/fa-regular/Clock';
 import { ButtonIcon } from 'components/atoms';
-import { themeDecorator } from '../../../../.storybook/themeDecorator';
+import { themeDecorator } from 'storybook/themeDecorator';
 
 export default {
   title: 'ButtonIcons',

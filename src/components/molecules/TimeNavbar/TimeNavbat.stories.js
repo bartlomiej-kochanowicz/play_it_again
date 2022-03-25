@@ -1,6 +1,6 @@
 import React from 'react';
-import TimeNavbar from './TimeNavbar';
-import { themeDecorator } from '../../../../.storybook/themeDecorator';
+import { themeDecorator } from 'storybook/themeDecorator';
+import { TimeNavbar } from 'components/molecules';
 
 export default {
   title: 'TimeNavbar',
