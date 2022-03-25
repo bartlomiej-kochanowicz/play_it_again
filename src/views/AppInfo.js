@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { routes } from 'routes';
 import styled from 'styled-components';
-import Heading from 'components/atoms/Heading/Heading';
-import Paragraph from 'components/atoms/Paragraph/Paragraph';
-import Logo from 'components/atoms/Logo/Logo';
-import Button from 'components/atoms/Button/Button';
+import { Heading, Paragraph, Logo, Button } from 'components/atoms';
 import { connect } from 'react-redux';
 import { fillDummyData as fillDummyDataAction } from 'actions';
 

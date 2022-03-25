@@ -9,11 +9,13 @@ import {
   fetchPlaylists as fetchPlaylistsAction,
   fetchNewReleases as fetchNewReleasesAction,
 } from 'actions';
-import DashboardProfile from 'components/molecules/DashboardProfile/DashboardProfile';
-import DashboardPlaylists from 'components/molecules/DashboardPlaylists/DashboardPlaylists';
-import DashboardNewReleases from 'components/molecules/DashboardNewReleases/DashboardNewReleases';
-import Spinner from 'components/atoms/Spinner/Spinner';
-import ErrorModal from 'components/molecules/ErrorModal/ErrorModal';
+import {
+  DashboardProfile,
+  DashboardPlaylists,
+  DashboardNewReleases,
+  ErrorModal,
+} from 'components/molecules';
+import { Spinner } from 'components/atoms';
 
 const StyledWrapper = styled.div`
   padding: 0 20px;

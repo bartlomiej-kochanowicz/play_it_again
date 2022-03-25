@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import Heading from 'components/atoms/Heading/Heading';
+import { Heading, Button } from 'components/atoms';
 import { logout } from 'utils';
-import Button from 'components/atoms/Button/Button';
 import { routes } from 'routes';
 
 const StyledWrapper = styled.div`

@@ -1,5 +1,5 @@
 import React from 'react';
-import Paragraph from './Paragraph';
+import { Paragraph } from 'components/atoms';
 import { themeDecorator } from '../../../../.storybook/themeDecorator';
 
 export default {

@@ -1,5 +1,5 @@
 import React from 'react';
-import Spinner from './Spinner';
+import { Spinner } from 'components/atoms';
 import { themeDecorator } from '../../../../.storybook/themeDecorator';
 
 export default {

@@ -28,6 +28,7 @@
     "react/forbid-prop-types": "off",
     "import/prefer-default-export": "off",
     "react/function-component-definition": "off",
-    "arrow-parens": ["error", "as-needed"]
+    "arrow-parens": ["error", "as-needed"],
+    "no-restricted-exports": "off"
   }
 }

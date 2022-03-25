@@ -1,5 +1,5 @@
 import React from 'react';
-import TimeButton from './TimeButton';
+import { TimeButton } from 'components/atoms';
 import { themeDecorator } from '../../../../.storybook/themeDecorator';
 
 export default {

@@ -1,6 +1,6 @@
 import React from 'react';
+import { HamburgerButton } from 'components/atoms';
 import { themeDecorator } from '../../../../.storybook/themeDecorator';
-import HamburgerButton from './HamburgerButton';
 
 export default {
   title: 'Buttons',

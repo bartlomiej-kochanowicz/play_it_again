@@ -3,13 +3,11 @@ import LazyLoad from 'react-lazyload';
 import styled from 'styled-components';
 import ListTemplate from 'templates/ListTemplate';
 import hero from 'assets/hero_images/hero3.jpg';
-import ListItem from 'components/molecules/ListItem/ListItem';
+import { ListItem, TimeNavbar, ErrorModal } from 'components/molecules';
 import { connect } from 'react-redux';
 import { fetchTracks as fetchTracksAction } from 'actions';
 import PropTypes from 'prop-types';
-import TimeNavbar from 'components/molecules/TimeNavbar/TimeNavbar';
 import { time as staticTime } from 'utils';
-import ErrorModal from 'components/molecules/ErrorModal/ErrorModal';
 
 const StyledList = styled.ul`
   padding: 20px 0;

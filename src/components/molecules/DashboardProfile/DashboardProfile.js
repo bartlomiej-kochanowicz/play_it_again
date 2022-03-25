@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Heading from 'components/atoms/Heading/Heading';
-import Paragraph from 'components/atoms/Paragraph/Paragraph';
-import Button from 'components/atoms/Button/Button';
+import { Heading, Paragraph, Button } from 'components/atoms';
 
 const StyledWrapper = styled.div`
   box-shadow: 0 0 33px -17px rgba(0, 0, 0, 0.5);

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
-import Paragraph from 'components/atoms/Paragraph/Paragraph';
+import { Paragraph } from 'components/atoms';
 
 const StyledWrapper = styled.a`
   display: block;

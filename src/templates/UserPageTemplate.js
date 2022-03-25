@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Sidebar from 'components/organisms/Sidebar/Sidebar';
+import { Sidebar, HamburgerMenu } from 'components/organisms';
 import { theme as mainTheme } from 'theme/mainTheme';
 import { useBreakpoint } from 'hooks/useBreakpoint';
-import HamburgerMenu from 'components/organisms/HamburgerMenu/HamburgerMenu';
 
 const StyledWrapper = styled.div`
   margin-left: 120px;

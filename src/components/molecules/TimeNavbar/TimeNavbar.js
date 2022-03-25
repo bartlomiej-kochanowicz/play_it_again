@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import TimeButton from 'components/atoms/TimeButton/TimeButton';
+import { TimeButton } from 'components/atoms';
 import { time } from 'utils';
 
 const TimeNavbar = ({ update }) => {

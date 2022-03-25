@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import HamburgerButton from 'components/atoms/HamburgerButton/HamburgerButton';
-import StyledNavigation from 'components/molecules/StyledNavigation/StyledNavigation';
+import { HamburgerButton } from 'components/atoms';
+import { StyledNavigation } from 'components/molecules';
 import { scrollToTop } from 'utils';
 
 const HamburgerMenu = () => {

@@ -3,9 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { routes } from 'routes';
 import background from 'assets/background.jpg';
-import Button from 'components/atoms/Button/Button';
-import Heading from 'components/atoms/Heading/Heading';
-import Logo from 'components/atoms/Logo/Logo';
+import { Button, Heading, Logo } from 'components/atoms';
 
 const StyledWrapper = styled.div`
   position: absolute;

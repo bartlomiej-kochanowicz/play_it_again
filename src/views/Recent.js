@@ -3,8 +3,7 @@ import LazyLoad from 'react-lazyload';
 import styled from 'styled-components';
 import ListTemplate from 'templates/ListTemplate';
 import hero from 'assets/hero_images/hero4.jpg';
-import ListItem from 'components/molecules/ListItem/ListItem';
-import ErrorModal from 'components/molecules/ErrorModal/ErrorModal';
+import { ListItem, ErrorModal } from 'components/molecules';
 import { connect } from 'react-redux';
 import {
   fetchRecent as fetchRecentAction,

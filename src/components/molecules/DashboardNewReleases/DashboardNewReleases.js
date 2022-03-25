@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Cover from 'components/molecules/Cover/Cover';
-import Heading from 'components/atoms/Heading/Heading';
+import { Cover } from 'components/molecules';
+import { Heading } from 'components/atoms';
 
 const StyledWrapper = styled.div`
   display: flex;
