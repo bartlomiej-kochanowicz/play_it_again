@@ -27,8 +27,7 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-    "lint": "eslint --fix -- ./src ",
-    "prebuild": "test \"$CI\" = true && npx pnpm install -r --store=node_modules/.pnpm-store || echo skipping pnpm install"
+    "lint": "eslint --fix -- ./src "
   },
   "browserslist": {
     "production": [
