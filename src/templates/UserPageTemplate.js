@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useMediaQuery } from 'react-responsive';
 import PropTypes from 'prop-types';
 import Sidebar from 'components/organisms/Sidebar/Sidebar';
 import { theme as mainTheme } from 'theme/mainTheme';
+import { useBreakpoint } from 'hooks/useBreakpoint';
 import HamburgerMenu from '../components/organisms/HamburgerMenu/HamburgerMenu';
 
 const StyledWrapper = styled.div`
@@ -24,9 +24,7 @@ const StyledWrapper = styled.div`
 `;
 
 function UserPageTemplate({ children }) {
-  const isTabletOrMobile = useMediaQuery({
-    query: `(max-width: ${mainTheme.breakpoints.tablet})`,
-  });
+  const isTabletOrMobile = useBreakpoint(mainTheme.breakpoints.tablet, 'max');
 
   return (
     <>
