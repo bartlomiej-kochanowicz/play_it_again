@@ -10,7 +10,7 @@ import { theme } from 'theme/mainTheme';
 export const useBreakpoint = (name, type) => {
   const pixels = theme.breakpoints[name];
 
-  const getMatchMediaQuery = (mediaType) => {
+  const getMatchMediaQuery = mediaType => {
     if (mediaType === 'min') {
       return `(min-width: ${pixels}px)`;
     }
@@ -27,7 +27,7 @@ export const useBreakpoint = (name, type) => {
   );
 
   useEffect(() => {
-    const onMatch = (event) => setMatch(event.matches);
+    const onMatch = event => setMatch(event.matches);
 
     const matcher = window.matchMedia(matchMediaQuery);
 

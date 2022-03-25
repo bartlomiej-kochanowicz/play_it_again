@@ -50,7 +50,7 @@ const DashboardPlaylists = ({ playlists, position }) => {
       <StyledHeading>{message}</StyledHeading>
       <StyledInnerWrapper>
         {items.length > 0 &&
-          items.map((item) => (
+          items.map(item => (
             <Cover
               big
               url={item.external_urls.spotify}

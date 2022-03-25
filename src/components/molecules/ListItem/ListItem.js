@@ -104,7 +104,7 @@ const ListItem = ({ type, index, name, description, image, link, played }) => (
           <StyledInfo secondary>
             {description
               .slice(0, 4)
-              .map((item) =>
+              .map(item =>
                 type === 'artist' ? `${item}, ` : `${item.name}, `
               )}
           </StyledInfo>

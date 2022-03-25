@@ -125,7 +125,7 @@ const AppInfo = ({ fillDummyData }) => (
   </StyledWrapper>
 );
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   fillDummyData: () => dispatch(fillDummyDataAction()),
 });
 

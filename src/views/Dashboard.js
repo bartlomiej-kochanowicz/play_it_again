@@ -109,7 +109,7 @@ const Dashboard = ({
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   const { user, recommendPlaylistsByCountry, recommendPlaylists, newReleases } =
     state;
   return {
@@ -120,9 +120,9 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   fetchUser: () => dispatch(fetchUserAction()),
-  fetchPlaylists: (country) => dispatch(fetchPlaylistsAction(country)),
+  fetchPlaylists: country => dispatch(fetchPlaylistsAction(country)),
   fetchNewReleases: () => dispatch(fetchNewReleasesAction()),
 });
 

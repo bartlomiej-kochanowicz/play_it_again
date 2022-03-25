@@ -21,7 +21,7 @@ const TopTracks = ({ fetchTracks, topTracks }) => {
   const [time, setTime] = useState(staticTime.longTerm);
   const [listVisible, setListVisibility] = useState(true);
 
-  const updateList = (item) => {
+  const updateList = item => {
     if (!topTracks[item].length) {
       fetchTracks(item);
     }
@@ -77,13 +77,13 @@ const TopTracks = ({ fetchTracks, topTracks }) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   const { topTracks } = state;
   return { topTracks };
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  fetchTracks: (time) => dispatch(fetchTracksAction(time)),
+const mapDispatchToProps = dispatch => ({
+  fetchTracks: time => dispatch(fetchTracksAction(time)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TopTracks);

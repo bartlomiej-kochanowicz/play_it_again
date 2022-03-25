@@ -27,8 +27,8 @@ const Recent = ({ fetchRecent, recent }) => {
     setTimeout(() => fetchRecent(), 75);
   };
 
-  const convertDate = (played) => {
-    const convertDay = (date) => {
+  const convertDate = played => {
+    const convertDay = date => {
       switch (date.getDay()) {
         case 0:
           return 'Mon';
@@ -105,12 +105,12 @@ const Recent = ({ fetchRecent, recent }) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   const { recent } = state;
   return { recent };
 };
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   fetchRecent: () => dispatch(fetchRecentAction()),
   clearStorage: () => dispatch(clearStorageAction()),
 });

@@ -21,7 +21,7 @@ const TopArtists = ({ fetchArtists, topArtists }) => {
   const [time, setTime] = useState(staticTime.longTerm);
   const [listVisible, setListVisibility] = useState(true);
 
-  const updateList = (item) => {
+  const updateList = item => {
     if (!topArtists[item].length) {
       fetchArtists(item);
     }
@@ -77,13 +77,13 @@ const TopArtists = ({ fetchArtists, topArtists }) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   const { topArtists } = state;
   return { topArtists };
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  fetchArtists: (time) => dispatch(fetchArtistsAction(time)),
+const mapDispatchToProps = dispatch => ({
+  fetchArtists: time => dispatch(fetchArtistsAction(time)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TopArtists);

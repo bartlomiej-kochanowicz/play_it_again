@@ -42,7 +42,7 @@ const DashboardNewReleases = ({ albums }) => (
   <StyledWrapper>
     <Heading>New Releases</Heading>
     <StyledInnerWrapper>
-      {albums.map((item) => (
+      {albums.map(item => (
         <CoverWrapper key={item.id}>
           <StyledCover
             image={item.images[0].url}

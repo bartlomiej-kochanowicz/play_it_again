@@ -10,7 +10,7 @@ const TimeNavbar = ({ update }) => {
     setActiveTab(time.longTerm);
   }, []);
 
-  const handleChange = (option) => {
+  const handleChange = option => {
     setActiveTab(option);
     update(option);
   };
