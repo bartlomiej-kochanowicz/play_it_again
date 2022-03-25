@@ -52,7 +52,7 @@ const initialState = {
 };
 
 const rootReducer = (state = initialState, action = null) =>
-  produce(state, (draft) => {
+  produce(state, draft => {
     switch (action.type) {
       case FETCH_ARTISTS_SUCCESS: {
         draft.topArtists[action.time] = [...action.payload.items];

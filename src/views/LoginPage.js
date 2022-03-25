@@ -3,9 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { routes } from 'routes';
 import background from 'assets/background.jpg';
-import Button from 'components/atoms/Button/Button';
-import Heading from 'components/atoms/Heading/Heading';
-import Logo from 'components/atoms/Logo/Logo';
+import { Button, Heading, Logo } from 'components/atoms';
 
 const StyledWrapper = styled.div`
   position: absolute;
@@ -78,21 +76,19 @@ const StyledButton = styled(Button)`
   }
 `;
 
-function LoginPage() {
-  return (
-    <StyledWrapper>
-      <StyledLogo />
-      <StyledHeader big>Replay your Spotify Hits</StyledHeader>
-      <StyledContainer>
-        <StyledHyperlink href="https://playitagain-auth.herokuapp.com/login">
-          <StyledButton>Sign in with Spotify</StyledButton>
-        </StyledHyperlink>
-        <StyledLink to={routes.app_info}>
-          What is this? + Overview link
-        </StyledLink>
-      </StyledContainer>
-    </StyledWrapper>
-  );
-}
+const LoginPage = () => (
+  <StyledWrapper>
+    <StyledLogo />
+    <StyledHeader big>Replay your Spotify Hits</StyledHeader>
+    <StyledContainer>
+      <StyledHyperlink href="https://playitagain-auth.herokuapp.com/login">
+        <StyledButton>Sign in with Spotify</StyledButton>
+      </StyledHyperlink>
+      <StyledLink to={routes.app_info}>
+        What is this? + Overview link
+      </StyledLink>
+    </StyledContainer>
+  </StyledWrapper>
+);
 
 export default LoginPage;

@@ -28,11 +28,11 @@ export const FILL_DUMMY_DATA = 'FILL_DUMMY_DATA';
 
 export const CLEAR_STORAGE_REQUEST = 'CLEAR_STORAGE_REQUEST';
 
-export const fetchArtists = (time) => (dispatch) => {
+export const fetchArtists = time => dispatch => {
   dispatch({ type: FETCH_ARTISTS_REQUEST });
   return spotifyApi
     .getMyTopArtists({ limit: 50, time_range: time })
-    .then((payload) => {
+    .then(payload => {
       dispatch({ type: FETCH_ARTISTS_SUCCESS, payload, time });
     })
     .catch(() => {
@@ -40,11 +40,11 @@ export const fetchArtists = (time) => (dispatch) => {
     });
 };
 
-export const fetchTracks = (time) => (dispatch) => {
+export const fetchTracks = time => dispatch => {
   dispatch({ type: FETCH_TRACKS_REQUEST });
   return spotifyApi
     .getMyTopTracks({ limit: 50, time_range: time })
-    .then((payload) => {
+    .then(payload => {
       dispatch({ type: FETCH_TRACKS_SUCCESS, payload, time });
     })
     .catch(() => {
@@ -52,11 +52,11 @@ export const fetchTracks = (time) => (dispatch) => {
     });
 };
 
-export const fetchRecent = () => (dispatch) => {
+export const fetchRecent = () => dispatch => {
   dispatch({ type: FETCH_RECENT_REQUEST });
   return spotifyApi
     .getMyRecentlyPlayedTracks({ limit: 50 })
-    .then((payload) => {
+    .then(payload => {
       dispatch({ type: FETCH_RECENT_SUCCESS, payload });
     })
     .catch(() => {
@@ -64,11 +64,11 @@ export const fetchRecent = () => (dispatch) => {
     });
 };
 
-export const fetchUser = () => (dispatch) => {
+export const fetchUser = () => dispatch => {
   dispatch({ type: FETCH_USER_REQUEST });
   return spotifyApi
     .getMe()
-    .then((payload) => {
+    .then(payload => {
       dispatch({ type: FETCH_USER_SUCCESS, payload });
     })
     .catch(() => {
@@ -78,13 +78,13 @@ export const fetchUser = () => (dispatch) => {
 
 export const fetchPlaylists =
   (country = null) =>
-  (dispatch) => {
+  dispatch => {
     dispatch({ type: FETCH_PLAYLISTS_REQUEST });
     return spotifyApi
       .getFeaturedPlaylists(
         country === null ? { limit: 4 } : { country, limit: 4 }
       )
-      .then((payload) => {
+      .then(payload => {
         dispatch({ type: FETCH_PLAYLISTS_SUCCESS, payload, country });
       })
       .catch(() => {
@@ -92,11 +92,11 @@ export const fetchPlaylists =
       });
   };
 
-export const fetchNewReleases = () => (dispatch) => {
+export const fetchNewReleases = () => dispatch => {
   dispatch({ type: FETCH_NEW_RELEASES_REQUEST });
   return spotifyApi
     .getNewReleases({ limit: 4 })
-    .then((payload) => {
+    .then(payload => {
       dispatch({ type: FETCH_NEW_RELEASES_SUCCESS, payload });
     })
     .catch(() => {
@@ -104,13 +104,13 @@ export const fetchNewReleases = () => (dispatch) => {
     });
 };
 
-export const fillDummyData = (dispatch) => {
+export const fillDummyData = dispatch => {
   window.localStorage.setItem('hash', '#dummydata');
   dispatch({ type: FILL_DUMMY_DATA });
   return null;
 };
 
-export const clearStorage = (dispatch) => {
+export const clearStorage = dispatch => {
   dispatch({ type: CLEAR_STORAGE_REQUEST });
   return null;
 };

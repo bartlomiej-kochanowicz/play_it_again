@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import HamburgerButton from 'components/atoms/HamburgerButton/HamburgerButton';
-import StyledNavigation from 'components/molecules/StyledNavigation/StyledNavigation';
+import { HamburgerButton } from 'components/atoms';
+import { StyledNavigation } from 'components/molecules';
 import { scrollToTop } from 'utils';
 
-function HamburgerMenu() {
+const HamburgerMenu = () => {
   const [isHamburgerActive, setHamburgerActive] = useState(false);
   const [isButtonBlack, setButtonBlack] = useState(false);
 
@@ -40,6 +40,6 @@ function HamburgerMenu() {
       <StyledNavigation isActive={isHamburgerActive} handleFn={handleClick} />
     </div>
   );
-}
+};
 
 export default HamburgerMenu;

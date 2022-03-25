@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 import UserPageTemplate from 'templates/UserPageTemplate';
-import Heading from 'components/atoms/Heading/Heading';
+import { Heading } from 'components/atoms';
 
 const StyledWrapper = styled.div`
   width: 1050px;
@@ -73,19 +73,17 @@ const StyledHeading = styled(Heading)`
   animation: ${appear} 0.5s 0.5s both;
 `;
 
-function ListTemplate({ image, header, children }) {
-  return (
-    <UserPageTemplate>
-      {!window.localStorage.getItem('hash') && <Redirect to="/login" />}
-      <StyledWrapper>
-        <StyledHero image={image}>
-          <StyledHeading big>{header}</StyledHeading>
-        </StyledHero>
-        <StyledInnerWrapper>{children}</StyledInnerWrapper>
-      </StyledWrapper>
-    </UserPageTemplate>
-  );
-}
+const ListTemplate = ({ image, header, children }) => (
+  <UserPageTemplate>
+    {!window.localStorage.getItem('hash') && <Redirect to="/login" />}
+    <StyledWrapper>
+      <StyledHero image={image}>
+        <StyledHeading big>{header}</StyledHeading>
+      </StyledHero>
+      <StyledInnerWrapper>{children}</StyledInnerWrapper>
+    </StyledWrapper>
+  </UserPageTemplate>
+);
 
 export default ListTemplate;
 

@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import Heading from 'components/atoms/Heading/Heading';
-import Paragraph from 'components/atoms/Paragraph/Paragraph';
-import Button from 'components/atoms/Button/Button';
+import { Heading, Paragraph, Button } from 'components/atoms';
 
 const StyledWrapper = styled.div`
   box-shadow: 0 0 33px -17px rgba(0, 0, 0, 0.5);
@@ -40,22 +38,20 @@ const StyledButton = styled(Button)`
   width: 100%;
 `;
 
-function DashboardProfile({ image, name, followers, link }) {
-  return (
-    <StyledWrapper>
-      <StyledAvatar image={image} />
-      <Heading>{name}</Heading>
-      <Paragraph>
-        Total followers: <strong>{followers}</strong>
-      </Paragraph>
-      <StyledButton>
-        <StyledLink href={link} target="_blank" rel="noopener noreferrer">
-          Visit profile
-        </StyledLink>
-      </StyledButton>
-    </StyledWrapper>
-  );
-}
+const DashboardProfile = ({ image, name, followers, link }) => (
+  <StyledWrapper>
+    <StyledAvatar image={image} />
+    <Heading>{name}</Heading>
+    <Paragraph>
+      Total followers: <strong>{followers}</strong>
+    </Paragraph>
+    <StyledButton>
+      <StyledLink href={link} target="_blank" rel="noopener noreferrer">
+        Visit profile
+      </StyledLink>
+    </StyledButton>
+  </StyledWrapper>
+);
 
 export default DashboardProfile;
 

@@ -4,10 +4,10 @@ export const time = {
   shortTerm: 'short_term',
 };
 
-export function scrollToTop() {
+export const scrollToTop = () => {
   window.scroll(0, 0);
-}
+};
 
-export function logout() {
+export const logout = () => {
   window.localStorage.clear();
-}
+};

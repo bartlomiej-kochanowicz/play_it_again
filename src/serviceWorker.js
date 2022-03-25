@@ -5,10 +5,12 @@ const isLocalhost = Boolean(
     // [::1] is the IPv6 localhost address.
     window.location.hostname === '[::1]' ||
     // 127.0.0.0/8 are considered localhost for IPv4.
-    window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/),
+    window.location.hostname.match(
+      /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
+    )
 );
 
-export function register(config) {
+export const register = (config) => {
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
     const publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
@@ -31,7 +33,7 @@ export function register(config) {
         navigator.serviceWorker.ready.then(() => {
           console.log(
             'This web app is being served cache-first by a service ' +
-              'worker. To learn more, visit https://bit.ly/CRA-PWA',
+              'worker. To learn more, visit https://bit.ly/CRA-PWA'
           );
         });
       } else {
@@ -40,9 +42,9 @@ export function register(config) {
       }
     });
   }
-}
+};
 
-function registerValidSW(swUrl, config) {
+const registerValidSW = (swUrl, config) => {
   navigator.serviceWorker
     .register(swUrl)
     .then((registration) => {
@@ -59,7 +61,7 @@ function registerValidSW(swUrl, config) {
               // content until all client tabs are closed.
               console.log(
                 'New content is available and will be used when all ' +
-                  'tabs for this page are closed. See https://bit.ly/CRA-PWA.',
+                  'tabs for this page are closed. See https://bit.ly/CRA-PWA.'
               );
 
               // Execute callback
@@ -84,9 +86,9 @@ function registerValidSW(swUrl, config) {
     .catch((error) => {
       console.error('Error during service worker registration:', error);
     });
-}
+};
 
-function checkValidServiceWorker(swUrl, config) {
+const checkValidServiceWorker = (swUrl, config) => {
   // Check if the service worker can be found. If it can't reload the page.
   fetch(swUrl, {
     headers: { 'Service-Worker': 'script' },
@@ -110,11 +112,13 @@ function checkValidServiceWorker(swUrl, config) {
       }
     })
     .catch(() => {
-      console.log('No internet connection found. App is running in offline mode.');
+      console.log(
+        'No internet connection found. App is running in offline mode.'
+      );
     });
-}
+};
 
-export function unregister() {
+export const unregister = () => {
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.ready
       .then((registration) => {
@@ -124,4 +128,4 @@ export function unregister() {
         console.error(error.message);
       });
   }
-}
+};

@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { routes } from 'routes';
 import styled from 'styled-components';
-import Heading from 'components/atoms/Heading/Heading';
-import Paragraph from 'components/atoms/Paragraph/Paragraph';
-import Logo from 'components/atoms/Logo/Logo';
-import Button from 'components/atoms/Button/Button';
+import { Heading, Paragraph, Logo, Button } from 'components/atoms';
 import { connect } from 'react-redux';
 import { fillDummyData as fillDummyDataAction } from 'actions';
 
@@ -72,63 +69,60 @@ const StyledButton = styled(Button)`
   width: calc(100% - 64px);
 `;
 
-function AppInfo({ fillDummyData }) {
-  return (
-    <StyledWrapper>
-      <StyledModal>
-        <StyledLogo />
-        <Heading big>Play It Again App</Heading>
-        <Paragraph>
-          Web app which allows you to discover your top artist, songs and
-          more.You can make playlist based on your music preferences.
-        </Paragraph>
-        <Heading>Required Spotify access</Heading>
-        <Paragraph>
-          Application requires access to your Spotify account. We use Spotify
-          Implicit Grant Flow for user Authorization. Application works as
-          client side only and your Spotify data is not stored to any server.
-        </Paragraph>
-        <Heading>Used Scopes and API</Heading>
-        <Paragraph>
-          Scopes enable the application to access specific Spotify API
-          endpoints. The set of scopes that are required for you to access this
-          Application:
-        </Paragraph>
-        <ul>
-          <StyledListItem>user-read-recently-played</StyledListItem>
-          <StyledListItem>user-top-read</StyledListItem>
-          <StyledListItem>playlist-modify-public</StyledListItem>
-        </ul>
-        <Paragraph>
-          Created & Powered by bartekmajster sp z o.o. using Google Firebase and
-          Spotify API.
-        </Paragraph>
-        <StyledLinksWrapper>
-          <StyledHyperlink
-            href="https://github.com/bartekmajster/play_it_again"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Github repository
-          </StyledHyperlink>
-          <StyledLink to={routes.dashboard} onClick={fillDummyData}>
-            Open app with dummy data.
-          </StyledLink>
-        </StyledLinksWrapper>
-        <Link to={routes.login}>
-          <StyledButton>
-            OK, got it
-            <span aria-label="OK" role="img">
-              👌🏻
-            </span>
-          </StyledButton>
-        </Link>
-      </StyledModal>
-    </StyledWrapper>
-  );
-}
+const AppInfo = ({ fillDummyData }) => (
+  <StyledWrapper>
+    <StyledModal>
+      <StyledLogo />
+      <Heading big>Play It Again App</Heading>
+      <Paragraph>
+        Web app which allows you to discover your top artist, songs and more.You
+        can make playlist based on your music preferences.
+      </Paragraph>
+      <Heading>Required Spotify access</Heading>
+      <Paragraph>
+        Application requires access to your Spotify account. We use Spotify
+        Implicit Grant Flow for user Authorization. Application works as client
+        side only and your Spotify data is not stored to any server.
+      </Paragraph>
+      <Heading>Used Scopes and API</Heading>
+      <Paragraph>
+        Scopes enable the application to access specific Spotify API endpoints.
+        The set of scopes that are required for you to access this Application:
+      </Paragraph>
+      <ul>
+        <StyledListItem>user-read-recently-played</StyledListItem>
+        <StyledListItem>user-top-read</StyledListItem>
+        <StyledListItem>playlist-modify-public</StyledListItem>
+      </ul>
+      <Paragraph>
+        Created & Powered by bartekmajster sp z o.o. using Google Firebase and
+        Spotify API.
+      </Paragraph>
+      <StyledLinksWrapper>
+        <StyledHyperlink
+          href="https://github.com/bartekmajster/play_it_again"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Github repository
+        </StyledHyperlink>
+        <StyledLink to={routes.dashboard} onClick={fillDummyData}>
+          Open app with dummy data.
+        </StyledLink>
+      </StyledLinksWrapper>
+      <Link to={routes.login}>
+        <StyledButton>
+          OK, got it
+          <span aria-label="OK" role="img">
+            👌🏻
+          </span>
+        </StyledButton>
+      </Link>
+    </StyledModal>
+  </StyledWrapper>
+);
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   fillDummyData: () => dispatch(fillDummyDataAction()),
 });
 

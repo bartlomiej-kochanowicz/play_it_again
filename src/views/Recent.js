@@ -3,8 +3,7 @@ import LazyLoad from 'react-lazyload';
 import styled from 'styled-components';
 import ListTemplate from 'templates/ListTemplate';
 import hero from 'assets/hero_images/hero4.jpg';
-import ListItem from 'components/molecules/ListItem/ListItem';
-import ErrorModal from 'components/molecules/ErrorModal/ErrorModal';
+import { ListItem, ErrorModal } from 'components/molecules';
 import { connect } from 'react-redux';
 import {
   fetchRecent as fetchRecentAction,
@@ -18,18 +17,17 @@ const StyledList = styled.ul`
   list-style: none;
 `;
 
-function Recent({ fetchRecent, recent }) {
+const Recent = ({ fetchRecent, recent }) => {
   useEffect(() => {
     fetchRecent();
-    // eslint-disable-next-line
   }, []);
 
   const updateList = () => {
     setTimeout(() => fetchRecent(), 75);
   };
 
-  const convertDate = (played) => {
-    const convertDay = (date) => {
+  const convertDate = played => {
+    const convertDay = date => {
       switch (date.getDay()) {
         case 0:
           return 'Mon';
@@ -104,14 +102,14 @@ function Recent({ fetchRecent, recent }) {
       </StyledList>
     </ListTemplate>
   );
-}
+};
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   const { recent } = state;
   return { recent };
 };
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   fetchRecent: () => dispatch(fetchRecentAction()),
   clearStorage: () => dispatch(clearStorageAction()),
 });

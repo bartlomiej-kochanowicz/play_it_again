@@ -9,11 +9,13 @@ import {
   fetchPlaylists as fetchPlaylistsAction,
   fetchNewReleases as fetchNewReleasesAction,
 } from 'actions';
-import DashboardProfile from 'components/molecules/DashboardProfile/DashboardProfile';
-import DashboardPlaylists from 'components/molecules/DashboardPlaylists/DashboardPlaylists';
-import DashboardNewReleases from 'components/molecules/DashboardNewReleases/DashboardNewReleases';
-import Spinner from 'components/atoms/Spinner/Spinner';
-import ErrorModal from '../components/molecules/ErrorModal/ErrorModal';
+import {
+  DashboardProfile,
+  DashboardPlaylists,
+  DashboardNewReleases,
+  ErrorModal,
+} from 'components/molecules';
+import { Spinner } from 'components/atoms';
 
 const StyledWrapper = styled.div`
   padding: 0 20px;
@@ -56,7 +58,7 @@ const StyledLoading = styled.div`
   height: 50%;
 `;
 
-function Dashboard({
+const Dashboard = ({
   fetchUser,
   fetchPlaylists,
   fetchNewReleases,
@@ -64,7 +66,7 @@ function Dashboard({
   recommendPlaylistsByCountry,
   recommendPlaylists,
   newReleases,
-}) {
+}) => {
   useEffect(() => {
     if (!user.country) {
       fetchUser();
@@ -72,7 +74,6 @@ function Dashboard({
       fetchPlaylists();
       fetchNewReleases();
     }
-    // eslint-disable-next-line
   }, []);
 
   return user.country !== undefined &&
@@ -108,9 +109,9 @@ function Dashboard({
       )}
     </ListTemplate>
   );
-}
+};
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   const { user, recommendPlaylistsByCountry, recommendPlaylists, newReleases } =
     state;
   return {
@@ -121,9 +122,9 @@ const mapStateToProps = (state) => {
   };
 };
 
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   fetchUser: () => dispatch(fetchUserAction()),
-  fetchPlaylists: (country) => dispatch(fetchPlaylistsAction(country)),
+  fetchPlaylists: country => dispatch(fetchPlaylistsAction(country)),
   fetchNewReleases: () => dispatch(fetchNewReleasesAction()),
 });
 

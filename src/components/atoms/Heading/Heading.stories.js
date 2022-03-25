@@ -1,15 +1,11 @@
 import React from 'react';
-import Heading from './Heading';
-import { themeDecorator } from '../../../../.storybook/themeDecorator';
+import { Heading } from 'components/atoms';
+import { themeDecorator } from 'storybook/themeDecorator';
 
 export default {
   title: 'Typology',
   decorators: [themeDecorator],
 };
 
-export function MainHeading() {
-  return <Heading>Hello Button</Heading>;
-}
-export function BigHeading() {
-  return <Heading big>Hello Button</Heading>;
-}
+export const MainHeading = () => <Heading>Hello Button</Heading>;
+export const BigHeading = () => <Heading big>Hello Button</Heading>;

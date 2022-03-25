@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import Heading from 'components/atoms/Heading/Heading';
+import { Heading } from 'components/atoms';
 import PropTypes from 'prop-types';
-import Cover from 'components/molecules/Cover/Cover';
+import { Cover } from 'components/molecules';
 
 const StyledWrapper = styled.div`
   grid-area: ${({ position }) => position};
@@ -39,7 +39,7 @@ const StyledHeading = styled(Heading)`
   }
 `;
 
-function DashboardPlaylists({ playlists, position }) {
+const DashboardPlaylists = ({ playlists, position }) => {
   const {
     message,
     playlists: { items },
@@ -50,7 +50,7 @@ function DashboardPlaylists({ playlists, position }) {
       <StyledHeading>{message}</StyledHeading>
       <StyledInnerWrapper>
         {items.length > 0 &&
-          items.map((item) => (
+          items.map(item => (
             <Cover
               big
               url={item.external_urls.spotify}
@@ -62,7 +62,7 @@ function DashboardPlaylists({ playlists, position }) {
       </StyledInnerWrapper>
     </StyledWrapper>
   );
-}
+};
 
 export default DashboardPlaylists;
 

@@ -1,13 +1,11 @@
 import React from 'react';
 import StoryRouter from 'storybook-react-router';
-import Sidebar from './Sidebar';
-import { themeDecorator } from '../../../../.storybook/themeDecorator';
+import { themeDecorator } from 'storybook/themeDecorator';
+import { Sidebar } from 'components/organisms';
 
 export default {
   title: 'Sidebar',
   decorators: [themeDecorator, StoryRouter()],
 };
 
-export function MainSidebar() {
-  return <Sidebar />;
-}
+export const MainSidebar = () => <Sidebar />;

@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import TimeButton from 'components/atoms/TimeButton/TimeButton';
+import { TimeButton } from 'components/atoms';
 import { time } from 'utils';
 
-function TimeNavbar({ update }) {
+const TimeNavbar = ({ update }) => {
   const [activeTab, setActiveTab] = useState(time.longTerm);
 
   useEffect(() => {
     setActiveTab(time.longTerm);
   }, []);
 
-  const handleChange = (option) => {
+  const handleChange = option => {
     setActiveTab(option);
     update(option);
   };
@@ -37,7 +37,7 @@ function TimeNavbar({ update }) {
       </TimeButton>
     </div>
   );
-}
+};
 
 export default TimeNavbar;
 

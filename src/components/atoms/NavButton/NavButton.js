@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import ButtonIcon from 'components/atoms/ButtonIcon/ButtonIcon';
+import { ButtonIcon } from 'components/atoms';
 
 const StyledDiv = styled.div`
   width: 100%;
@@ -26,14 +26,12 @@ const StyledSpan = styled.span`
   margin-top: 10px;
 `;
 
-function NavButton({ icon, children, last }) {
-  return (
-    <StyledDiv last={last}>
-      <ButtonIcon icon={icon} />
-      <StyledSpan>{children}</StyledSpan>
-    </StyledDiv>
-  );
-}
+const NavButton = ({ icon, children, last }) => (
+  <StyledDiv last={last}>
+    <ButtonIcon icon={icon} />
+    <StyledSpan>{children}</StyledSpan>
+  </StyledDiv>
+);
 
 export default NavButton;
 

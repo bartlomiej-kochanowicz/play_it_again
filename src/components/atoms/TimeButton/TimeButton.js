@@ -49,13 +49,11 @@ const StyledButton = styled.button`
   }
 `;
 
-function TimeButton({ children, active, animation }) {
-  return (
-    <StyledButton onClick={animation} active={active}>
-      {children}
-    </StyledButton>
-  );
-}
+const TimeButton = ({ children, active, animation }) => (
+  <StyledButton onClick={animation} active={active}>
+    {children}
+  </StyledButton>
+);
 
 export default TimeButton;
 

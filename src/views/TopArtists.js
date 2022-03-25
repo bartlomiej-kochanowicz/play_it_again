@@ -3,13 +3,11 @@ import LazyLoad from 'react-lazyload';
 import PropTypes from 'prop-types';
 import ListTemplate from 'templates/ListTemplate';
 import hero from 'assets/hero_images/hero2.jpg';
-import ListItem from 'components/molecules/ListItem/ListItem';
+import { ListItem, TimeNavbar, ErrorModal } from 'components/molecules';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { fetchArtists as fetchArtistsAction } from 'actions';
 import { time as staticTime } from 'utils';
-import TimeNavbar from 'components/molecules/TimeNavbar/TimeNavbar';
-import ErrorModal from '../components/molecules/ErrorModal/ErrorModal';
 
 const StyledList = styled.ul`
   padding: 20px 0;
@@ -17,11 +15,11 @@ const StyledList = styled.ul`
   list-style: none;
 `;
 
-function TopArtists({ fetchArtists, topArtists }) {
+const TopArtists = ({ fetchArtists, topArtists }) => {
   const [time, setTime] = useState(staticTime.longTerm);
   const [listVisible, setListVisibility] = useState(true);
 
-  const updateList = (item) => {
+  const updateList = item => {
     if (!topArtists[item].length) {
       fetchArtists(item);
     }
@@ -75,15 +73,15 @@ function TopArtists({ fetchArtists, topArtists }) {
       )}
     </ListTemplate>
   );
-}
+};
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   const { topArtists } = state;
   return { topArtists };
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  fetchArtists: (time) => dispatch(fetchArtistsAction(time)),
+const mapDispatchToProps = dispatch => ({
+  fetchArtists: time => dispatch(fetchArtistsAction(time)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TopArtists);
