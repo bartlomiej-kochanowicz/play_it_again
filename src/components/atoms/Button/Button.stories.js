@@ -7,6 +7,4 @@ export default {
   decorators: [themeDecorator],
 };
 
-export function MainButton() {
-  return <Button>Hello Button</Button>;
-}
+export const MainButton = () => <Button>Hello Button</Button>;

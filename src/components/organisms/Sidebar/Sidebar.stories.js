@@ -8,6 +8,4 @@ export default {
   decorators: [themeDecorator, StoryRouter()],
 };
 
-export function MainSidebar() {
-  return <Sidebar />;
-}
+export const MainSidebar = () => <Sidebar />;

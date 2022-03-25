@@ -7,6 +7,4 @@ export default {
   decorators: [themeDecorator],
 };
 
-export function SpinnerLoader() {
-  return <Spinner />;
-}
+export const SpinnerLoader = () => <Spinner />;

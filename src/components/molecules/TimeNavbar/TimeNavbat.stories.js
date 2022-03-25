@@ -7,6 +7,4 @@ export default {
   decorators: [themeDecorator],
 };
 
-export function TimeNavbarMobule() {
-  return <TimeNavbar />;
-}
+export const TimeNavbarMobule = () => <TimeNavbar />;

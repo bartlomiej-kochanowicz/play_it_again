@@ -7,6 +7,4 @@ export default {
   decorators: [themeDecorator],
 };
 
-export function TimeNavButton() {
-  return <TimeButton>Top Artists</TimeButton>;
-}
+export const TimeNavButton = () => <TimeButton>Top Artists</TimeButton>;

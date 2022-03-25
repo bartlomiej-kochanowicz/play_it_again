@@ -7,6 +7,4 @@ export default {
   decorators: [themeDecorator],
 };
 
-export function MainLogo() {
-  return <Logo />;
-}
+export const MainLogo = () => <Logo />;

@@ -7,6 +7,4 @@ export default {
   decorators: [themeDecorator],
 };
 
-export function MainParagraph() {
-  return <Paragraph>Hello Button</Paragraph>;
-}
+export const MainParagraph = () => <Paragraph>Hello Button</Paragraph>;
