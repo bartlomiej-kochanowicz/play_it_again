@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import styled, { css } from 'styled-components';
-import { routes } from 'routes';
+import { paths } from 'routes/paths';
 import { scrollToTop, logout } from 'utils';
 import { NavButton, Logo } from 'components/atoms';
 import { Star } from '@styled-icons/fa-regular/Star';
@@ -76,7 +76,7 @@ const Sidebar = () => (
       <StyledLi>
         <StyledNavLink
           activeClassName="active"
-          to={routes.dashboard}
+          to={paths.dashboard}
           onClick={scrollToTop}
         >
           <NavButton icon={Gem}>Dashboard</NavButton>
@@ -85,7 +85,7 @@ const Sidebar = () => (
       <StyledLi>
         <StyledNavLink
           activeClassName="active"
-          to={routes.top_artists}
+          to={paths.top_artists}
           onClick={scrollToTop}
         >
           <NavButton icon={Star}>Top Artists</NavButton>
@@ -94,7 +94,7 @@ const Sidebar = () => (
       <StyledLi>
         <StyledNavLink
           activeClassName="active"
-          to={routes.top_tracks}
+          to={paths.top_tracks}
           onClick={scrollToTop}
         >
           <NavButton icon={Heart}>Top Tracks</NavButton>
@@ -103,14 +103,14 @@ const Sidebar = () => (
       <StyledLi>
         <StyledNavLink
           activeClassName="active"
-          to={routes.recent}
+          to={paths.recent}
           onClick={scrollToTop}
         >
           <NavButton icon={Clock}>Recent</NavButton>
         </StyledNavLink>
       </StyledLi>
       <StyledLi last>
-        <StyledLink to={routes.login} onClick={logout}>
+        <StyledLink to={paths.login} onClick={logout}>
           <NavButton icon={ShareSquare}>Logout</NavButton>
         </StyledLink>
       </StyledLi>

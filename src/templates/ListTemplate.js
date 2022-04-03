@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled, { keyframes } from 'styled-components';
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import UserPageTemplate from 'templates/UserPageTemplate';
 import { Heading } from 'components/atoms';
 
@@ -73,17 +73,24 @@ const StyledHeading = styled(Heading)`
   animation: ${appear} 0.5s 0.5s both;
 `;
 
-const ListTemplate = ({ image, header, children }) => (
-  <UserPageTemplate>
-    {!window.localStorage.getItem('hash') && <Redirect to="/login" />}
-    <StyledWrapper>
-      <StyledHero image={image}>
-        <StyledHeading big>{header}</StyledHeading>
-      </StyledHero>
-      <StyledInnerWrapper>{children}</StyledInnerWrapper>
-    </StyledWrapper>
-  </UserPageTemplate>
-);
+const ListTemplate = ({ image, header, children }) => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!window.localStorage.getItem('hash')) navigate('/login');
+  }, []);
+
+  return (
+    <UserPageTemplate>
+      <StyledWrapper>
+        <StyledHero image={image}>
+          <StyledHeading big>{header}</StyledHeading>
+        </StyledHero>
+        <StyledInnerWrapper>{children}</StyledInnerWrapper>
+      </StyledWrapper>
+    </UserPageTemplate>
+  );
+};
 
 export default ListTemplate;
 
