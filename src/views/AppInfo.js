@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { routes } from 'routes';
+import { paths } from 'routes/paths';
 import styled from 'styled-components';
 import { Heading, Paragraph, Logo, Button } from 'components/atoms';
 import { connect } from 'react-redux';
@@ -106,11 +106,11 @@ const AppInfo = ({ fillDummyData }) => (
         >
           Github repository
         </StyledHyperlink>
-        <StyledLink to={routes.dashboard} onClick={fillDummyData}>
+        <StyledLink to={paths.dashboard} onClick={fillDummyData}>
           Open app with dummy data.
         </StyledLink>
       </StyledLinksWrapper>
-      <Link to={routes.login}>
+      <Link to={paths.login}>
         <StyledButton>
           OK, got it
           <span aria-label="OK" role="img">

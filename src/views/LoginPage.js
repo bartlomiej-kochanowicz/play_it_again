@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { routes } from 'routes';
+import { paths } from 'routes/paths';
 import background from 'assets/background.jpg';
 import { Button, Heading, Logo } from 'components/atoms';
 
@@ -84,9 +84,7 @@ const LoginPage = () => (
       <StyledHyperlink href="https://playitagain-auth.herokuapp.com/login">
         <StyledButton>Sign in with Spotify</StyledButton>
       </StyledHyperlink>
-      <StyledLink to={routes.app_info}>
-        What is this? + Overview link
-      </StyledLink>
+      <StyledLink to={paths.app_info}>What is this? + Overview link</StyledLink>
     </StyledContainer>
   </StyledWrapper>
 );

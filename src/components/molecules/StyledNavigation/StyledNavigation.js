@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css, keyframes } from 'styled-components';
-import { routes } from 'routes';
+import { paths } from 'routes/paths';
 import { NavLink, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { logout } from 'utils';
@@ -87,7 +87,7 @@ const StyledNavigation = ({ isActive, handleFn }) => (
         <StyledLi
           as={NavLink}
           activeClassName="active"
-          to={routes.dashboard}
+          to={paths.dashboard}
           onClick={() => handleFn(false)}
         >
           Dashboard
@@ -95,7 +95,7 @@ const StyledNavigation = ({ isActive, handleFn }) => (
         <StyledLi
           as={NavLink}
           activeClassName="active"
-          to={routes.top_artists}
+          to={paths.top_artists}
           onClick={() => handleFn(false)}
         >
           Top Artists
@@ -103,7 +103,7 @@ const StyledNavigation = ({ isActive, handleFn }) => (
         <StyledLi
           as={NavLink}
           activeClassName="active"
-          to={routes.top_tracks}
+          to={paths.top_tracks}
           onClick={() => handleFn(false)}
         >
           Top Tracks
@@ -111,12 +111,12 @@ const StyledNavigation = ({ isActive, handleFn }) => (
         <StyledLi
           as={NavLink}
           activeClassName="active"
-          to={routes.recent}
+          to={paths.recent}
           onClick={() => handleFn(false)}
         >
           Recent
         </StyledLi>
-        <StyledLi as={Link} to={routes.login} onClick={logout}>
+        <StyledLi as={Link} to={paths.login} onClick={logout}>
           Logout
         </StyledLi>
       </StyledUl>
