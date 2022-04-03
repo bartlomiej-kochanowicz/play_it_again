@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, useRoutes } from 'react-router-dom';
+import { useRoutes } from 'react-router-dom';
 import { paths } from 'routes/paths';
 import LoginPage from 'views/LoginPage';
 import AppInfo from 'views/AppInfo';
@@ -8,7 +8,7 @@ import TopTracks from 'views/TopTracks';
 import Recent from 'views/Recent';
 import Dashboard from 'views/Dashboard';
 
-const Root = () => {
+const Views = () => {
   const routes = useRoutes([
     { path: paths.home, element: <LoginPage /> },
     { path: paths.login, element: <LoginPage /> },
@@ -19,7 +19,7 @@ const Root = () => {
     { path: paths.recent, element: <Recent /> },
   ]);
 
-  return <BrowserRouter>{routes}</BrowserRouter>;
+  return routes;
 };
 
-export default Root;
+export default Views;

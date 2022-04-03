@@ -4,12 +4,15 @@ import { Provider } from 'react-redux';
 import store from 'store';
 import MainTemplate from 'templates/MainTemplate';
 import Views from 'views';
+import { BrowserRouter } from 'react-router-dom';
 import * as serviceWorker from 'serviceWorker';
 
 const App = () => (
   <Provider store={store}>
     <MainTemplate>
-      <Views />
+      <BrowserRouter>
+        <Views />
+      </BrowserRouter>
     </MainTemplate>
   </Provider>
 );
